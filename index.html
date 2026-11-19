@@ -6,7 +6,7 @@
   <title>Darkrock Games | Klasik Masa Oyunları</title>
   
   <!-- SEO & Social Meta Tags -->
-  <meta name="description" content="Klasik Tavla, Pişti Online ve Türk Daması! Geleneksel Türk masa ve iskambil oyunları, lüks ahşap ve altın teması, akıllı botlar ve 1'e 1 canlı online düellolarla Google Play ve App Store'da.">
+  <meta name="description" content="Klasik Tavla, Pişti Online ve Türk Daması! Geleneksel masa ve iskambil oyunları, lüks ahşap ve altın teması, akıllı botlar ve 1'e 1 canlı online düellolarla Google Play ve App Store'da.">
   <meta name="keywords" content="tavla, pişti, pisti, klasik pişti online, klasik tavla, türk daması, dama, masa oyunları, iskambil oyunları, online oyun, app store, google play">
   <meta name="author" content="Darkrock Games">
   <meta name="theme-color" content="#160B04">
@@ -416,8 +416,8 @@
       overflow: hidden;
       margin-bottom: 48px;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-      display: grid;
-      grid-template-columns: 1.15fr 1fr;
+      display: flex;
+      flex-direction: column;
       transition: var(--transition);
     }
 
@@ -427,42 +427,44 @@
       transform: translateY(-4px);
     }
 
-    .game-card-large.reverse {
-      grid-template-columns: 1fr 1.15fr;
-    }
-
     .game-visual {
       position: relative;
-      background: #000;
+      width: 100%;
+      background: #0A0402;
       overflow: hidden;
-      min-height: 380px;
       display: flex;
       align-items: center;
       justify-content: center;
+      max-height: 420px;
+      border-bottom: 1.5px solid var(--border-gold);
     }
 
     .game-banner-img {
       width: 100%;
-      height: 100%;
+      height: auto;
+      max-height: 420px;
       object-fit: cover;
+      object-position: center;
+      display: block;
       transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .game-card-large:hover .game-banner-img {
-      transform: scale(1.04);
+      transform: scale(1.02);
     }
 
     .game-visual-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(0deg, rgba(18, 8, 3, 0.8) 0%, transparent 60%);
+      background: linear-gradient(0deg, rgba(27, 15, 6, 0.6) 0%, transparent 40%);
+      pointer-events: none;
     }
 
     .game-content {
-      padding: 40px;
+      padding: 36px 40px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
     }
 
     .game-header-row {
@@ -794,9 +796,7 @@
 
     /* RESPONSIVE */
     @media (max-width: 992px) {
-      .game-card-large, .game-card-large.reverse {
-        grid-template-columns: 1fr;
-      }
+      /* cards are vertical */
       .game-visual {
         min-height: 260px;
       }
@@ -869,10 +869,9 @@
     <div class="container">
       <div class="hero-badge" data-i18n="hero_badge"><span>⭐</span> KLASİK GELENEKSEL OYUNLAR MOTORU</div>
       <h1 class="hero-title" data-i18n="hero_title">Geleneksel Masa Oyunları,<br>Modern Canlı Düellolar</h1>
-      <p class="hero-desc" data-i18n="hero_desc">Türkiye'nin en sevilen klasik masa ve iskambil oyunları; masif ceviz & altın işçiliği, 60 FPS akıcı 2.5D animasyonlar, gelişmiş yapay zeka ve gerçek zamanlı 1'e 1 online eşleşme ile parmaklarınızın ucunda.</p>
+      <p class="hero-desc" data-i18n="hero_desc">En sevilen klasik masa ve iskambil oyunları; masif ceviz & altın işçiliği, 60 FPS akıcı 2.5D animasyonlar, gelişmiş yapay zeka ve gerçek zamanlı 1'e 1 online eşleşme ile parmaklarınızın ucunda.</p>
       <div class="hero-actions">
         <a href="#games" class="btn-gold" data-i18n="hero_explore"><span>🎲</span> Oyunları Keşfet</a>
-        <a href="#games" class="btn-outline" data-i18n="hero_coming_soon"><span>✨</span> Yakında Mağazalarda</a>
       </div>
     </div>
   </header>
@@ -901,7 +900,7 @@
               <p class="game-tagline" data-i18n="pisti_tagline">Apple App Store İncelemesinde & Google Play Testinde</p>
             </div>
           </div>
-          <p class="game-desc" data-i18n="pisti_desc">Türkiye'nin en popüler iskambil oyunu Pişti! Arkadaşlarınızı tek tıkla WhatsApp üzerinden masaya davet edin veya internetsiz offline modda stratejik yapay zekaya karşı yarışın. Özel Zümrüt Yeşili ve Lüks Ceviz masa seçenekleri, 2.5D kavisli kart fiziği ve çift pişti heyecanı!</p>
+          <p class="game-desc" data-i18n="pisti_desc">En popüler iskambil oyunu Pişti! Arkadaşlarınızı tek tıkla WhatsApp üzerinden masaya davet edin veya internetsiz offline modda stratejik yapay zekaya karşı yarışın. Özel Zümrüt Yeşili ve Lüks Ceviz masa seçenekleri, 2.5D kavisli kart fiziği ve çift pişti heyecanı!</p>
           <div class="game-features-list">
             <div class="feature-item"><span>✨</span> <span data-i18n="pisti_f1">1v1 Canlı Çok Oyunculu</span></div>
             <div class="feature-item"><span>🧠</span> <span data-i18n="pisti_f2">İnternetsiz Akıllı Bot</span></div>
@@ -932,7 +931,10 @@
       </div>
 
       <!-- GAME 2: KLASİK TAVLA ONLINE -->
-      <div class="game-card-large reverse">
+      <div class="game-card-large">
+        <div class="game-visual">
+          <img src="assets/images/tavla_banner.png" alt="Klasik Tavla Online Afiş" class="game-banner-img">
+          <div class="game-visual-overlay"></div>
         <div class="game-content">
           <div class="game-header-row">
             <img src="assets/images/tavla_icon.png" alt="Tavla Logosu" class="game-avatar">
@@ -942,42 +944,6 @@
               <p class="game-tagline" data-i18n="tavla_tagline">3D Masif Ceviz Kasa & Sedef İşlemeli Gerçek Tavla</p>
             </div>
           </div>
-          <p class="game-desc" data-i18n="tavla_desc">7 katmanlı 3D ceviz kasa, altın pirinç menteşeler, sedefli ve obsidyen taşlarla gerçek tavla ustalarının oyunu. Adil ve şeffaf zar çarkı animasyonu, sağ toplama tepsisinde 3D dikey pul istifleri, WhatsApp'tan hızlı arkadaş daveti ve kesintisiz offline yapay zeka modu.</p>
-          <div class="game-features-list">
-            <div class="feature-item"><span>🎲</span> <span data-i18n="tavla_f1">620ms Sayı Çarkı Zar Hissi</span></div>
-            <div class="feature-item"><span>🚀</span> <span data-i18n="tavla_f2">2.5D Kavisli Taş Kayma Fiziği</span></div>
-            <div class="feature-item"><span>🪵</span> <span data-i18n="tavla_f3">Masif Ahşap & Sedef İşleme</span></div>
-            <div class="feature-item"><span>⚡</span> <span data-i18n="tavla_f4">WebSocket 1v1 Eşleşme</span></div>
-            <div class="feature-item"><span>💬</span> <span data-i18n="tavla_f5">Hızlı Mesajlaşma & Kayan Yazı</span></div>
-            <div class="feature-item"><span>🛡️</span> <span data-i18n="tavla_f6">%100 Hilesiz Adil Zar Garantisi</span></div>
-          </div>
-          <div class="store-badges">
-            <!-- Web Play Live Button -->
-            <a href="/tavla/" target="_blank" rel="noopener" class="web-play-btn" style="text-decoration: none;">
-              <span>🎲</span> <span data-i18n="tavla_web_play">Web'''de Hemen Oyna</span>
-            </a>
-            <!-- Google Play Badge -->
-            <a href="https://play.google.com/store/apps/details?id=com.darkrock.tavla" target="_blank" rel="noopener" class="store-badge-btn">
-              <svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 0 1-.22-.986V2.8a2.38 2.38 0 0 1 .219-.986zm11.233 11.234l2.42 2.42-11.75 6.643 9.33-9.063zm0-2.096L5.512 1.89l11.75 6.642-2.42 2.42zm1.485 1.048l3.414 1.929c.954.54.954 1.419 0 1.958l-3.414 1.93-2.148-2.148 2.148-2.148z"/></svg>
-              <div class="store-badge-text">
-                <div class="store-badge-sub">GET IT ON</div>
-                <div class="store-badge-main">Google Play</div>
-              </div>
-            </a>
-            <!-- App Store Coming Soon -->
-            <div class="store-badge-btn" style="border-color: rgba(212, 175, 55, 0.4);">
-              <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.99.6-2.63 1.35-.57.65-1.07 1.72-.94 2.74 1 .08 2.03-.49 2.65-1.24z"/></svg>
-              <div class="store-badge-text">
-                <div class="store-badge-sub">App Store (iOS)</div>
-                <div class="store-badge-main" style="color: var(--gold-light);" data-i18n="store_soon">Çok Yakında</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="game-visual">
-          <img src="assets/images/tavla_banner.png" alt="Klasik Tavla Online Afiş" class="game-banner-img">
-          <div class="game-visual-overlay"></div>
-        </div>
       </div>
 
       <!-- UPCOMING GAMES -->
@@ -989,10 +955,10 @@
               <div class="brand-emblem" style="font-size: 26px;">🏁</div>
               <div>
                 <span class="game-status-badge status-soon" data-i18n="checkers_status">⏳ ÇOK YAKINDA</span>
-                <h3 class="game-title" style="font-size: 1.45rem;" data-i18n="checkers_title">Türk Daması Online</h3>
+                <h3 class="game-title" style="font-size: 1.45rem;" data-i18n="checkers_title">Klasik Dama Online</h3>
               </div>
             </div>
-            <p class="game-desc" data-i18n="checkers_desc">Geleneksel Türk Daması kuralları, azami taş alma mecburiyeti, dikey ve yatay uçan dama taşları! 64 karelik lüks maun satranç/dama tahtasında hem internetsiz yapay zeka hem de canlı 1'e 1 online düello heyecanı çok yakında Google Play ve App Store'da.</p>
+            <p class="game-desc" data-i18n="checkers_desc">Geleneksel Dama kuralları, azami taş alma mecburiyeti, dikey ve yatay uçan dama taşları! 64 karelik lüks maun satranç/dama tahtasında hem internetsiz yapay zeka hem de canlı 1'e 1 online düello heyecanı çok yakında Google Play ve App Store'da.</p>
           </div>
           <div style="border-top: 1px solid var(--border-gold); padding-top: 16px; margin-top: 20px;">
             <span style="color: var(--gold-primary); font-size: 0.88rem; font-weight: 600;">
@@ -1109,7 +1075,7 @@
               <div class="brand-subtitle">GAMES STUDIO</div>
             </div>
           </div>
-          <p class="footer-brand-desc" data-i18n="footer_desc">Geleneksel Türk masa ve iskambil oyunlarını en üstün işçilik, lüks görsel tasarım ve modern multiplayer teknolojisiyle dünya standartlarında oyuncularla buluşturuyoruz.</p>
+          <p class="footer-brand-desc" data-i18n="footer_desc">Geleneksel masa ve iskambil oyunlarını en üstün işçilik, lüks görsel tasarım ve modern multiplayer teknolojisiyle dünya standartlarında oyuncularla buluşturuyoruz.</p>
         </div>
 
         <div>
@@ -1149,7 +1115,7 @@
     "nav_explore": "Oyunları Keşfet",
     "hero_badge": "⭐ KLASİK GELENEKSEL OYUNLAR MOTORU",
     "hero_title": "Geleneksel Masa Oyunları,<br>Modern Canlı Düellolar",
-    "hero_desc": "Türkiye'nin en sevilen klasik masa ve iskambil oyunları; masif ceviz & altın işçiliği, 60 FPS akıcı 2.5D animasyonlar, gelişmiş yapay zeka ve gerçek zamanlı 1'e 1 online eşleşme ile parmaklarınızın ucunda.",
+    "hero_desc": "En sevilen klasik masa ve iskambil oyunları; masif ceviz & altın işçiliği, 60 FPS akıcı 2.5D animasyonlar, gelişmiş yapay zeka ve gerçek zamanlı 1'e 1 online eşleşme ile parmaklarınızın ucunda.",
     "hero_explore": "🎲 Oyunları Keşfet",
     "hero_coming_soon": "✨ Yakında Mağazalarda",
     "sec_games_tag": "PORTFÖYÜMÜZ",
@@ -1158,7 +1124,7 @@
     "pisti_status": "⏳ MAĞAZA ONAYINDA • ÇOK YAKINDA",
     "pisti_title": "Klasik Pişti Online",
     "pisti_tagline": "Apple App Store İncelemesinde & Google Play Testinde",
-    "pisti_desc": "Türkiye'nin en popüler iskambil oyunu Pişti! Arkadaşlarınızı tek tıkla WhatsApp üzerinden masaya davet edin veya internetsiz offline modda stratejik yapay zekaya karşı yarışın. Özel Zümrüt Yeşili ve Lüks Ceviz masa seçenekleri, 2.5D kavisli kart fiziği ve çift pişti heyecanı!",
+    "pisti_desc": "En popüler klasik iskambil oyunu Pişti! Arkadaşlarınızı tek tıkla WhatsApp üzerinden masaya davet edin veya internetsiz offline modda stratejik yapay zekaya karşı yarışın. Özel Zümrüt Yeşili ve Lüks Ceviz masa seçenekleri, 2.5D kavisli kart fiziği ve çift pişti heyecanı!",
     "pisti_f1": "1v1 Canlı Çok Oyunculu",
     "pisti_f2": "İnternetsiz Akıllı Bot",
     "pisti_f3": "WhatsApp Anında Davet",
@@ -1179,8 +1145,8 @@
     "tavla_f6": "%100 Hilesiz Adil Zar Garantisi",
     "store_soon": "Çok Yakında",
     "checkers_status": "⏳ ÇOK YAKINDA",
-    "checkers_title": "Türk Daması Online",
-    "checkers_desc": "Geleneksel Türk Daması kuralları, azami taş alma mecburiyeti, dikey ve yatay uçan dama taşları! 64 karelik lüks maun satranç/dama tahtasında hem internetsiz yapay zeka hem de canlı 1'e 1 online düello heyecanı çok yakında Google Play ve App Store'da.",
+    "checkers_title": "Klasik Dama Online",
+    "checkers_desc": "Geleneksel dama kuralları, azami taş alma mecburiyeti, dikey ve yatay uçan dama taşları! 64 karelik lüks maun tahtada hem internetsiz yapay zeka hem de canlı 1'e 1 online düello heyecanı çok yakında Google Play ve App Store'da.",
     "checkers_footer": "🚀 Geliştirme Aşamasında • 2026 Q1 Lansmanı",
     "series_status": "✨ PLANLANAN PROJELER",
     "series_title": "Geleneksel Oyunlar Serisi",
@@ -1230,7 +1196,7 @@
     "pisti_status": "⏳ PENDING STORE APPROVAL • COMING SOON",
     "pisti_title": "Classic Pishti Online",
     "pisti_tagline": "In Apple App Store Review & Google Play Closed Testing",
-    "pisti_desc": "The most popular Turkish card game Pishti! Invite friends via WhatsApp with a single tap or challenge smart strategic AI offline. Emerald felt and luxury walnut tables, 2.5D curved card physics, and double Pishti excitement!",
+    "pisti_desc": "The most popular classic card game Pishti! Invite friends via WhatsApp with a single tap or challenge smart strategic AI offline. Emerald felt and luxury walnut tables, 2.5D curved card physics, and double Pishti excitement!",
     "pisti_f1": "1v1 Real-time Multiplayer",
     "pisti_f2": "Offline Smart AI",
     "pisti_f3": "Instant WhatsApp Invite",
@@ -1251,8 +1217,8 @@
     "tavla_f6": "100% Fair Random Dice Guarantee",
     "store_soon": "Coming Soon",
     "checkers_status": "⏳ COMING SOON",
-    "checkers_title": "Turkish Checkers Online",
-    "checkers_desc": "Traditional Turkish Checkers rules, mandatory maximum capture, orthogonal flying kings! Luxury 64-square mahogany board with offline smart AI and real-time 1v1 online duels coming soon to Google Play and App Store.",
+    "checkers_title": "Classic Checkers Online",
+    "checkers_desc": "Traditional checkers rules, mandatory maximum capture, orthogonal flying kings! Luxury 64-square mahogany board with offline smart AI and real-time 1v1 online duels coming soon to Google Play and App Store.",
     "checkers_footer": "🚀 In Development • Q1 2026 Launch",
     "series_status": "✨ PLANNED PROJECTS",
     "series_title": "Traditional Games Series",
@@ -1302,7 +1268,7 @@
     "pisti_status": "⏳ IN PRÜFUNG • BALD VERFÜGBAR",
     "pisti_title": "Klassisches Pishti Online",
     "pisti_tagline": "In Apple App Store Prüfung & Google Play Test",
-    "pisti_desc": "Das beliebteste türkische Kartenspiel Pishti! Lade Freunde per WhatsApp ein oder spiele offline gegen strategische KI.",
+    "pisti_desc": "Das beliebteste traditionelle Kartenspiel Pishti! Lade Freunde per WhatsApp ein oder spiele offline gegen strategische KI.",
     "pisti_f1": "1v1 Echtzeit-Multiplayer",
     "pisti_f2": "Offline Intelligente KI",
     "pisti_f3": "WhatsApp Soforteinladung",
@@ -1323,7 +1289,7 @@
     "tavla_f6": "100% Faire Würfelgarantie",
     "store_soon": "Bald verfügbar",
     "checkers_status": "⏳ BALD VERFÜGBAR",
-    "checkers_title": "Türkische Dame Online",
+    "checkers_title": "Klassische Dame Online",
     "checkers_desc": "Traditionelle Regeln, maximale Schlagpflicht und fliegende Damen auf 64 edlen Mahagonifeldern.",
     "checkers_footer": "🚀 In Entwicklung • Start Q1 2026",
     "series_status": "✨ GEPLANTE PROJEKTE",
@@ -1374,7 +1340,7 @@
     "pisti_status": "⏳ НА ПРОВЕРКЕ • СКОРО",
     "pisti_title": "Классический Пишти Онлайн",
     "pisti_tagline": "На проверке в Apple App Store и закрытом тесте Google Play",
-    "pisti_desc": "Популярнейшая турецкая карточная игра Пишти! Приглашайте друзей через WhatsApp или играйте офлайн против тактического ИИ.",
+    "pisti_desc": "Популярнейшая карточная игра Пишти! Приглашайте друзей через WhatsApp или играйте офлайн против тактического ИИ.",
     "pisti_f1": "1v1 Мультиплеер онлайн",
     "pisti_f2": "Офлайн умный бот",
     "pisti_f3": "Быстрое приглашение WhatsApp",
@@ -1395,7 +1361,7 @@
     "tavla_f6": "100% честные случайные кости",
     "store_soon": "Скоро",
     "checkers_status": "⏳ СКОРО",
-    "checkers_title": "Турецкие шашки онлайн",
+    "checkers_title": "Классические шашки онлайн",
     "checkers_desc": "Традиционные правила, обязательное максимальное взятие и летающие дамки на роскошной доске из красного дерева.",
     "checkers_footer": "🚀 В разработке • Релиз Q1 2026",
     "series_status": "✨ В ПЛАНАХ",
@@ -1446,7 +1412,7 @@
     "pisti_status": "⏳ قيد المراجعة • قريباً",
     "pisti_title": "بيشتي كلاسيك أونلاين",
     "pisti_tagline": "قيد المراجعة في متجر التطبيقات واختبار Google Play",
-    "pisti_desc": "أشهر لعبة ورق تركية بيشتي! ادعُ أصدقاءك بضغطة واحدة عبر واتساب أو تحدَّ الذكاء الاصطناعي أوفلاين بطاولات خشب الجوز والجوخ الزمردي.",
+    "pisti_desc": "أشهر لعبة ورق كلاسيكية بيشتي! ادعُ أصدقاءك بضغطة واحدة عبر واتساب أو تحدَّ الذكاء الاصطناعي أوفلاين بطاولات خشب الجوز والجوخ الزمردي.",
     "pisti_f1": "1 ضد 1 متعدد اللاعبين حي",
     "pisti_f2": "ذكاء اصطناعي بدون إنترنت",
     "pisti_f3": "دعوة فورية عبر واتساب",
@@ -1467,7 +1433,7 @@
     "tavla_f6": "نرد عادل وعشوائي 100%",
     "store_soon": "قريباً جداً",
     "checkers_status": "⏳ قريباً",
-    "checkers_title": "الدامة التركية أونلاين",
+    "checkers_title": "الدامة الكلاسيكية أونلاين",
     "checkers_desc": "القواعد التقليدية للدامة مع شرط الأكل الأقصى وحركات الدامة الطائرة على رقعة ماهوجني فاخرة من 64 مربعاً.",
     "checkers_footer": "🚀 قيد التطوير • إطلاق الربع الأول 2026",
     "series_status": "✨ مشاريع مستقبلية",

@@ -75,6 +75,107 @@
       background-attachment: fixed;
     }
 
+    
+    /* LANGUAGE SELECTOR */
+    .lang-selector-wrap {
+      position: relative;
+      display: inline-block;
+    }
+
+    .lang-dropdown-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: rgba(34, 18, 7, 0.8);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-sm);
+      color: var(--gold-light);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .lang-dropdown-btn:hover {
+      border-color: var(--gold-light);
+      background: rgba(58, 30, 14, 0.9);
+    }
+
+    .lang-dropdown-btn svg {
+      width: 14px;
+      height: 14px;
+      fill: var(--gold-light);
+      transition: transform 0.2s;
+    }
+
+    .lang-dropdown-btn.active svg {
+      transform: rotate(180deg);
+    }
+
+    .lang-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      background: #1F0E05;
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-sm);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+      min-width: 150px;
+      display: none;
+      flex-direction: column;
+      z-index: 1001;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .lang-dropdown-menu.show {
+      display: flex;
+    }
+
+    .lang-option {
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text-main);
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      border: none;
+      background: transparent;
+      width: 100%;
+      text-align: left;
+    }
+
+    .lang-option:hover {
+      background: rgba(212, 175, 55, 0.15);
+      color: var(--gold-light);
+    }
+
+    .lang-option.selected {
+      background: rgba(212, 175, 55, 0.25);
+      color: var(--gold-light);
+      font-weight: 700;
+    }
+
+    [dir="rtl"] {
+      text-align: right;
+    }
+    [dir="rtl"] .brand-logo {
+      flex-direction: row-reverse;
+    }
+    [dir="rtl"] .lang-dropdown-menu {
+      right: auto;
+      left: 0;
+    }
+    [dir="rtl"] .store-badge-text {
+      text-align: right;
+    }
+    [dir="rtl"] .lang-option {
+      text-align: right;
+    }
+
     /* TYPOGRAPHY */
     h1, h2, h3, .font-cinzel {
       font-family: 'Cinzel', serif;
@@ -739,10 +840,26 @@
         </div>
       </a>
       <div class="nav-links">
-        <a href="#games" class="nav-link">Oyunlarımız</a>
-        <a href="#features" class="nav-link">Özellikler</a>
-        <a href="#privacy" class="nav-link">Gizlilik Politikası</a>
-        <a href="mailto:karakayaonur1719@yahoo.com" class="nav-btn">İletişim & Destek</a>
+        <a href="#games" class="nav-link" data-i18n="nav_games">Oyunlarımız</a>
+        <a href="#features" class="nav-link" data-i18n="nav_features">Özellikler</a>
+        <a href="#privacy" class="nav-link" data-i18n="nav_privacy">Gizlilik Politikası</a>
+        <!-- LANGUAGE SELECTOR -->
+        <div class="lang-selector-wrap">
+          <button id="langBtn" class="lang-dropdown-btn" aria-label="Dil Seçimi">
+            <span id="currentLangFlag">🇹🇷</span>
+            <span id="currentLangLabel">TR</span>
+            <svg viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
+          </button>
+          <div id="langMenu" class="lang-dropdown-menu">
+            <button class="lang-option selected" onclick="changeLanguage('tr')">🇹🇷 Türkçe (TR)</button>
+            <button class="lang-option" onclick="changeLanguage('en')">🇬🇧 English (EN)</button>
+            <button class="lang-option" onclick="changeLanguage('de')">🇩🇪 Deutsch (DE)</button>
+            <button class="lang-option" onclick="changeLanguage('ru')">🇷🇺 Русский (RU)</button>
+            <button class="lang-option" onclick="changeLanguage('ar')">🇸🇦 العربية (AR)</button>
+          </div>
+        </div>
+
+        <a href="mailto:karakayaonur1719@yahoo.com" class="nav-btn" data-i18n="nav_contact">İletişim & Destek</a>
       </div>
     </div>
   </nav>
@@ -750,20 +867,12 @@
   <!-- HERO SECTION -->
   <header class="hero">
     <div class="container">
-      <div class="hero-badge">
-        <span>⭐</span> KLASİK GELENEKSEL OYUNLAR MOTORU
-      </div>
-      <h1 class="hero-title">Geleneksel Masa Oyunları,<br>Modern Canlı Düellolar</h1>
-      <p class="hero-desc">
-        Türkiye'nin en sevilen klasik masa ve iskambil oyunları; masif ceviz & altın işçiliği, 60 FPS akıcı 2.5D animasyonlar, gelişmiş yapay zeka ve gerçek zamanlı 1'e 1 online eşleşme ile parmaklarınızın ucunda.
-      </p>
+      <div class="hero-badge" data-i18n="hero_badge"><span>⭐</span> KLASİK GELENEKSEL OYUNLAR MOTORU</div>
+      <h1 class="hero-title" data-i18n="hero_title">Geleneksel Masa Oyunları,<br>Modern Canlı Düellolar</h1>
+      <p class="hero-desc" data-i18n="hero_desc">Türkiye'nin en sevilen klasik masa ve iskambil oyunları; masif ceviz & altın işçiliği, 60 FPS akıcı 2.5D animasyonlar, gelişmiş yapay zeka ve gerçek zamanlı 1'e 1 online eşleşme ile parmaklarınızın ucunda.</p>
       <div class="hero-actions">
-        <a href="#games" class="btn-gold">
-          <span>🎲</span> Oyunları Keşfet
-        </a>
-        <a href="#games" class="btn-outline">
-          <span>✨</span> Yakında Mağazalarda
-        </a>
+        <a href="#games" class="btn-gold" data-i18n="hero_explore"><span>🎲</span> Oyunları Keşfet</a>
+        <a href="#games" class="btn-outline" data-i18n="hero_coming_soon"><span>✨</span> Yakında Mağazalarda</a>
       </div>
     </div>
   </header>
@@ -772,9 +881,9 @@
   <section id="games" class="games-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">PORTFÖYÜMÜZ</span>
-        <h2 class="section-title">Öne Çıkan Oyunlarımız</h2>
-        <p class="section-desc">Milyonların tutkusu geleneksel oyunlar, üstün mühendislik ve lüks görsel tasarımla yeniden canlandı.</p>
+        <span class="section-tag" data-i18n="sec_games_tag">PORTFÖYÜMÜZ</span>
+        <h2 class="section-title" data-i18n="sec_games_title">Öne Çıkan Oyunlarımız</h2>
+        <p class="section-desc" data-i18n="sec_games_desc">Milyonların tutkusu geleneksel oyunlar, üstün mühendislik ve lüks görsel tasarımla yeniden canlandı.</p>
       </div>
 
       <!-- GAME 1: KLASİK PİŞTİ ONLINE -->
@@ -787,21 +896,19 @@
           <div class="game-header-row">
             <img src="assets/images/pisti_icon.png" alt="Pişti Logosu" class="game-avatar">
             <div>
-              <span class="game-status-badge status-soon">⏳ MAĞAZA ONAYINDA • ÇOK YAKINDA</span>
-              <h3 class="game-title">Klasik Pişti Online</h3>
-              <p class="game-tagline">Apple App Store İncelemesinde & Google Play Testinde</p>
+              <span class="game-status-badge status-soon" data-i18n="pisti_status">⏳ MAĞAZA ONAYINDA • ÇOK YAKINDA</span>
+              <h3 class="game-title" data-i18n="pisti_title">Klasik Pişti Online</h3>
+              <p class="game-tagline" data-i18n="pisti_tagline">Apple App Store İncelemesinde & Google Play Testinde</p>
             </div>
           </div>
-          <p class="game-desc">
-            Türkiye'nin en popüler iskambil oyunu Pişti! Arkadaşlarınızı tek tıkla WhatsApp üzerinden masaya davet edin veya internetsiz offline modda stratejik yapay zekaya karşı yarışın. Özel Zümrüt Yeşili ve Lüks Ceviz masa seçenekleri, 2.5D kavisli kart fiziği ve çift pişti heyecanı!
-          </p>
+          <p class="game-desc" data-i18n="pisti_desc">Türkiye'nin en popüler iskambil oyunu Pişti! Arkadaşlarınızı tek tıkla WhatsApp üzerinden masaya davet edin veya internetsiz offline modda stratejik yapay zekaya karşı yarışın. Özel Zümrüt Yeşili ve Lüks Ceviz masa seçenekleri, 2.5D kavisli kart fiziği ve çift pişti heyecanı!</p>
           <div class="game-features-list">
-            <div class="feature-item"><span>✨</span> 1v1 Canlı Çok Oyunculu</div>
-            <div class="feature-item"><span>🧠</span> İnternetsiz Akıllı Bot</div>
-            <div class="feature-item"><span>📲</span> WhatsApp Anında Davet</div>
-            <div class="feature-item"><span>🏆</span> Kariyer & Galibiyet Rozetleri</div>
-            <div class="feature-item"><span>🎨</span> Lüks Ahşap & Çuha Temaları</div>
-            <div class="feature-item"><span>🔒</span> Karşılıklı Mola & Devam Et</div>
+            <div class="feature-item"><span>✨</span> <span data-i18n="pisti_f1">1v1 Canlı Çok Oyunculu</span></div>
+            <div class="feature-item"><span>🧠</span> <span data-i18n="pisti_f2">İnternetsiz Akıllı Bot</span></div>
+            <div class="feature-item"><span>📲</span> <span data-i18n="pisti_f3">WhatsApp Anında Davet</span></div>
+            <div class="feature-item"><span>🏆</span> <span data-i18n="pisti_f4">Kariyer & Skor Takibi</span></div>
+            <div class="feature-item"><span>🎨</span> <span data-i18n="pisti_f5">Lüks Ahşap & Çuha Temaları</span></div>
+            <div class="feature-item"><span>🔒</span> <span data-i18n="pisti_f6">Karşılıklı Mola & Devam Et</span></div>
           </div>
           <div class="store-badges">
             <!-- App Store In Review -->
@@ -809,7 +916,7 @@
               <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.99.6-2.63 1.35-.57.65-1.07 1.72-.94 2.74 1 .08 2.03-.49 2.65-1.24z"/></svg>
               <div class="store-badge-text">
                 <div class="store-badge-sub">App Store (iOS)</div>
-                <div class="store-badge-main" style="color: var(--gold-light);">İnceleme Aşamasında</div>
+                <div class="store-badge-main" style="color: var(--gold-light);" data-i18n="store_review">İnceleme Aşamasında</div>
               </div>
             </div>
             <!-- Google Play Testing -->
@@ -817,7 +924,7 @@
               <svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 0 1-.22-.986V2.8a2.38 2.38 0 0 1 .219-.986zm11.233 11.234l2.42 2.42-11.75 6.643 9.33-9.063zm0-2.096L5.512 1.89l11.75 6.642-2.42 2.42zm1.485 1.048l3.414 1.929c.954.54.954 1.419 0 1.958l-3.414 1.93-2.148-2.148 2.148-2.148z"/></svg>
               <div class="store-badge-text">
                 <div class="store-badge-sub">Google Play</div>
-                <div class="store-badge-main" style="color: var(--gold-light);">Kapalı Testte</div>
+                <div class="store-badge-main" style="color: var(--gold-light);" data-i18n="store_closed_test">Kapalı Testte</div>
               </div>
             </div>
           </div>
@@ -830,21 +937,19 @@
           <div class="game-header-row">
             <img src="assets/images/tavla_icon.png" alt="Tavla Logosu" class="game-avatar">
             <div>
-              <span class="game-status-badge status-live">🟢 ANDROID TESTTE • 🍏 iOS YAKINDA</span>
-              <h3 class="game-title">Klasik Tavla Online</h3>
-              <p class="game-tagline">3D Masif Ceviz Kasa & Sedef İşlemeli Gerçek Tavla</p>
+              <span class="game-status-badge status-live" data-i18n="tavla_status">🟢 ANDROID TESTTE • 🍏 iOS YAKINDA</span>
+              <h3 class="game-title" data-i18n="tavla_title">Klasik Tavla Online</h3>
+              <p class="game-tagline" data-i18n="tavla_tagline">3D Masif Ceviz Kasa & Sedef İşlemeli Gerçek Tavla</p>
             </div>
           </div>
-          <p class="game-desc">
-            7 katmanlı 3D ceviz kasa, altın pirinç menteşeler, sedefli ve obsidyen taşlarla gerçek tavla ustalarının oyunu. Adil ve şeffaf zar çarkı animasyonu, sağ toplama tepsisinde 3D dikey pul istifleri, WhatsApp'tan hızlı arkadaş daveti ve kesintisiz offline yapay zeka modu.
-          </p>
+          <p class="game-desc" data-i18n="tavla_desc">7 katmanlı 3D ceviz kasa, altın pirinç menteşeler, sedefli ve obsidyen taşlarla gerçek tavla ustalarının oyunu. Adil ve şeffaf zar çarkı animasyonu, sağ toplama tepsisinde 3D dikey pul istifleri, WhatsApp'tan hızlı arkadaş daveti ve kesintisiz offline yapay zeka modu.</p>
           <div class="game-features-list">
-            <div class="feature-item"><span>🎲</span> 620ms Sayı Çarkı Zar Hissi</div>
-            <div class="feature-item"><span>🚀</span> 2.5D Kavisli Taş Kayma Fiziği</div>
-            <div class="feature-item"><span>🪵</span> Masif Ahşap & Sedef İşleme</div>
-            <div class="feature-item"><span>⚡</span> WebSocket 1v1 Eşleşme</div>
-            <div class="feature-item"><span>💬</span> Hızlı Mesajlaşma & Kayan Yazı</div>
-            <div class="feature-item"><span>🛡️</span> %100 Hilesiz Adil Zar Garantisi</div>
+            <div class="feature-item"><span>🎲</span> <span data-i18n="tavla_f1">620ms Sayı Çarkı Zar Hissi</span></div>
+            <div class="feature-item"><span>🚀</span> <span data-i18n="tavla_f2">2.5D Kavisli Taş Kayma Fiziği</span></div>
+            <div class="feature-item"><span>🪵</span> <span data-i18n="tavla_f3">Masif Ahşap & Sedef İşleme</span></div>
+            <div class="feature-item"><span>⚡</span> <span data-i18n="tavla_f4">WebSocket 1v1 Eşleşme</span></div>
+            <div class="feature-item"><span>💬</span> <span data-i18n="tavla_f5">Hızlı Mesajlaşma & Kayan Yazı</span></div>
+            <div class="feature-item"><span>🛡️</span> <span data-i18n="tavla_f6">%100 Hilesiz Adil Zar Garantisi</span></div>
           </div>
           <div class="store-badges">
             <!-- Google Play Badge -->
@@ -860,7 +965,7 @@
               <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.99.6-2.63 1.35-.57.65-1.07 1.72-.94 2.74 1 .08 2.03-.49 2.65-1.24z"/></svg>
               <div class="store-badge-text">
                 <div class="store-badge-sub">App Store (iOS)</div>
-                <div class="store-badge-main" style="color: var(--gold-light);">Çok Yakında</div>
+                <div class="store-badge-main" style="color: var(--gold-light);" data-i18n="store_soon">Çok Yakında</div>
               </div>
             </div>
           </div>
@@ -879,17 +984,15 @@
             <div class="game-header-row">
               <div class="brand-emblem" style="font-size: 26px;">🏁</div>
               <div>
-                <span class="game-status-badge status-soon">⏳ ÇOK YAKINDA</span>
-                <h3 class="game-title" style="font-size: 1.45rem;">Türk Daması Online</h3>
+                <span class="game-status-badge status-soon" data-i18n="checkers_status">⏳ ÇOK YAKINDA</span>
+                <h3 class="game-title" style="font-size: 1.45rem;" data-i18n="checkers_title">Türk Daması Online</h3>
               </div>
             </div>
-            <p class="game-desc">
-              Geleneksel Türk Daması kuralları, azami taş alma mecburiyeti, dikey ve yatay uçan dama taşları! 64 karelik lüks maun satranç/dama tahtasında hem internetsiz yapay zeka hem de canlı 1'e 1 online düello heyecanı çok yakında Google Play ve App Store'da.
-            </p>
+            <p class="game-desc" data-i18n="checkers_desc">Geleneksel Türk Daması kuralları, azami taş alma mecburiyeti, dikey ve yatay uçan dama taşları! 64 karelik lüks maun satranç/dama tahtasında hem internetsiz yapay zeka hem de canlı 1'e 1 online düello heyecanı çok yakında Google Play ve App Store'da.</p>
           </div>
           <div style="border-top: 1px solid var(--border-gold); padding-top: 16px; margin-top: 20px;">
             <span style="color: var(--gold-primary); font-size: 0.88rem; font-weight: 600;">
-              🚀 Geliştirme Aşamasında • 2026 Q1 Lansmanı
+              <span data-i18n="checkers_footer">🚀 Geliştirme Aşamasında • 2026 Q1 Lansmanı</span>
             </span>
           </div>
         </div>
@@ -900,17 +1003,15 @@
             <div class="game-header-row">
               <div class="brand-emblem" style="font-size: 26px;">🃏</div>
               <div>
-                <span class="game-status-badge status-soon">✨ PLANLANAN PROJELER</span>
-                <h3 class="game-title" style="font-size: 1.45rem;">Geleneksel Oyunlar Serisi</h3>
+                <span class="game-status-badge status-soon" data-i18n="series_status">✨ PLANLANAN PROJELER</span>
+                <h3 class="game-title" style="font-size: 1.45rem;" data-i18n="series_title">Geleneksel Oyunlar Serisi</h3>
               </div>
             </div>
-            <p class="game-desc">
-              Batak, Okey, Satranç ve Mangala gibi kültürümüzün vazgeçilmez parçası olan masa ve kart oyunlarını aynı yüksek kalite, lüks ahşap teması ve sıfır gecikmeli sunucu altyapısıyla portföyümüze eklemeye devam ediyoruz.
-            </p>
+            <p class="game-desc" data-i18n="series_desc">Batak, Okey, Satranç ve Mangala gibi kültürümüzün vazgeçilmez parçası olan masa ve kart oyunlarını aynı yüksek kalite, lüks ahşap teması ve sıfır gecikmeli sunucu altyapısıyla portföyümüze eklemeye devam ediyoruz.</p>
           </div>
           <div style="border-top: 1px solid var(--border-gold); padding-top: 16px; margin-top: 20px;">
             <span style="color: var(--gold-light); font-size: 0.88rem; font-weight: 600;">
-              🌟 Yeni Oyun Duyuruları İçin Takipte Kalın
+              <span data-i18n="series_footer">🌟 Yeni Oyun Duyuruları İçin Takipte Kalın</span>
             </span>
           </div>
         </div>
@@ -922,42 +1023,34 @@
   <section id="features" class="features-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">NEDEN BİZ?</span>
-        <h2 class="section-title">Üstün Oyun Deneyimi</h2>
-        <p class="section-desc">Her detay oyuncunun konforu, adil rekabet ve görsel zarafet için tasarlandı.</p>
+        <span class="section-tag" data-i18n="sec_why_tag">NEDEN BİZ?</span>
+        <h2 class="section-title" data-i18n="sec_why_title">Üstün Oyun Deneyimi</h2>
+        <p class="section-desc" data-i18n="sec_why_desc">Her detay oyuncunun konforu, adil rekabet ve görsel zarafet için tasarlandı.</p>
       </div>
 
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-icon-box">⚡</div>
-          <h3 class="feature-title">Gerçek Zamanlı 1'e 1</h3>
-          <p class="feature-text">
-            Özel optimize edilmiş WebSocket sunucu mimarisi sayesinde dünya çapında <40ms ultra düşük gecikmeyle kesintisiz online maçlar.
-          </p>
+          <h3 class="feature-title" data-i18n="feat1_title">Gerçek Zamanlı 1'e 1</h3>
+          <p class="feature-text" data-i18n="feat1_desc">Özel optimize edilmiş WebSocket sunucu mimarisi sayesinde dünya çapında <40ms ultra düşük gecikmeyle kesintisiz online maçlar.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-icon-box">🧠</div>
-          <h3 class="feature-title">Akıllı Offline Bot</h3>
-          <p class="feature-text">
-            İnternetiniz olmadığında bile metroda, uçakta veya seyahatte oynayabileceğiniz hilesiz, adil ve zorlu yapay zeka motoru.
-          </p>
+          <h3 class="feature-title" data-i18n="feat2_title">Akıllı Offline Bot</h3>
+          <p class="feature-text" data-i18n="feat2_desc">İnternetiniz olmadığında bile metroda, uçakta veya seyahatte oynayabileceğiniz hilesiz, adil ve zorlu yapay zeka motoru.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-icon-box">🪵</div>
-          <h3 class="feature-title">Lüks Ahşap & Altın</h3>
-          <p class="feature-text">
-            Göz yormayan masif ceviz, sedef kakmalar, altın pirinç çerçeveler ve 60 FPS 2.5D parabolik kavisli taş/kart animasyonları.
-          </p>
+          <h3 class="feature-title" data-i18n="feat3_title">Lüks Ahşap & Altın</h3>
+          <p class="feature-text" data-i18n="feat3_desc">Göz yormayan masif ceviz, sedef kakmalar, altın pirinç çerçeveler ve 60 FPS 2.5D parabolik kavisli taş/kart animasyonları.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-icon-box">⏸️</div>
-          <h3 class="feature-title">Mola & Masaya Dönüş</h3>
-          <p class="feature-text">
-            Acil bir işiniz çıktığında oyundan kopmadan mola isteyin; dilediğiniz an tek tıkla masaya dönüp kaldığınız yerden devam edin.
-          </p>
+          <h3 class="feature-title" data-i18n="feat4_title">Mola & Masaya Dönüş</h3>
+          <p class="feature-text" data-i18n="feat4_desc">Acil bir işiniz çıktığında oyundan kopmadan mola isteyin; dilediğiniz an tek tıkla masaya dönüp kaldığınız yerden devam edin.</p>
         </div>
       </div>
     </div>
@@ -967,18 +1060,18 @@
   <section id="privacy" class="privacy-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">YASAL & GÜVENLİK</span>
-        <h2 class="section-title">Gizlilik Politikası (Privacy Policy)</h2>
-        <p class="section-desc">Google Play Store ve Apple App Store kurallarına %100 uyumluluk beyanı.</p>
+        <span class="section-tag" data-i18n="privacy_tag">YASAL & GÜVENLİK</span>
+        <h2 class="section-title" data-i18n="privacy_title">Gizlilik Politikası (Privacy Policy)</h2>
+        <p class="section-desc" data-i18n="privacy_desc">Google Play Store ve Apple App Store kurallarına %100 uyumluluk beyanı.</p>
       </div>
 
       <div class="privacy-box">
-        <h3>1. Genel Bilgilendirme</h3>
+        <h3 data-i18n="privacy_sec1_title">1. Genel Bilgilendirme</h3>
         <p>
           Bu Gizlilik Politikası, Onur Karakaya ("Geliştirici") tarafından geliştirilen ve yayımlanan mobil ve web oyunları (Klasik Pişti Online, Klasik Tavla Online ve ileride sunulacak tüm oyunlar) için geçerlidir. Kullanıcılarımızın gizliliğine ve kişisel verilerinin korunmasına en üst düzeyde önem vermekteyiz.
         </p>
 
-        <h3>2. Toplanan Veriler ve Kullanım Amacı</h3>
+        <h3 data-i18n="privacy_sec2_title">2. Toplanan Veriler ve Kullanım Amacı</h3>
         <p>
           Oyunlarımızda gereksiz veya hassas kişisel veri (T.C. kimlik no, kredi kartı, adres defteri vb.) <strong>kesinlikle toplanmaz</strong>. Yalnızca oyunun temel işlevlerini yerine getirebilmek adına aşağıdaki teknik veriler işlenir:
         </p>
@@ -988,12 +1081,12 @@
           <li><strong>Oyun İstatistikleri:</strong> Çevrimdışı ve çevrimiçi kazanılan ve kaybedilen maç sayıları cihazınızda (SharedPreferences / UserDefaults) yerel olarak saklanır.</li>
         </ul>
 
-        <h3>3. Reklam ve Üçüncü Taraf Hizmetleri (Google AdMob)</h3>
+        <h3 data-i18n="privacy_sec3_title">3. Reklam ve Üçüncü Taraf Hizmetleri (Google AdMob)</h3>
         <p>
           Oyunlarımızda ücretsiz sunumu desteklemek amacıyla Google AdMob reklam hizmeti kullanılmaktadır. Google AdMob, kişiselleştirilmiş veya kişiselleştirilmemiş reklamlar sunabilmek adına anonim reklam kimliklerini (IDFA / AAID) kullanabilir. Resmi reklam doğrulama kaydımız için sitemizin kök dizininde <a href="/app-ads.txt" style="color: var(--gold-light); text-decoration: underline;">app-ads.txt</a> dosyası yayımlanmaktadır.
         </p>
 
-        <h3>4. Çocukların Gizliliği</h3>
+        <h3 data-i18n="privacy_sec4_title">4. Çocukların Gizliliği</h3>
         <p>
           Oyunlarımız her yaştan kullanıcının keyifle oynayabileceği geleneksel zeka ve strateji oyunlarıdır. Bilerek ve isteyerek 13 yaşından küçük çocuklardan kişisel veri toplanmamaktadır.
         </p>
@@ -1023,13 +1116,11 @@
               <div class="brand-subtitle">GAMES & ENTERTAINMENT</div>
             </div>
           </div>
-          <p class="footer-brand-desc">
-            Geleneksel Türk masa ve iskambil oyunlarını en üstün işçilik, lüks görsel tasarım ve modern multiplayer teknolojisiyle dünya standartlarında oyuncularla buluşturuyoruz.
-          </p>
+          <p class="footer-brand-desc" data-i18n="footer_desc">Geleneksel Türk masa ve iskambil oyunlarını en üstün işçilik, lüks görsel tasarım ve modern multiplayer teknolojisiyle dünya standartlarında oyuncularla buluşturuyoruz.</p>
         </div>
 
         <div>
-          <h4 class="footer-col-title">Oyunlarımız</h4>
+          <h4 class="footer-col-title" data-i18n="footer_games">Oyunlarımız</h4>
           <ul class="footer-links">
             <li><a href="https://apps.apple.com/app/klasik-pi%C5%9Fti-online/id6835895552" target="_blank" rel="noopener">Klasik Pişti (iOS)</a></li>
             <li><a href="https://play.google.com/store/apps/details?id=com.darkrock.pisti" target="_blank" rel="noopener">Klasik Pişti (Android)</a></li>
@@ -1040,7 +1131,7 @@
         </div>
 
         <div>
-          <h4 class="footer-col-title">Bağlantılar & Yasal</h4>
+          <h4 class="footer-col-title" data-i18n="footer_legal">Bağlantılar & Yasal</h4>
           <ul class="footer-links">
             <li><a href="#privacy">Gizlilik Politikası</a></li>
             <li><a href="/app-ads.txt">app-ads.txt</a></li>
@@ -1050,11 +1141,458 @@
       </div>
 
       <div class="footer-bottom">
-        <div>© 2026 Onur Karakaya. Tüm hakları saklıdır.</div>
+        <div data-i18n="footer_rights">© 2026 Onur Karakaya. Tüm hakları saklıdır.</div>
         <div>Designed with Walnut & Gold Luxury Theme for Board Game Masters.</div>
       </div>
     </div>
   </footer>
 
+
+  <script>
+    const translations = {
+  "tr": {
+    "nav_games": "Oyunlarımız",
+    "nav_features": "Özellikler",
+    "nav_privacy": "Gizlilik Politikası",
+    "nav_contact": "İletişim & Destek",
+    "hero_badge": "⭐ KLASİK GELENEKSEL OYUNLAR MOTORU",
+    "hero_title": "Geleneksel Masa Oyunları,<br>Modern Canlı Düellolar",
+    "hero_desc": "Türkiye'nin en sevilen klasik masa ve iskambil oyunları; masif ceviz & altın işçiliği, 60 FPS akıcı 2.5D animasyonlar, gelişmiş yapay zeka ve gerçek zamanlı 1'e 1 online eşleşme ile parmaklarınızın ucunda.",
+    "hero_explore": "🎲 Oyunları Keşfet",
+    "hero_coming_soon": "✨ Yakında Mağazalarda",
+    "sec_games_tag": "PORTFÖYÜMÜZ",
+    "sec_games_title": "Öne Çıkan Oyunlarımız",
+    "sec_games_desc": "Milyonların tutkusu geleneksel oyunlar, üstün mühendislik ve lüks görsel tasarımla yeniden canlandı.",
+    "pisti_status": "⏳ MAĞAZA ONAYINDA • ÇOK YAKINDA",
+    "pisti_title": "Klasik Pişti Online",
+    "pisti_tagline": "Apple App Store İncelemesinde & Google Play Testinde",
+    "pisti_desc": "Türkiye'nin en popüler iskambil oyunu Pişti! Arkadaşlarınızı tek tıkla WhatsApp üzerinden masaya davet edin veya internetsiz offline modda stratejik yapay zekaya karşı yarışın. Özel Zümrüt Yeşili ve Lüks Ceviz masa seçenekleri, 2.5D kavisli kart fiziği ve çift pişti heyecanı!",
+    "pisti_f1": "1v1 Canlı Çok Oyunculu",
+    "pisti_f2": "İnternetsiz Akıllı Bot",
+    "pisti_f3": "WhatsApp Anında Davet",
+    "pisti_f4": "Kariyer & Skor Takibi",
+    "pisti_f5": "Lüks Ahşap & Çuha Temaları",
+    "pisti_f6": "Karşılıklı Mola & Devam Et",
+    "store_review": "İnceleme Aşamasında",
+    "store_closed_test": "Kapalı Testte",
+    "tavla_status": "🟢 ANDROID TESTTE • 🍏 iOS YAKINDA",
+    "tavla_title": "Klasik Tavla Online",
+    "tavla_tagline": "3D Masif Ceviz Kasa & Sedef İşlemeli Gerçek Tavla",
+    "tavla_desc": "7 katmanlı 3D ceviz kasa, altın pirinç menteşeler, sedefli ve obsidyen taşlarla gerçek tavla ustalarının oyunu. Adil ve şeffaf zar çarkı animasyonu, sağ toplama tepsisinde 3D dikey pul istifleri, WhatsApp'tan hızlı arkadaş daveti ve kesintisiz offline yapay zeka modu.",
+    "tavla_f1": "620ms Sayı Çarkı Zar Hissi",
+    "tavla_f2": "2.5D Kavisli Taş Kayma Fiziği",
+    "tavla_f3": "Masif Ahşap & Sedef İşleme",
+    "tavla_f4": "WebSocket 1v1 Eşleşme",
+    "tavla_f5": "Hızlı Mesajlaşma & Kayan Yazı",
+    "tavla_f6": "%100 Hilesiz Adil Zar Garantisi",
+    "store_soon": "Çok Yakında",
+    "checkers_status": "⏳ ÇOK YAKINDA",
+    "checkers_title": "Türk Daması Online",
+    "checkers_desc": "Geleneksel Türk Daması kuralları, azami taş alma mecburiyeti, dikey ve yatay uçan dama taşları! 64 karelik lüks maun satranç/dama tahtasında hem internetsiz yapay zeka hem de canlı 1'e 1 online düello heyecanı çok yakında Google Play ve App Store'da.",
+    "checkers_footer": "🚀 Geliştirme Aşamasında • 2026 Q1 Lansmanı",
+    "series_status": "✨ PLANLANAN PROJELER",
+    "series_title": "Geleneksel Oyunlar Serisi",
+    "series_desc": "Batak, Okey, Satranç ve Mangala gibi kültürümüzün vazgeçilmez parçası olan masa ve kart oyunlarını aynı yüksek kalite, lüks ahşap teması ve sıfır gecikmeli sunucu altyapısıyla portföyümüze eklemeye devam ediyoruz.",
+    "series_footer": "🌟 Yeni Oyun Duyuruları İçin Takipte Kalın",
+    "sec_why_tag": "NEDEN BİZ?",
+    "sec_why_title": "Üstün Oyun Deneyimi",
+    "sec_why_desc": "Her detay oyuncunun konforu, adil rekabet ve görsel zarafet için tasarlandı.",
+    "feat1_title": "Gerçek Zamanlı 1'e 1",
+    "feat1_desc": "Özel optimize edilmiş WebSocket sunucu mimarisi sayesinde dünya çapında <40ms ultra düşük gecikmeyle kesintisiz online maçlar.",
+    "feat2_title": "Akıllı Offline Bot",
+    "feat2_desc": "İnternetiniz olmadığında bile metroda, uçakta veya seyahatte oynayabileceğiniz hilesiz, adil ve zorlu yapay zeka motoru.",
+    "feat3_title": "Lüks Ahşap & Altın",
+    "feat3_desc": "Göz yormayan masif ceviz, sedef kakmalar, altın pirinç çerçeveler ve 60 FPS 2.5D parabolik kavisli taş/kart animasyonları.",
+    "feat4_title": "Mola & Masaya Dönüş",
+    "feat4_desc": "Acil bir işiniz çıktığında oyundan kopmadan mola isteyin; dilediğiniz an tek tıkla masaya dönüp kaldığınız yerden devam edin.",
+    "privacy_tag": "YASAL & GÜVENLİK",
+    "privacy_title": "Gizlilik Politikası (Privacy Policy)",
+    "privacy_desc": "Google Play Store ve Apple App Store kurallarına %100 uyumluluk beyanı.",
+    "privacy_sec1_title": "1. Genel Bilgilendirme",
+    "privacy_sec1_p": "Bu Gizlilik Politikası, Onur Karakaya (\"Geliştirici\") tarafından geliştirilen ve yayımlanan mobil ve web oyunları (Klasik Pişti Online, Klasik Tavla Online ve ileride sunulacak tüm oyunlar) için geçerlidir. Kullanıcılarımızın gizliliğine ve kişisel verilerinin korunmasına en üst düzeyde önem vermekteyiz.",
+    "privacy_sec2_title": "2. Toplanan Veriler ve Kullanım Amacı",
+    "privacy_sec2_p": "Oyunlarımızda gereksiz veya hassas kişisel veri (T.C. kimlik no, kredi kartı, adres defteri vb.) kesinlikle toplanmaz. Yalnızca oyunun temel işlevlerini yerine getirebilmek adına anonim cihaz kimliği, kullanıcı takma adı ve oyun istatistikleri işlenir.",
+    "privacy_sec3_title": "3. Reklam ve Üçüncü Taraf Hizmetleri (Google AdMob)",
+    "privacy_sec3_p": "Oyunlarımızda ücretsiz deneyimi desteklemek amacıyla Google AdMob reklam hizmeti kullanılmaktadır. Resmi reklam doğrulama kaydımız sitemizin kök dizininde app-ads.txt dosyası olarak yayımlanmaktadır.",
+    "privacy_sec4_title": "4. Çocukların Gizliliği ve İletişim",
+    "privacy_sec4_p": "Oyunlarımız her yaştan kullanıcının güvenle oynayabileceği geleneksel zeka oyunlarıdır. Bilerek 13 yaşından küçük çocuklardan veri toplanmaz. İletişim için: karakayaonur1719@yahoo.com",
+    "footer_desc": "Geleneksel Türk masa ve iskambil oyunlarını en üstün işçilik, lüks görsel tasarım ve modern multiplayer teknolojisiyle dünya standartlarında oyuncularla buluşturuyoruz.",
+    "footer_games": "Oyunlarımız",
+    "footer_legal": "Bağlantılar & Yasal",
+    "footer_rights": "© 2026 Onur Karakaya. Tüm hakları saklıdır."
+  },
+  "en": {
+    "nav_games": "Our Games",
+    "nav_features": "Features",
+    "nav_privacy": "Privacy Policy",
+    "nav_contact": "Contact & Support",
+    "hero_badge": "⭐ CLASSIC TRADITIONAL GAMES ENGINE",
+    "hero_title": "Traditional Board Games,<br>Modern Live Duels",
+    "hero_desc": "The most beloved classic board and card games; solid walnut & gold craftsmanship, 60 FPS smooth 2.5D animations, advanced AI, and real-time 1v1 online duels at your fingertips.",
+    "hero_explore": "🎲 Explore Games",
+    "hero_coming_soon": "✨ Coming Soon to Stores",
+    "sec_games_tag": "OUR PORTFOLIO",
+    "sec_games_title": "Featured Games",
+    "sec_games_desc": "Timeless traditional games brought to life with premium craftsmanship, cutting-edge engineering, and luxury design.",
+    "pisti_status": "⏳ PENDING STORE APPROVAL • COMING SOON",
+    "pisti_title": "Classic Pishti Online",
+    "pisti_tagline": "In Apple App Store Review & Google Play Closed Testing",
+    "pisti_desc": "The most popular Turkish card game Pishti! Invite friends via WhatsApp with a single tap or challenge smart strategic AI offline. Emerald felt and luxury walnut tables, 2.5D curved card physics, and double Pishti excitement!",
+    "pisti_f1": "1v1 Real-time Multiplayer",
+    "pisti_f2": "Offline Smart AI",
+    "pisti_f3": "Instant WhatsApp Invite",
+    "pisti_f4": "Career & Score Tracking",
+    "pisti_f5": "Luxury Wood & Felt Themes",
+    "pisti_f6": "Mutual Pause & Resume",
+    "store_review": "In Review",
+    "store_closed_test": "Closed Testing",
+    "tavla_status": "🟢 ANDROID TESTING • 🍏 iOS SOON",
+    "tavla_title": "Classic Backgammon Online",
+    "tavla_tagline": "3D Solid Walnut Cabinet & Mother-of-Pearl Craftsmanship",
+    "tavla_desc": "Master backgammon with a 7-layer 3D walnut cabinet, brass hinges, and mother-of-pearl & obsidian checkers. Fair decelerating dice roulette, 3D vertical tray chip stacks, fast WhatsApp invite, and offline smart AI.",
+    "tavla_f1": "620ms Deceleration Dice Feel",
+    "tavla_f2": "2.5D Curved Checker Flight",
+    "tavla_f3": "Solid Walnut & Pearl Inlays",
+    "tavla_f4": "WebSocket 1v1 Matchmaking",
+    "tavla_f5": "Fast Chat & Marquee Banner",
+    "tavla_f6": "100% Fair Random Dice Guarantee",
+    "store_soon": "Coming Soon",
+    "checkers_status": "⏳ COMING SOON",
+    "checkers_title": "Turkish Checkers Online",
+    "checkers_desc": "Traditional Turkish Checkers rules, mandatory maximum capture, orthogonal flying kings! Luxury 64-square mahogany board with offline smart AI and real-time 1v1 online duels coming soon to Google Play and App Store.",
+    "checkers_footer": "🚀 In Development • Q1 2026 Launch",
+    "series_status": "✨ PLANNED PROJECTS",
+    "series_title": "Traditional Games Series",
+    "series_desc": "We continue expanding our portfolio with Batak, Okey, Chess, and Mangala—built with the same luxury walnut theme, 60 FPS physics, and zero-latency multiplayer infrastructure.",
+    "series_footer": "🌟 Stay Tuned for New Announcements",
+    "sec_why_tag": "WHY US?",
+    "sec_why_title": "Superior Gaming Experience",
+    "sec_why_desc": "Every detail is engineered for player comfort, fair play, and visual luxury.",
+    "feat1_title": "Real-time 1v1",
+    "feat1_desc": "High-performance WebSocket architecture ensuring seamless online duels with ultra-low latency (<40ms) worldwide.",
+    "feat2_title": "Offline Smart AI",
+    "feat2_desc": "A fair, challenging, and uncheated AI engine playable on subways, flights, or off-grid travels without internet.",
+    "feat3_title": "Luxury Wood & Gold",
+    "feat3_desc": "Gentle on the eyes: solid walnut, pearl inlays, brass hinges, and 60 FPS 2.5D parabolic checker/card animations.",
+    "feat4_title": "Pause & Resume",
+    "feat4_desc": "Request a mutual pause when real life calls; resume your match anytime with a single tap.",
+    "privacy_tag": "LEGAL & COMPLIANCE",
+    "privacy_title": "Privacy Policy",
+    "privacy_desc": "100% compliance statement with Google Play Store & Apple App Store developer policies.",
+    "privacy_sec1_title": "1. General Information",
+    "privacy_sec1_p": "This Privacy Policy applies to mobile and web games developed and published by Onur Karakaya (\"Developer\"). We take user privacy and personal data protection very seriously.",
+    "privacy_sec2_title": "2. Data Collected & Purpose",
+    "privacy_sec2_p": "We never collect sensitive personal information. Only anonymous device identifiers, temporary player nicknames, and local match statistics are processed to deliver multiplayer and persistence features.",
+    "privacy_sec3_title": "3. Advertising & Third-Party Services (Google AdMob)",
+    "privacy_sec3_p": "To support free gameplay, Google AdMob is integrated. Official advertising compliance is verified via our root app-ads.txt file.",
+    "privacy_sec4_title": "4. Children's Privacy & Contact",
+    "privacy_sec4_p": "Our games are safe strategic games suitable for all ages. We do not knowingly collect information from children under 13. Contact: karakayaonur1719@yahoo.com",
+    "footer_desc": "Delivering classic traditional board and card games to players worldwide with exquisite craftsmanship, luxury design, and modern multiplayer tech.",
+    "footer_games": "Our Games",
+    "footer_legal": "Links & Legal",
+    "footer_rights": "© 2026 Onur Karakaya. All rights reserved."
+  },
+  "de": {
+    "nav_games": "Spiele",
+    "nav_features": "Funktionen",
+    "nav_privacy": "Datenschutz",
+    "nav_contact": "Kontakt & Support",
+    "hero_badge": "⭐ KLASSISCHE BRETTSPIELE-ENGINE",
+    "hero_title": "Traditionelle Brettspiele,<br>Moderne Live-Duelle",
+    "hero_desc": "Die beliebtesten klassischen Brett- und Kartenspiele; massive Walnuss- und Goldverarbeitung, flüssige 60-FPS-2.5D-Animationen, fortschrittliche KI und 1-gegen-1-Live-Duelle.",
+    "hero_explore": "🎲 Spiele entdecken",
+    "hero_coming_soon": "✨ Bald in den Stores",
+    "sec_games_tag": "PORTFOLIO",
+    "sec_games_title": "Ausgewählte Spiele",
+    "sec_games_desc": "Zeitlose traditionelle Spiele, wiederbelebt mit meisterhafter Handwerkskunst und modernem Design.",
+    "pisti_status": "⏳ IN PRÜFUNG • BALD VERFÜGBAR",
+    "pisti_title": "Klassisches Pishti Online",
+    "pisti_tagline": "In Apple App Store Prüfung & Google Play Test",
+    "pisti_desc": "Das beliebteste türkische Kartenspiel Pishti! Lade Freunde per WhatsApp ein oder spiele offline gegen strategische KI.",
+    "pisti_f1": "1v1 Echtzeit-Multiplayer",
+    "pisti_f2": "Offline Intelligente KI",
+    "pisti_f3": "WhatsApp Soforteinladung",
+    "pisti_f4": "Karriere & Punkteübersicht",
+    "pisti_f5": "Luxus Holz- & Filzthemen",
+    "pisti_f6": "Pause & Fortsetzen",
+    "store_review": "In Prüfung",
+    "store_closed_test": "Geschlossener Test",
+    "tavla_status": "🟢 ANDROID TEST • 🍏 iOS BALD",
+    "tavla_title": "Klassisches Backgammon Online",
+    "tavla_tagline": "3D Massivholz-Gehäuse & Perlmutt-Handwerk",
+    "tavla_desc": "Meisterhaftes Backgammon mit 7-schichtigem 3D-Walnussgehäuse, Messingscharnieren und Perlmuttsteinen. Faire Würfelphysik und Offline-KI.",
+    "tavla_f1": "620ms Würfelrad-Gefühl",
+    "tavla_f2": "2.5D Bogenflug-Animation",
+    "tavla_f3": "Massivholz & Perlmutt",
+    "tavla_f4": "WebSocket 1v1 Matchmaking",
+    "tavla_f5": "Schneller Chat & Lauftext",
+    "tavla_f6": "100% Faire Würfelgarantie",
+    "store_soon": "Bald verfügbar",
+    "checkers_status": "⏳ BALD VERFÜGBAR",
+    "checkers_title": "Türkische Dame Online",
+    "checkers_desc": "Traditionelle Regeln, maximale Schlagpflicht und fliegende Damen auf 64 edlen Mahagonifeldern.",
+    "checkers_footer": "🚀 In Entwicklung • Start Q1 2026",
+    "series_status": "✨ GEPLANTE PROJEKTE",
+    "series_title": "Klassiker-Serie",
+    "series_desc": "Batak, Okey, Schach und Mangala werden mit derselben Qualität und Null-Latenz-Technologie folgen.",
+    "series_footer": "🌟 Bleiben Sie dran für Ankündigungen",
+    "sec_why_tag": "WARUM WIR?",
+    "sec_why_title": "Überlegenes Spielerlebnis",
+    "sec_why_desc": "Jedes Detail ist für Komfort, faires Spiel und visuelle Eleganz gestaltet.",
+    "feat1_title": "Echtzeit 1-gegen-1",
+    "feat1_desc": "Optimierte WebSocket-Serverarchitektur für Duelle mit extrem niedriger Latenz (<40ms).",
+    "feat2_title": "Offline Intelligente KI",
+    "feat2_desc": "Ein faires, anspruchsvolles KI-Erlebnis, das auch ohne Internetverbindung überall gespielt werden kann.",
+    "feat3_title": "Luxus Holz & Gold",
+    "feat3_desc": "Augenschonendes Walnussholz, Perlmutt, Messing und flüssige 60-FPS-Parabelanimationen.",
+    "feat4_title": "Pause & Fortsetzen",
+    "feat4_desc": "Unterbrich dein Spiel bei Bedarf und kehre mit einem Klick an den Tisch zurück.",
+    "privacy_tag": "RECHTLICHES",
+    "privacy_title": "Datenschutzerklärung",
+    "privacy_desc": "100% Konformität mit Google Play und Apple App Store Richtlinien.",
+    "privacy_sec1_title": "1. Allgemeine Informationen",
+    "privacy_sec1_p": "Diese Datenschutzrichtlinie gilt für Spiele von Onur Karakaya. Wir respektieren die Privatsphäre unserer Nutzer.",
+    "privacy_sec2_title": "2. Datenerhebung",
+    "privacy_sec2_p": "Es werden keine sensiblen Daten erfasst; nur anonyme Geräte-IDs für Spielfortsetzung und Matchmaking.",
+    "privacy_sec3_title": "3. Google AdMob",
+    "privacy_sec3_p": "Zur Unterstützung werbefinanzierter Spiele wird Google AdMob genutzt (verifiziert via app-ads.txt).",
+    "privacy_sec4_title": "4. Kontakt",
+    "privacy_sec4_p": "Fragen gerne per E-Mail an: karakayaonur1719@yahoo.com",
+    "footer_desc": "Klassische Spiele in weltweiter Spitzenqualität mit edlem Holzdesign und moderner Mehrspieler-Technik.",
+    "footer_games": "Spiele",
+    "footer_legal": "Rechtliches",
+    "footer_rights": "© 2026 Onur Karakaya. Alle Rechte vorbehalten."
+  },
+  "ru": {
+    "nav_games": "Наши игры",
+    "nav_features": "Особенности",
+    "nav_privacy": "Конфиденциальность",
+    "nav_contact": "Контакты и поддержка",
+    "hero_badge": "⭐ ДВИЖОК КЛАССИЧЕСКИХ ИГР",
+    "hero_title": "Традиционные настольные игры,<br>Современные дуэли",
+    "hero_desc": "Любимые классические настольные и карточные игры: отделка из ореха и золота, 60 FPS 2.5D анимации, умный ИИ и онлайн-дуэли 1 на 1 в реальном времени.",
+    "hero_explore": "🎲 Смотреть игры",
+    "hero_coming_soon": "✨ Скоро в магазинах",
+    "sec_games_tag": "НАШЕ ПОРТФОЛИО",
+    "sec_games_title": "Избранные игры",
+    "sec_games_desc": "Вечные классические игры, воссозданные с безупречным качеством и роскошным дизайном.",
+    "pisti_status": "⏳ НА ПРОВЕРКЕ • СКОРО",
+    "pisti_title": "Классический Пишти Онлайн",
+    "pisti_tagline": "На проверке в Apple App Store и закрытом тесте Google Play",
+    "pisti_desc": "Популярнейшая турецкая карточная игра Пишти! Приглашайте друзей через WhatsApp или играйте офлайн против тактического ИИ.",
+    "pisti_f1": "1v1 Мультиплеер онлайн",
+    "pisti_f2": "Офлайн умный бот",
+    "pisti_f3": "Быстрое приглашение WhatsApp",
+    "pisti_f4": "Карьера и статистика",
+    "pisti_f5": "Темы дерева и сукна",
+    "pisti_f6": "Пауза и продолжение",
+    "store_review": "На проверке",
+    "store_closed_test": "Закрытый тест",
+    "tavla_status": "🟢 ANDROID ТЕСТ • 🍏 iOS СКОРО",
+    "tavla_title": "Классические Короткие Нарды",
+    "tavla_tagline": "3D Массив ореха и перламутровая инкрустация",
+    "tavla_desc": "Настоящие нарды: 7-слойный корпус из ореха, латунные петли, перламутровые и обсидиановые шашки. Честные кости и умный офлайн ИИ.",
+    "tavla_f1": "620 мс вращение кубиков",
+    "tavla_f2": "2.5D параболический полет шашек",
+    "tavla_f3": "Массив дерева и перламутр",
+    "tavla_f4": "WebSocket 1v1 дуэли",
+    "tavla_f5": "Быстрый чат и бегущая строка",
+    "tavla_f6": "100% честные случайные кости",
+    "store_soon": "Скоро",
+    "checkers_status": "⏳ СКОРО",
+    "checkers_title": "Турецкие шашки онлайн",
+    "checkers_desc": "Традиционные правила, обязательное максимальное взятие и летающие дамки на роскошной доске из красного дерева.",
+    "checkers_footer": "🚀 В разработке • Релиз Q1 2026",
+    "series_status": "✨ В ПЛАНАХ",
+    "series_title": "Серия традиционных игр",
+    "series_desc": "Батак, Окей, Шахматы и Мангала пополнят коллекцию с тем же премиальным качеством и сетевым кодом без задержек.",
+    "series_footer": "🌟 Следите за новыми анонсами",
+    "sec_why_tag": "ПОЧЕМУ МЫ?",
+    "sec_why_title": "Превосходный игровой опыт",
+    "sec_why_desc": "Каждая деталь создана для комфорта, честной игры и эстетического удовольствия.",
+    "feat1_title": "1 на 1 в реальном времени",
+    "feat1_desc": "Серверная архитектура WebSocket с минимальной задержкой (<40 мс) по всему миру.",
+    "feat2_title": "Умный офлайн-бот",
+    "feat2_desc": "Честный и глубокий искусственный интеллект, готовый к игре в самолете, метро или поездке.",
+    "feat3_title": "Роскошное дерево и золото",
+    "feat3_desc": "Приятные глазу оттенки дерева, латунные петли и плавная физика 60 FPS.",
+    "feat4_title": "Пауза и возвращение",
+    "feat4_desc": "Ставьте партию на паузу по согласию и возвращайтесь в игру в любое удобное время.",
+    "privacy_tag": "ПРАВОВАЯ ИНФОРМАЦИЯ",
+    "privacy_title": "Политика конфиденциальности",
+    "privacy_desc": "100% соответствие стандартам Google Play и Apple App Store.",
+    "privacy_sec1_title": "1. Общие положения",
+    "privacy_sec1_p": "Политика конфиденциальности для игр разработчика Onur Karakaya. Мы бережно относимся к данным пользователей.",
+    "privacy_sec2_title": "2. Сбор данных",
+    "privacy_sec2_p": "Мы не собираем персональные данные; используются только анонимные идентификаторы устройства для мультиплеера.",
+    "privacy_sec3_title": "3. Реклама Google AdMob",
+    "privacy_sec3_p": "Используется Google AdMob (подтверждено файлом app-ads.txt).",
+    "privacy_sec4_title": "4. Контакты",
+    "privacy_sec4_p": "Электронная почта для поддержки: karakayaonur1719@yahoo.com",
+    "footer_desc": "Классические игры мирового уровня с премиальным деревянным дизайном и современным мультиплеером.",
+    "footer_games": "Наши игры",
+    "footer_legal": "Юридическая информация",
+    "footer_rights": "© 2026 Onur Karakaya. Все права защищены."
+  },
+  "ar": {
+    "nav_games": "ألعابنا",
+    "nav_features": "المميزات",
+    "nav_privacy": "سياسة الخصوصية",
+    "nav_contact": "الدعم والتواصل",
+    "hero_badge": "⭐ محرك الألعاب الكلاسيكية التقليدية",
+    "hero_title": "ألعاب الطاولة التقليدية،<br>مبارزات حية حديثة",
+    "hero_desc": "أشهر ألعاب الطاولة والورق الكلاسيكية؛ خشب الجوز المصمت والذهب، رسوم متحركة 2.5D سلسة بمعدل 60 إطاراً، ذكاء اصطناعي متطور، ومبارزات 1 ضد 1 حية.",
+    "hero_explore": "🎲 استكشف الألعاب",
+    "hero_coming_soon": "✨ قريباً في المتاجر",
+    "sec_games_tag": "محفظتنا",
+    "sec_games_title": "ألعابنا المميزة",
+    "sec_games_desc": "ألعاب تراثية خالدة تنبض بالحياة بحرفية متقونة وتصميم فاخر.",
+    "pisti_status": "⏳ قيد المراجعة • قريباً",
+    "pisti_title": "بيشتي كلاسيك أونلاين",
+    "pisti_tagline": "قيد المراجعة في متجر التطبيقات واختبار Google Play",
+    "pisti_desc": "أشهر لعبة ورق تركية بيشتي! ادعُ أصدقاءك بضغطة واحدة عبر واتساب أو تحدَّ الذكاء الاصطناعي أوفلاين بطاولات خشب الجوز والجوخ الزمردي.",
+    "pisti_f1": "1 ضد 1 متعدد اللاعبين حي",
+    "pisti_f2": "ذكاء اصطناعي بدون إنترنت",
+    "pisti_f3": "دعوة فورية عبر واتساب",
+    "pisti_f4": "سجل الإنجازات والنتائج",
+    "pisti_f5": "ثيمات الخشب الفاخر والجوخ",
+    "pisti_f6": "إيقاف مؤقت ومتابعة",
+    "store_review": "قيد المراجعة",
+    "store_closed_test": "اختبار مغلق",
+    "tavla_status": "🟢 أندرويد قيد الاختبار • 🍏 آي أو إس قريباً",
+    "tavla_title": "طاولة الزهر الكلاسيكية أونلاين",
+    "tavla_tagline": "صندوق خشب الجوز 3D مطعم بالصدف الطبيعي",
+    "tavla_desc": "طاولة الزهر الحقيقية: هيكل ثلاثي الأبعاد من 7 طبقات من خشب الجوز، مفصلات نحاسية، وأحجار عرق اللؤلؤ. نرد عادل وذكاء اصطناعي أوفلاين.",
+    "tavla_f1": "دوران واقعي للنرد 620 مللي ثانية",
+    "tavla_f2": "حركة طيران القطع المنحنية 2.5D",
+    "tavla_f3": "خشب الجوز والصدف الطبيعي",
+    "tavla_f4": "اقتران سريع عبر WebSocket",
+    "tavla_f5": "دردشة سريعة وشريط متحرك",
+    "tavla_f6": "نرد عادل وعشوائي 100%",
+    "store_soon": "قريباً جداً",
+    "checkers_status": "⏳ قريباً",
+    "checkers_title": "الدامة التركية أونلاين",
+    "checkers_desc": "القواعد التقليدية للدامة مع شرط الأكل الأقصى وحركات الدامة الطائرة على رقعة ماهوجني فاخرة من 64 مربعاً.",
+    "checkers_footer": "🚀 قيد التطوير • إطلاق الربع الأول 2026",
+    "series_status": "✨ مشاريع مستقبلية",
+    "series_title": "سلسلة الألعاب التقليدية",
+    "series_desc": "سنضيف ألعاب الباتك، الأوكي، الشطرنج، والمانغالا بنفس المعايير الفاخرة وخوادم بدون أي تأخير.",
+    "series_footer": "🌟 تابعونا للإعلان عن الألعاب الجديدة",
+    "sec_why_tag": "لماذا نحن؟",
+    "sec_why_title": "تجربة لعب استثنائية",
+    "sec_why_desc": "صُممت كل التفاصيل لراحة اللاعب والمنافسة العادلة والفخامة البصرية.",
+    "feat1_title": "مبارزات حية 1 ضد 1",
+    "feat1_desc": "خوادم WebSocket عالية الأداء تضمن لعباً سلساً بدون تأخير (<40 مللي ثانية).",
+    "feat2_title": "ذكاء اصطناعي بدون إنترنت",
+    "feat2_desc": "محرك ذكاء اصطناعي قوي وعادل يمكنك اللعب ضده في الطائرة أو المترو بدون إنترنت.",
+    "feat3_title": "الخشب والذهب الفاخر",
+    "feat3_desc": "خشب الجوز المريح للعينين، الصدف الطبيعي، النحاس الذهبي ورسوم متحركة 60 إطاراً في الثانية.",
+    "feat4_title": "ميزة الإيقاف المؤقت",
+    "feat4_desc": "أوقف اللعب بموافقة الطرفين وعُد إلى طاولتك في أي وقت بلمسة واحدة.",
+    "privacy_tag": "الأمان والخصوصية",
+    "privacy_title": "سياسة الخصوصية",
+    "privacy_desc": "متوافق بنسبة 100% مع معايير Google Play ومتجر تطبيقات Apple.",
+    "privacy_sec1_title": "1. معلومات عامة",
+    "privacy_sec1_p": "تنطبق سياسة الخصوصية هذه على الألعاب المطورة من قبل Onur Karakaya ونحن نولي خصوصيتكم اهتماماً بالغاً.",
+    "privacy_sec2_title": "2. البيانات المجمعة",
+    "privacy_sec2_p": "لا نجمع بيانات حساسة إطلاقاً، فقط معرّف الجهاز المجهول لضمان إعادة الاتصال والمزامنة.",
+    "privacy_sec3_title": "3. إعلانات Google AdMob",
+    "privacy_sec3_p": "ندعم اللعب المجاني عبر Google AdMob وموثق في ملف app-ads.txt.",
+    "privacy_sec4_title": "4. التواصل",
+    "privacy_sec4_p": "لأي استفسار أو دعم: karakayaonur1719@yahoo.com",
+    "footer_desc": "نقدم ألعاب الطاولة والورق التراثية لجميع اللاعبين حول العالم بأعلى معايير الحرفية والتصميم.",
+    "footer_games": "ألعابنا",
+    "footer_legal": "الروابط والقانونية",
+    "footer_rights": "© 2026 Onur Karakaya. جميع الحقوق محفوظة."
+  }
+};
+
+    const langFlags = {
+      tr: '🇹🇷',
+      en: '🇬🇧',
+      de: '🇩🇪',
+      ru: '🇷🇺',
+      ar: '🇸🇦'
+    };
+
+    const langLabels = {
+      tr: 'TR',
+      en: 'EN',
+      de: 'DE',
+      ru: 'RU',
+      ar: 'AR'
+    };
+
+    function changeLanguage(lang) {
+      if (!translations[lang]) return;
+
+      localStorage.setItem('onur_games_lang', lang);
+
+      // Update button flag & label
+      document.getElementById('currentLangFlag').innerText = langFlags[lang];
+      document.getElementById('currentLangLabel').innerText = langLabels[lang];
+
+      // Update html lang & dir
+      document.documentElement.lang = lang;
+      if (lang === 'ar') {
+        document.documentElement.dir = 'rtl';
+      } else {
+        document.documentElement.dir = 'ltr';
+      }
+
+      // Translate all data-i18n elements
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+
+      // Update active option in menu
+      document.querySelectorAll('.lang-option').forEach(opt => {
+        if (opt.getAttribute('onclick').includes(lang)) {
+          opt.classList.add('selected');
+        } else {
+          opt.classList.remove('selected');
+        }
+      });
+
+      // Close dropdown
+      document.getElementById('langMenu').classList.remove('show');
+      document.getElementById('langBtn').classList.remove('active');
+    }
+
+    // Toggle Dropdown
+    document.getElementById('langBtn').addEventListener('click', function(e) {
+      e.stopPropagation();
+      const menu = document.getElementById('langMenu');
+      menu.classList.toggle('show');
+      this.classList.toggle('active');
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', function() {
+      const menu = document.getElementById('langMenu');
+      if (menu) menu.classList.remove('show');
+      const btn = document.getElementById('langBtn');
+      if (btn) btn.classList.remove('active');
+    });
+
+    // Initialize from storage or browser language
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('onur_games_lang');
+      if (savedLang && translations[savedLang]) {
+        changeLanguage(savedLang);
+      } else {
+        const browserLang = (navigator.language || 'tr').slice(0, 2).toLowerCase();
+        if (translations[browserLang]) {
+          changeLanguage(browserLang);
+        } else {
+          changeLanguage('tr');
+        }
+      }
+    });
+  </script>
 </body>
+
 </html>

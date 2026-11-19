@@ -801,7 +801,7 @@
 
     @media (max-width: 768px) {
       .nav-links {
-        display: none;
+        display: flex;
       }
       .grid-2 {
         grid-template-columns: 1fr;
@@ -831,9 +831,6 @@
         </div>
       </a>
       <div class="nav-links">
-        <a href="#games" class="nav-link" data-i18n="nav_games">Oyunlarımız</a>
-        <a href="#features" class="nav-link" data-i18n="nav_features">Özellikler</a>
-        <a href="#privacy" class="nav-link" data-i18n="nav_privacy">Gizlilik Politikası</a>
         <!-- LANGUAGE SELECTOR -->
         <div class="lang-selector-wrap">
           <button id="langBtn" class="lang-dropdown-btn" aria-label="Dil Seçimi">
@@ -849,8 +846,6 @@
             <button class="lang-option" onclick="changeLanguage('ar')">🇸🇦 العربية (AR)</button>
           </div>
         </div>
-
-        <a href="#games" class="nav-btn" data-i18n="nav_explore">Oyunları Keşfet</a>
       </div>
     </div>
   </nav>

@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onur Karakaya Games | Klasik Masa Oyunları</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Klasik Tavla, Pişti Online ve Türk Daması! Geleneksel Türk masa ve iskambil oyunları, lüks ahşap ve altın teması, akıllı botlar ve 1'e 1 canlı online düellolarla Google Play ve App Store'da.">
+  <meta name="keywords" content="tavla, pişti, pisti, klasik pişti online, klasik tavla, türk daması, dama, masa oyunları, iskambil oyunları, online oyun, app store, google play">
+  <meta name="author" content="Onur Karakaya">
+  <meta name="theme-color" content="#160B04">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://onurkrky.github.io/">
+  <meta property="og:title" content="Onur Karakaya Games | Klasik Masa ve İskambil Oyunları">
+  <meta property="og:description" content="Lüks ceviz & altın tasarımı, 60 FPS akıcı animasyonlar, gelişmiş yapay zeka ve gerçek zamanlı 1'e 1 online düellolar!">
+  <meta property="og:image" content="https://onurkrky.github.io/assets/images/pisti_banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Onur Karakaya Games | Klasik Masa Oyunları">
+  <meta property="twitter:description" content="Klasik Tavla & Pişti Online - Google Play ve App Store'da!">
+  <meta property="twitter:image" content="https://onurkrky.github.io/assets/images/pisti_banner.png">
+
+  <!-- Google Fonts: Outfit & Cinzel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #120803;
+      --bg-surface: #1B0F06;
+      --bg-card: #221207;
+      --bg-elevated: #2D180B;
+      --gold-primary: #D4AF37;
+      --gold-light: #FFE082;
+      --gold-bright: #F59E0B;
+      --gold-glow: rgba(212, 175, 55, 0.25);
+      --text-main: #FFF8E7;
+      --text-muted: #C4A482;
+      --text-subtle: #8A6D52;
+      --border-gold: rgba(212, 175, 55, 0.25);
+      --border-gold-hover: rgba(255, 224, 130, 0.6);
+      --accent-green: #10B981;
+      --accent-blue: #3B82F6;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Outfit', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.08) 0%, transparent 60%),
+        radial-gradient(circle at 80% 50%, rgba(90, 46, 26, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(34, 18, 7, 0.8) 0%, transparent 60%);
+      background-attachment: fixed;
+    }
+
+    /* TYPOGRAPHY */
+    h1, h2, h3, .font-cinzel {
+      font-family: 'Cinzel', serif;
+      letter-spacing: 0.5px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(18, 8, 3, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-gold);
+      padding: 16px 0;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-emblem {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, #5A3118, #220E04);
+      border: 1.5px solid var(--gold-primary);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 15px var(--gold-glow);
+      font-size: 20px;
+    }
+
+    .brand-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1.1;
+    }
+
+    .brand-subtitle {
+      font-size: 0.72rem;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-link {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: var(--gold-light);
+    }
+
+    .nav-btn {
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #EAB308, #D97706);
+      color: #120803;
+      font-weight: 700;
+      font-size: 0.88rem;
+      box-shadow: 0 4px 15px rgba(234, 179, 8, 0.35);
+      border: none;
+      cursor: pointer;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(234, 179, 8, 0.5);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      padding: 80px 0 60px;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 18px;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid var(--border-gold);
+      border-radius: 999px;
+      color: var(--gold-light);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      animation: pulseGlow 3s infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 10px rgba(212, 175, 55, 0.15); }
+      50% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.35); }
+    }
+
+    .hero-title {
+      font-size: 3.2rem;
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      background: linear-gradient(180deg, #FFFFFF 20%, #FFE082 70%, #D4AF37 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      max-width: 720px;
+      margin: 0 auto 36px;
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-gold {
+      padding: 14px 28px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, #F59E0B, #D97706);
+      color: #120803;
+      font-weight: 700;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+      border: 1px solid #FFE082;
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(245, 158, 11, 0.6);
+      color: #000;
+    }
+
+    .btn-outline {
+      padding: 14px 28px;
+      border-radius: var(--radius-md);
+      background: rgba(34, 18, 7, 0.6);
+      color: var(--text-main);
+      font-weight: 600;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--border-gold);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold-light);
+      background: rgba(45, 24, 11, 0.8);
+      transform: translateY(-3px);
+      color: var(--gold-light);
+    }
+
+    /* SECTION HEADERS */
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-tag {
+      color: var(--gold-primary);
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      color: var(--gold-light);
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1rem;
+    }
+
+    /* GAMES SHOWCASE */
+    .games-section {
+      padding: 60px 0 100px;
+    }
+
+    .game-card-large {
+      background: linear-gradient(145deg, var(--bg-card), var(--bg-surface));
+      border: 1.5px solid var(--border-gold);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 48px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      transition: var(--transition);
+    }
+
+    .game-card-large:hover {
+      border-color: var(--border-gold-hover);
+      box-shadow: 0 25px 50px rgba(212, 175, 55, 0.15);
+      transform: translateY(-4px);
+    }
+
+    .game-card-large.reverse {
+      grid-template-columns: 1fr 1.15fr;
+    }
+
+    .game-visual {
+      position: relative;
+      background: #000;
+      overflow: hidden;
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .game-banner-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .game-card-large:hover .game-banner-img {
+      transform: scale(1.04);
+    }
+
+    .game-visual-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(18, 8, 3, 0.8) 0%, transparent 60%);
+    }
+
+    .game-content {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .game-header-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .game-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      border: 2px solid var(--gold-primary);
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+      object-fit: cover;
+    }
+
+    .game-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .status-live {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid var(--accent-green);
+      color: #34D399;
+    }
+
+    .status-soon {
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid var(--gold-bright);
+      color: #FBBF24;
+    }
+
+    .game-title {
+      font-size: 1.8rem;
+      color: var(--gold-light);
+      margin-bottom: 4px;
+    }
+
+    .game-tagline {
+      color: var(--gold-primary);
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .game-desc {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .game-features-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      color: var(--text-main);
+    }
+
+    .feature-item span {
+      color: var(--gold-light);
+    }
+
+    .store-badges {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .store-badge-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #000;
+      border: 1.2px solid var(--border-gold);
+      border-radius: var(--radius-sm);
+      padding: 8px 16px;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .store-badge-btn:hover {
+      border-color: var(--gold-light);
+      background: #1A0D05;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+    }
+
+    .store-badge-btn svg {
+      width: 24px;
+      height: 24px;
+      fill: #FFF;
+    }
+
+    .store-badge-text {
+      text-align: left;
+      line-height: 1.15;
+    }
+
+    .store-badge-sub {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .store-badge-main {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #FFF;
+    }
+
+    .web-play-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(90, 46, 26, 0.4));
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-sm);
+      padding: 10px 18px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--gold-light);
+    }
+
+    .web-play-btn:hover {
+      border-color: var(--gold-light);
+      color: #FFF;
+      background: rgba(212, 175, 55, 0.3);
+      transform: translateY(-2px);
+    }
+
+    /* FUTURE GAMES GRID */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .mini-game-card {
+      background: linear-gradient(145deg, var(--bg-card), var(--bg-surface));
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mini-game-card:hover {
+      border-color: var(--border-gold-hover);
+      transform: translateY(-4px);
+    }
+
+    /* FEATURES GRID */
+    .features-section {
+      padding: 80px 0;
+      background: rgba(18, 8, 3, 0.6);
+      border-top: 1px solid var(--border-gold);
+      border-bottom: 1px solid var(--border-gold);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      transition: var(--transition);
+    }
+
+    .feature-card:hover {
+      border-color: var(--gold-primary);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(212, 175, 55, 0.1);
+    }
+
+    .feature-icon-box {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #3A1E0E, #1F0D04);
+      border: 1px solid var(--gold-primary);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+    }
+
+    .feature-title {
+      font-size: 1.15rem;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .feature-text {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    /* PRIVACY & COMPLIANCE MODAL / SECTION */
+    .privacy-section {
+      padding: 80px 0;
+    }
+
+    .privacy-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-md);
+      padding: 40px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .privacy-box h3 {
+      color: var(--gold-light);
+      margin: 24px 0 12px;
+      font-size: 1.25rem;
+    }
+
+    .privacy-box h3:first-child {
+      margin-top: 0;
+    }
+
+    .privacy-box p {
+      margin-bottom: 14px;
+    }
+
+    .privacy-box ul {
+      margin-left: 20px;
+      margin-bottom: 16px;
+    }
+
+    .privacy-box li {
+      margin-bottom: 6px;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #0E0502;
+      border-top: 1px solid var(--border-gold);
+      padding: 60px 0 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand-desc {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      max-width: 380px;
+      margin-top: 14px;
+    }
+
+    .footer-col-title {
+      color: var(--gold-light);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-light);
+      padding-left: 4px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(212, 175, 55, 0.12);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text-subtle);
+      font-size: 0.85rem;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+      .game-card-large, .game-card-large.reverse {
+        grid-template-columns: 1fr;
+      }
+      .game-visual {
+        min-height: 260px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-title {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .game-features-list {
+        grid-template-columns: 1fr;
+      }
+      .hero-title {
+        font-size: 2rem;
+      }
+      .game-content {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo">
+        <div class="brand-emblem">👑</div>
+        <div>
+          <div class="brand-title font-cinzel">ONUR KARAKAYA</div>
+          <div class="brand-subtitle">GAMES & ENTERTAINMENT</div>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="#games" class="nav-link">Oyunlarımız</a>
+        <a href="#features" class="nav-link">Özellikler</a>
+        <a href="#privacy" class="nav-link">Gizlilik Politikası</a>
+        <a href="mailto:karakayaonur1719@yahoo.com" class="nav-btn">İletişim & Destek</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-badge">
+        <span>⭐</span> KLASİK GELENEKSEL OYUNLAR MOTORU
+      </div>
+      <h1 class="hero-title">Geleneksel Masa Oyunları,<br>Modern Canlı Düellolar</h1>
+      <p class="hero-desc">
+        Türkiye'nin en sevilen klasik masa ve iskambil oyunları; masif ceviz & altın işçiliği, 60 FPS akıcı 2.5D animasyonlar, gelişmiş yapay zeka ve gerçek zamanlı 1'e 1 online eşleşme ile parmaklarınızın ucunda.
+      </p>
+      <div class="hero-actions">
+        <a href="#games" class="btn-gold">
+          <span>🎲</span> Oyunları Keşfet
+        </a>
+        <a href="https://apps.apple.com/app/klasik-pi%C5%9Fti-online/id6835895552" target="_blank" rel="noopener" class="btn-outline">
+          <span>🍏</span> App Store
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.darkrock.pisti" target="_blank" rel="noopener" class="btn-outline">
+          <span>🤖</span> Google Play
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN GAMES SHOWCASE -->
+  <section id="games" class="games-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">PORTFÖYÜMÜZ</span>
+        <h2 class="section-title">Öne Çıkan Oyunlarımız</h2>
+        <p class="section-desc">Milyonların tutkusu geleneksel oyunlar, üstün mühendislik ve lüks görsel tasarımla yeniden canlandı.</p>
+      </div>
+
+      <!-- GAME 1: KLASİK PİŞTİ ONLINE -->
+      <div class="game-card-large">
+        <div class="game-visual">
+          <img src="assets/images/pisti_banner.png" alt="Klasik Pişti Online Afiş" class="game-banner-img">
+          <div class="game-visual-overlay"></div>
+        </div>
+        <div class="game-content">
+          <div class="game-header-row">
+            <img src="assets/images/pisti_icon.png" alt="Pişti Logosu" class="game-avatar">
+            <div>
+              <span class="game-status-badge status-live">🟢 YAYINDA • CANLI</span>
+              <h3 class="game-title">Klasik Pişti Online</h3>
+              <p class="game-tagline">Gerçek Zamanlı 1'e 1 Pişti & Akıllı Bot Düellosu</p>
+            </div>
+          </div>
+          <p class="game-desc">
+            Türkiye'nin en popüler iskambil oyunu Pişti! Arkadaşlarınızı tek tıkla WhatsApp üzerinden masaya davet edin veya internetsiz offline modda stratejik yapay zekaya karşı yarışın. Özel Zümrüt Yeşili ve Lüks Ceviz masa seçenekleri, 2.5D kavisli kart fiziği ve çift pişti heyecanı!
+          </p>
+          <div class="game-features-list">
+            <div class="feature-item"><span>✨</span> 1v1 Canlı Çok Oyunculu</div>
+            <div class="feature-item"><span>🧠</span> İnternetsiz Akıllı Bot</div>
+            <div class="feature-item"><span>📲</span> WhatsApp Anında Davet</div>
+            <div class="feature-item"><span>🏆</span> Kariyer & Galibiyet Rozetleri</div>
+            <div class="feature-item"><span>🎨</span> Lüks Ahşap & Çuha Temaları</div>
+            <div class="feature-item"><span>🔒</span> Karşılıklı Mola & Devam Et</div>
+          </div>
+          <div class="store-badges">
+            <!-- App Store Badge -->
+            <a href="https://apps.apple.com/app/klasik-pi%C5%9Fti-online/id6835895552" target="_blank" rel="noopener" class="store-badge-btn">
+              <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.99.6-2.63 1.35-.57.65-1.07 1.72-.94 2.74 1 .08 2.03-.49 2.65-1.24z"/></svg>
+              <div class="store-badge-text">
+                <div class="store-badge-sub">Download on the</div>
+                <div class="store-badge-main">App Store</div>
+              </div>
+            </a>
+            <!-- Google Play Badge -->
+            <a href="https://play.google.com/store/apps/details?id=com.darkrock.pisti" target="_blank" rel="noopener" class="store-badge-btn">
+              <svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 0 1-.22-.986V2.8a2.38 2.38 0 0 1 .219-.986zm11.233 11.234l2.42 2.42-11.75 6.643 9.33-9.063zm0-2.096L5.512 1.89l11.75 6.642-2.42 2.42zm1.485 1.048l3.414 1.929c.954.54.954 1.419 0 1.958l-3.414 1.93-2.148-2.148 2.148-2.148z"/></svg>
+              <div class="store-badge-text">
+                <div class="store-badge-sub">GET IT ON</div>
+                <div class="store-badge-main">Google Play</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- GAME 2: KLASİK TAVLA ONLINE -->
+      <div class="game-card-large reverse">
+        <div class="game-content">
+          <div class="game-header-row">
+            <img src="assets/images/tavla_icon.png" alt="Tavla Logosu" class="game-avatar">
+            <div>
+              <span class="game-status-badge status-live">🟢 YAYINDA • GOOGLE PLAY & WEB</span>
+              <h3 class="game-title">Klasik Tavla Online</h3>
+              <p class="game-tagline">3D Masif Ceviz Kasa & Sedef İşlemeli Gerçek Tavla</p>
+            </div>
+          </div>
+          <p class="game-desc">
+            7 katmanlı 3D ceviz kasa, altın pirinç menteşeler, sedefli ve obsidyen taşlarla gerçek tavla ustalarının oyunu. Adil ve şeffaf zar çarkı animasyonu, sağ toplama tepsisinde 3D dikey pul istifleri, WhatsApp'tan hızlı arkadaş daveti ve kesintisiz offline yapay zeka modu.
+          </p>
+          <div class="game-features-list">
+            <div class="feature-item"><span>🎲</span> 620ms Sayı Çarkı Zar Hissi</div>
+            <div class="feature-item"><span>🚀</span> 2.5D Kavisli Taş Kayma Fiziği</div>
+            <div class="feature-item"><span>🪵</span> Masif Ahşap & Sedef İşleme</div>
+            <div class="feature-item"><span>🌐</span> İndirmeden Web'de Oyna</div>
+            <div class="feature-item"><span>💬</span> Hızlı Mesajlaşma & Kayan Yazı</div>
+            <div class="feature-item"><span>🛡️</span> %100 Hilesiz Adil Zar Garantisi</div>
+          </div>
+          <div class="store-badges">
+            <!-- Google Play Badge -->
+            <a href="https://play.google.com/store/apps/details?id=com.darkrock.tavla" target="_blank" rel="noopener" class="store-badge-btn">
+              <svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 0 1-.22-.986V2.8a2.38 2.38 0 0 1 .219-.986zm11.233 11.234l2.42 2.42-11.75 6.643 9.33-9.063zm0-2.096L5.512 1.89l11.75 6.642-2.42 2.42zm1.485 1.048l3.414 1.929c.954.54.954 1.419 0 1.958l-3.414 1.93-2.148-2.148 2.148-2.148z"/></svg>
+              <div class="store-badge-text">
+                <div class="store-badge-sub">GET IT ON</div>
+                <div class="store-badge-main">Google Play</div>
+              </div>
+            </a>
+            <!-- Web Play Badge -->
+            <a href="https://tavla-3q16.onrender.com" target="_blank" rel="noopener" class="web-play-btn">
+              <span>🌐</span> Web'de Hemen Oyna
+            </a>
+            <!-- App Store Coming Soon -->
+            <span class="store-badge-btn" style="opacity: 0.7; cursor: default;" title="iOS Sürümü İncelemede">
+              <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.99.6-2.63 1.35-.57.65-1.07 1.72-.94 2.74 1 .08 2.03-.49 2.65-1.24z"/></svg>
+              <div class="store-badge-text">
+                <div class="store-badge-sub">iOS Sürümü</div>
+                <div class="store-badge-main">Çok Yakında</div>
+              </div>
+            </span>
+          </div>
+        </div>
+        <div class="game-visual">
+          <img src="assets/images/tavla_banner.png" alt="Klasik Tavla Online Afiş" class="game-banner-img">
+          <div class="game-visual-overlay"></div>
+        </div>
+      </div>
+
+      <!-- UPCOMING GAMES -->
+      <div class="grid-2">
+        <!-- GAME 3: TÜRK DAMASI -->
+        <div class="mini-game-card">
+          <div>
+            <div class="game-header-row">
+              <div class="brand-emblem" style="font-size: 26px;">🏁</div>
+              <div>
+                <span class="game-status-badge status-soon">⏳ ÇOK YAKINDA</span>
+                <h3 class="game-title" style="font-size: 1.45rem;">Türk Daması Online</h3>
+              </div>
+            </div>
+            <p class="game-desc">
+              Geleneksel Türk Daması kuralları, azami taş alma mecburiyeti, dikey ve yatay uçan dama taşları! 64 karelik lüks maun satranç/dama tahtasında hem internetsiz yapay zeka hem de canlı 1'e 1 online düello heyecanı çok yakında Google Play ve App Store'da.
+            </p>
+          </div>
+          <div style="border-top: 1px solid var(--border-gold); padding-top: 16px; margin-top: 20px;">
+            <span style="color: var(--gold-primary); font-size: 0.88rem; font-weight: 600;">
+              🚀 Geliştirme Aşamasında • 2026 Q1 Lansmanı
+            </span>
+          </div>
+        </div>
+
+        <!-- GAME 4: DİĞER KLASİKLER -->
+        <div class="mini-game-card">
+          <div>
+            <div class="game-header-row">
+              <div class="brand-emblem" style="font-size: 26px;">🃏</div>
+              <div>
+                <span class="game-status-badge status-soon">✨ PLANLANAN PROJELER</span>
+                <h3 class="game-title" style="font-size: 1.45rem;">Geleneksel Oyunlar Serisi</h3>
+              </div>
+            </div>
+            <p class="game-desc">
+              Batak, Okey, Satranç ve Mangala gibi kültürümüzün vazgeçilmez parçası olan masa ve kart oyunlarını aynı yüksek kalite, lüks ahşap teması ve sıfır gecikmeli sunucu altyapısıyla portföyümüze eklemeye devam ediyoruz.
+            </p>
+          </div>
+          <div style="border-top: 1px solid var(--border-gold); padding-top: 16px; margin-top: 20px;">
+            <span style="color: var(--gold-light); font-size: 0.88rem; font-weight: 600;">
+              🌟 Yeni Oyun Duyuruları İçin Takipte Kalın
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES & TECH HIGHLIGHTS -->
+  <section id="features" class="features-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">NEDEN BİZ?</span>
+        <h2 class="section-title">Üstün Oyun Deneyimi</h2>
+        <p class="section-desc">Her detay oyuncunun konforu, adil rekabet ve görsel zarafet için tasarlandı.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-box">⚡</div>
+          <h3 class="feature-title">Gerçek Zamanlı 1'e 1</h3>
+          <p class="feature-text">
+            Özel optimize edilmiş WebSocket sunucu mimarisi sayesinde dünya çapında <40ms ultra düşük gecikmeyle kesintisiz online maçlar.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">🧠</div>
+          <h3 class="feature-title">Akıllı Offline Bot</h3>
+          <p class="feature-text">
+            İnternetiniz olmadığında bile metroda, uçakta veya seyahatte oynayabileceğiniz hilesiz, adil ve zorlu yapay zeka motoru.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">🪵</div>
+          <h3 class="feature-title">Lüks Ahşap & Altın</h3>
+          <p class="feature-text">
+            Göz yormayan masif ceviz, sedef kakmalar, altın pirinç çerçeveler ve 60 FPS 2.5D parabolik kavisli taş/kart animasyonları.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">⏸️</div>
+          <h3 class="feature-title">Mola & Masaya Dönüş</h3>
+          <p class="feature-text">
+            Acil bir işiniz çıktığında oyundan kopmadan mola isteyin; dilediğiniz an tek tıkla masaya dönüp kaldığınız yerden devam edin.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVACY POLICY & COMPLIANCE -->
+  <section id="privacy" class="privacy-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">YASAL & GÜVENLİK</span>
+        <h2 class="section-title">Gizlilik Politikası (Privacy Policy)</h2>
+        <p class="section-desc">Google Play Store ve Apple App Store kurallarına %100 uyumluluk beyanı.</p>
+      </div>
+
+      <div class="privacy-box">
+        <h3>1. Genel Bilgilendirme</h3>
+        <p>
+          Bu Gizlilik Politikası, Onur Karakaya ("Geliştirici") tarafından geliştirilen ve yayımlanan mobil ve web oyunları (Klasik Pişti Online, Klasik Tavla Online ve ileride sunulacak tüm oyunlar) için geçerlidir. Kullanıcılarımızın gizliliğine ve kişisel verilerinin korunmasına en üst düzeyde önem vermekteyiz.
+        </p>
+
+        <h3>2. Toplanan Veriler ve Kullanım Amacı</h3>
+        <p>
+          Oyunlarımızda gereksiz veya hassas kişisel veri (T.C. kimlik no, kredi kartı, adres defteri vb.) <strong>kesinlikle toplanmaz</strong>. Yalnızca oyunun temel işlevlerini yerine getirebilmek adına aşağıdaki teknik veriler işlenir:
+        </p>
+        <ul>
+          <li><strong>Anonim Cihaz Tanımlayıcısı (Device ID):</strong> Oyuncunun aynı cihazdan maça yeniden bağlanabilmesi (reconnect) ve mola anında oyun durumunun yerel olarak kaydedilmesi amacıyla kullanılır.</li>
+          <li><strong>Kullanıcı Adı:</strong> Oyuncunun lobi ekranında kendi belirlediği takma isim (nickname), yalnızca oda eşleşmesinde ve rakibe gösterilmek üzere geçici olarak sunucuda tutulur.</li>
+          <li><strong>Oyun İstatistikleri:</strong> Çevrimdışı ve çevrimiçi kazanılan ve kaybedilen maç sayıları cihazınızda (SharedPreferences / UserDefaults) yerel olarak saklanır.</li>
+        </ul>
+
+        <h3>3. Reklam ve Üçüncü Taraf Hizmetleri (Google AdMob)</h3>
+        <p>
+          Oyunlarımızda ücretsiz sunumu desteklemek amacıyla Google AdMob reklam hizmeti kullanılmaktadır. Google AdMob, kişiselleştirilmiş veya kişiselleştirilmemiş reklamlar sunabilmek adına anonim reklam kimliklerini (IDFA / AAID) kullanabilir. Resmi reklam doğrulama kaydımız için sitemizin kök dizininde <a href="/app-ads.txt" style="color: var(--gold-light); text-decoration: underline;">app-ads.txt</a> dosyası yayımlanmaktadır.
+        </p>
+
+        <h3>4. Çocukların Gizliliği</h3>
+        <p>
+          Oyunlarımız her yaştan kullanıcının keyifle oynayabileceği geleneksel zeka ve strateji oyunlarıdır. Bilerek ve isteyerek 13 yaşından küçük çocuklardan kişisel veri toplanmamaktadır.
+        </p>
+
+        <h3>5. İletişim</h3>
+        <p>
+          Gizlilik politikamız veya oyunlarımızla ilgili her türlü soru, öneri ve destek talepleriniz için bizimle doğrudan iletişime geçebilirsiniz:<br>
+          <strong>E-Posta:</strong> <a href="mailto:karakayaonur1719@yahoo.com" style="color: var(--gold-light);">karakayaonur1719@yahoo.com</a><br>
+          <strong>Geliştirici Web Sitesi:</strong> https://onurkrky.github.io
+        </p>
+        <p style="font-size: 0.85rem; color: var(--text-subtle); margin-top: 16px;">
+          Son Güncelleme: 19 Kasım 2026
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand-logo" style="margin-bottom: 12px;">
+            <div class="brand-emblem">👑</div>
+            <div>
+              <div class="brand-title font-cinzel">ONUR KARAKAYA</div>
+              <div class="brand-subtitle">GAMES & ENTERTAINMENT</div>
+            </div>
+          </div>
+          <p class="footer-brand-desc">
+            Geleneksel Türk masa ve iskambil oyunlarını en üstün işçilik, lüks görsel tasarım ve modern multiplayer teknolojisiyle dünya standartlarında oyuncularla buluşturuyoruz.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Oyunlarımız</h4>
+          <ul class="footer-links">
+            <li><a href="https://apps.apple.com/app/klasik-pi%C5%9Fti-online/id6835895552" target="_blank" rel="noopener">Klasik Pişti (iOS)</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.darkrock.pisti" target="_blank" rel="noopener">Klasik Pişti (Android)</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.darkrock.tavla" target="_blank" rel="noopener">Klasik Tavla (Android)</a></li>
+            <li><a href="https://tavla-3q16.onrender.com" target="_blank" rel="noopener">Klasik Tavla (Web)</a></li>
+            <li><a href="#games">Türk Daması (Yakında)</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Bağlantılar & Yasal</h4>
+          <ul class="footer-links">
+            <li><a href="#privacy">Gizlilik Politikası</a></li>
+            <li><a href="/app-ads.txt">app-ads.txt</a></li>
+            <li><a href="mailto:karakayaonur1719@yahoo.com">Destek & İletişim</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Onur Karakaya. Tüm hakları saklıdır.</div>
+        <div>Designed with Walnut & Gold Luxury Theme for Board Game Masters.</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

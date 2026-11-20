@@ -9,7 +9,7 @@
   <meta name="description" content="Klasik Tavla, Pişti Online ve Türk Daması! Geleneksel masa ve iskambil oyunları, lüks ahşap ve altın teması, akıllı botlar ve 1'e 1 canlı online düellolarla Google Play ve App Store'da.">
   <meta name="keywords" content="tavla, pişti, pisti, klasik pişti online, klasik tavla, türk daması, dama, masa oyunları, iskambil oyunları, online oyun, app store, google play">
   <meta name="author" content="Darkrock Games">
-  <meta name="theme-color" content="#F4EDE2">
+  <meta name="theme-color" content="#141820">
   <link rel="canonical" href="https://darkrockstudio.net/">
   <link rel="icon" type="image/png" href="assets/images/tavla_icon.png">
   <meta name="google-adsense-account" content="ca-pub-5059706166608811">
@@ -82,21 +82,21 @@
 
   <style>
     :root {
-      --bg-dark: #F4EDE2;
-      --bg-surface: #EAE0D0;
-      --bg-card: #FFFFFF;
-      --bg-elevated: #FAF6F0;
-      --gold-primary: #A66E14;
-      --gold-light: #2B1506;
-      --gold-bright: #D97706;
-      --gold-glow: rgba(166, 110, 20, 0.18);
-      --text-main: #241409;
-      --text-muted: #5C432D;
-      --text-subtle: #8A6D52;
-      --border-gold: rgba(166, 110, 20, 0.28);
-      --border-gold-hover: rgba(166, 110, 20, 0.65);
-      --accent-green: #059669;
-      --accent-blue: #2563EB;
+      --bg-dark: #141820;
+      --bg-surface: #1B202B;
+      --bg-card: #222936;
+      --bg-elevated: #2A3342;
+      --gold-primary: #D4AF37;
+      --gold-light: #FFE082;
+      --gold-bright: #F59E0B;
+      --gold-glow: rgba(212, 175, 55, 0.25);
+      --text-main: #F8FAFC;
+      --text-muted: #CBD5E1;
+      --text-subtle: #94A3B8;
+      --border-gold: rgba(212, 175, 55, 0.30);
+      --border-gold-hover: rgba(255, 224, 130, 0.70);
+      --accent-green: #10B981;
+      --accent-blue: #3B82F6;
       --radius-sm: 8px;
       --radius-md: 16px;
       --radius-lg: 24px;
@@ -120,9 +120,9 @@
       line-height: 1.6;
       overflow-x: hidden;
       background-image: 
-        radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.22) 0%, transparent 65%),
-        radial-gradient(circle at 85% 45%, rgba(190, 145, 85, 0.18) 0%, transparent 55%),
-        radial-gradient(circle at 15% 80%, rgba(180, 130, 70, 0.15) 0%, transparent 60%);
+        radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 85% 40%, rgba(56, 189, 248, 0.07) 0%, transparent 55%),
+        radial-gradient(circle at 15% 80%, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
       background-attachment: fixed;
     }
 
@@ -138,26 +138,25 @@
       align-items: center;
       gap: 6px;
       padding: 6px 12px;
-      background: #FFFFFF;
-      border: 1.2px solid var(--border-gold);
+      background: rgba(34, 41, 54, 0.9);
+      border: 1px solid var(--border-gold);
       border-radius: var(--radius-sm);
-      color: var(--text-main);
+      color: var(--gold-light);
       font-size: 0.88rem;
       font-weight: 600;
       cursor: pointer;
-      box-shadow: 0 2px 8px rgba(36, 20, 9, 0.06);
       transition: var(--transition);
     }
 
     .lang-dropdown-btn:hover {
-      border-color: var(--gold-primary);
-      background: #FAF6F0;
+      border-color: var(--gold-light);
+      background: #2A3342;
     }
 
     .lang-dropdown-btn svg {
       width: 14px;
       height: 14px;
-      fill: var(--text-main);
+      fill: var(--gold-light);
       transition: transform 0.2s;
     }
 
@@ -169,10 +168,10 @@
       position: absolute;
       top: calc(100% + 8px);
       right: 0;
-      background: #FFFFFF;
-      border: 1.2px solid var(--border-gold);
+      background: #1B202B;
+      border: 1px solid var(--border-gold);
       border-radius: var(--radius-sm);
-      box-shadow: 0 12px 28px rgba(36, 20, 9, 0.16);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.65);
       min-width: 150px;
       display: none;
       flex-direction: column;
@@ -251,11 +250,11 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(244, 237, 226, 0.92);
+      background: rgba(20, 24, 32, 0.90);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border-gold);
-      box-shadow: 0 4px 20px rgba(46, 23, 8, 0.06);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
       padding: 16px 0;
     }
 
@@ -366,7 +365,7 @@
       font-weight: 900;
       line-height: 1.15;
       margin-bottom: 20px;
-      background: linear-gradient(180deg, #241409 10%, #5C3214 60%, #9E6514 100%);
+      background: linear-gradient(180deg, #FFFFFF 20%, #FFE082 70%, #D4AF37 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -376,7 +375,7 @@
       margin: 0 auto 36px;
       font-size: 1.15rem;
       color: var(--text-muted);
-      font-weight: 400;
+      font-weight: 300;
     }
 
     .hero-actions {
@@ -390,41 +389,41 @@
       padding: 14px 28px;
       border-radius: var(--radius-md);
       background: linear-gradient(135deg, #F59E0B, #D97706);
-      color: #1A0B02;
+      color: #120803;
       font-weight: 700;
       font-size: 1rem;
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      box-shadow: 0 8px 22px rgba(217, 119, 6, 0.30);
-      border: 1px solid #F59E0B;
+      box-shadow: 0 8px 25px rgba(245, 158, 11, 0.35);
+      border: 1px solid #FFE082;
     }
 
     .btn-gold:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 28px rgba(217, 119, 6, 0.45);
+      box-shadow: 0 12px 30px rgba(245, 158, 11, 0.55);
       color: #000;
     }
 
     .btn-outline {
       padding: 14px 28px;
       border-radius: var(--radius-md);
-      background: #FFFFFF;
+      background: rgba(34, 41, 54, 0.85);
       color: var(--text-main);
-      font-weight: 700;
+      font-weight: 600;
       font-size: 1rem;
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      border: 1.5px solid var(--border-gold);
-      box-shadow: 0 6px 18px rgba(46, 23, 8, 0.08);
+      border: 1px solid var(--border-gold);
+      backdrop-filter: blur(8px);
     }
 
     .btn-outline:hover {
-      border-color: var(--gold-primary);
-      background: #FAF6F0;
+      border-color: var(--gold-light);
+      background: #2A3342;
       transform: translateY(-3px);
-      color: var(--gold-primary);
+      color: var(--gold-light);
     }
 
     /* SECTION HEADERS */
@@ -471,12 +470,12 @@
     }
 
     .game-card-large {
-      background: #FFFFFF;
+      background: linear-gradient(145deg, var(--bg-card), var(--bg-surface));
       border: 1.5px solid var(--border-gold);
       border-radius: var(--radius-lg);
       overflow: hidden;
       margin-bottom: 0;
-      box-shadow: 0 14px 36px rgba(46, 23, 8, 0.10);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
       display: flex;
       flex-direction: column;
       width: 100%;
@@ -485,7 +484,7 @@
 
     .game-card-large:hover {
       border-color: var(--border-gold-hover);
-      box-shadow: 0 20px 44px rgba(166, 110, 20, 0.18);
+      box-shadow: 0 25px 50px rgba(212, 175, 55, 0.15);
       transform: translateY(-4px);
     }
 
@@ -551,15 +550,15 @@
     }
 
     .status-live {
-      background: rgba(16, 185, 129, 0.14);
-      border: 1px solid #059669;
-      color: #065F46;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid var(--accent-green);
+      color: #34D399;
     }
 
     .status-soon {
-      background: rgba(217, 119, 6, 0.14);
-      border: 1px solid #D97706;
-      color: #92400E;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid var(--gold-bright);
+      color: #FBBF24;
     }
 
     .game-title {
@@ -707,14 +706,14 @@
     }
 
     .mini-game-card {
-      background: #FFFFFF;
-      border: 1.2px solid var(--border-gold);
+      background: linear-gradient(145deg, var(--bg-card), var(--bg-surface));
+      border: 1px solid var(--border-gold);
       border-radius: var(--radius-md);
       padding: 32px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      box-shadow: 0 10px 26px rgba(46, 23, 8, 0.07);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
       transition: var(--transition);
       position: relative;
       overflow: hidden;
@@ -722,14 +721,13 @@
 
     .mini-game-card:hover {
       border-color: var(--border-gold-hover);
-      box-shadow: 0 14px 32px rgba(166, 110, 20, 0.14);
       transform: translateY(-4px);
     }
 
     /* FEATURES GRID */
     .features-section {
       padding: 80px 0;
-      background: rgba(234, 224, 208, 0.65);
+      background: rgba(27, 32, 43, 0.75);
       border-top: 1px solid var(--border-gold);
       border-bottom: 1px solid var(--border-gold);
     }
@@ -741,11 +739,10 @@
     }
 
     .feature-card {
-      background: #FFFFFF;
-      border: 1.2px solid var(--border-gold);
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
       border-radius: var(--radius-md);
       padding: 28px;
-      box-shadow: 0 8px 22px rgba(46, 23, 8, 0.06);
       transition: var(--transition);
     }
 
@@ -788,12 +785,12 @@
     }
 
     .privacy-box {
-      background: #FFFFFF;
-      border: 1.2px solid var(--border-gold);
+      background: var(--bg-surface);
+      border: 1px solid var(--border-gold);
       border-radius: var(--radius-md);
       padding: 40px;
       color: var(--text-muted);
-      box-shadow: 0 10px 28px rgba(46, 23, 8, 0.07);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
       line-height: 1.7;
       font-size: 0.95rem;
     }
@@ -823,8 +820,8 @@
 
     /* FOOTER */
     .footer {
-      background: #E5D9C5;
-      border-top: 1.5px solid var(--border-gold);
+      background: #0F131A;
+      border-top: 1px solid var(--border-gold);
       padding: 60px 0 30px;
     }
 

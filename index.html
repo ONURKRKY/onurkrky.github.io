@@ -2249,11 +2249,11 @@
       if (savedLang && translations[savedLang]) {
         changeLanguage(savedLang);
       } else {
-        const browserLang = (navigator.language || 'tr').slice(0, 2).toLowerCase();
+        const browserLang = (navigator.language || 'en').slice(0, 2).toLowerCase();
         if (translations[browserLang]) {
           changeLanguage(browserLang);
         } else {
-          changeLanguage('tr');
+          changeLanguage('en');
         }
       }
     });

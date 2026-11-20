@@ -24,13 +24,7 @@
         "@type": "Organization",
         "name": "Darkrock Games Studio",
         "url": "https://darkrockstudio.net/",
-        "logo": "https://darkrockstudio.net/assets/images/tavla_icon.png",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "email": "karakayaonur@yahoo.com",
-          "contactType": "customer support",
-          "availableLanguage": ["Turkish", "English", "German", "Russian", "Arabic"]
-        }
+        "logo": "https://darkrockstudio.net/assets/images/tavla_icon.png"
       },
       {
         "@type": "VideoGame",
@@ -691,7 +685,7 @@
     .game-visual {
       display: block;
       width: 100%;
-      height: auto;
+      aspect-ratio: 16 / 9;
       background: #0A0402;
       overflow: hidden;
       position: relative;
@@ -700,9 +694,10 @@
 
     .game-banner-img {
       width: 100%;
-      height: auto;
+      height: 100%;
       display: block;
-      object-fit: contain;
+      object-fit: cover;
+      object-position: center;
       transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -1532,7 +1527,7 @@
 
         <h3 data-i18n="privacy_sec5_title">5. İletişim &amp; Destek</h3>
         <p data-i18n="privacy_sec5_p">
-          Oyunlarımız, gizlilik politikamız veya iş birliği taleplerinizle ilgili her türlü soru, görüş ve teknik destek için bizimle doğrudan e-posta üzerinden iletişime geçebilirsiniz: <a href="mailto:karakayaonur@yahoo.com" style="color: var(--gold-light); font-weight: 600; text-decoration: underline;">karakayaonur@yahoo.com</a>
+          Oyunlarımız, gizlilik politikamız veya teknik destek talepleriniz için Google Play ve App Store mağaza sayfalarımız üzerinden bizimle iletişime geçebilirsiniz.
         </p>
 
         <p style="font-size: 0.85rem; color: var(--text-subtle); margin-top: 20px;">
@@ -1576,7 +1571,6 @@
             <li><a href="#guides" data-i18n="guides_tag">Oyun Rehberi &amp; Kurallar</a></li>
             <li><a href="#faq" data-i18n="faq_title">Sıkça Sorulan Sorular</a></li>
             <li><a href="#privacy" data-i18n="nav_privacy">Gizlilik Politikası</a></li>
-            <li><a href="mailto:karakayaonur@yahoo.com">📩 karakayaonur@yahoo.com</a></li>
           </ul>
         </div>
       </div>
@@ -1701,7 +1695,7 @@
     "privacy_sec4_title": "4. Çocukların Gizliliği",
     "privacy_sec4_p": "Oyunlarımız her yaştan kullanıcının güvenle oynayabileceği geleneksel zeka oyunlarıdır. Bilerek 13 yaşından küçük çocuklardan veri toplanmaz.",
     "privacy_sec5_title": "5. İletişim & Destek",
-    "privacy_sec5_p": "Oyunlarımız, gizlilik politikamız veya iş birliği taleplerinizle ilgili her türlü soru, görüş ve teknik destek için bizimle doğrudan e-posta üzerinden iletişime geçebilirsiniz: <a href=\"mailto:karakayaonur@yahoo.com\" style=\"color: var(--gold-light); font-weight: 600; text-decoration: underline;\">karakayaonur@yahoo.com</a>",
+    "privacy_sec5_p": "Oyunlarımız, gizlilik politikamız veya teknik destek talepleriniz için Google Play ve App Store mağaza sayfalarımız üzerinden bizimle iletişime geçebilirsiniz.",
     "footer_desc": "Geleneksel masa ve iskambil oyunlarını en üstün işçilik, lüks görsel tasarım ve modern multiplayer teknolojisiyle dünya standartlarında oyuncularla buluşturuyoruz.",
     "footer_games": "Oyunlarımız",
     "footer_legal": "Bağlantılar & Yasal",
@@ -1818,7 +1812,7 @@
     "privacy_sec4_title": "4. Children's Privacy",
     "privacy_sec4_p": "Our games are safe strategic games suitable for all ages. We do not knowingly collect personal data from children under 13.",
     "privacy_sec5_title": "5. Contact & Support",
-    "privacy_sec5_p": "For any questions, feedback, technical support, or privacy inquiries regarding our games, please contact us directly via email: <a href=\"mailto:karakayaonur@yahoo.com\" style=\"color: var(--gold-light); font-weight: 600; text-decoration: underline;\">karakayaonur@yahoo.com</a>",
+    "privacy_sec5_p": "For feedback, questions, or technical support regarding our games, please reach out via our official Google Play and App Store pages.",
     "footer_desc": "Delivering classic traditional board and card games to players worldwide with exquisite craftsmanship, luxury design, and modern multiplayer tech.",
     "footer_games": "Our Games",
     "footer_legal": "Links & Legal",
@@ -1935,7 +1929,7 @@
     "privacy_sec4_title": "4. Jugendschutz",
     "privacy_sec4_p": "Unsere Spiele sind für alle Altersgruppen geeignet. Wir erfassen keine Daten von Kindern unter 13 Jahren.",
     "privacy_sec5_title": "5. Kontakt & Support",
-    "privacy_sec5_p": "Bei Fragen, Feedback oder technischem Support erreichen Sie uns jederzeit direkt per E-Mail unter: <a href=\"mailto:karakayaonur@yahoo.com\" style=\"color: var(--gold-light); font-weight: 600; text-decoration: underline;\">karakayaonur@yahoo.com</a>",
+    "privacy_sec5_p": "Bei Fragen, Feedback oder Support erreichen Sie uns über unsere Store-Seiten im Google Play und App Store.",
     "footer_desc": "Klassische Spiele in weltweiter Spitzenqualität mit edlem Holzdesign und moderner Mehrspieler-Technik.",
     "footer_games": "Spiele",
     "footer_legal": "Rechtliches",
@@ -2052,7 +2046,7 @@
     "privacy_sec4_title": "4. Дети и безопасность",
     "privacy_sec4_p": "Наши игры предназначены для всех возрастов. Мы сознательно не собираем данные детей до 13 лет.",
     "privacy_sec5_title": "5. Контакты и поддержка",
-    "privacy_sec5_p": "По всем вопросам, предложениям и для технической поддержки свяжитесь с нами по электронной почте: <a href=\"mailto:karakayaonur@yahoo.com\" style=\"color: var(--gold-light); font-weight: 600; text-decoration: underline;\">karakayaonur@yahoo.com</a>",
+    "privacy_sec5_p": "По всем вопросам и для технической поддержки свяжитесь с нами через страницы в Google Play и App Store.",
     "footer_desc": "Классические игры мирового уровня с премиальным деревянным дизайном и современным мультиплеером.",
     "footer_games": "Наши игры",
     "footer_legal": "Юридическая информация",
@@ -2169,7 +2163,7 @@
     "privacy_sec4_title": "4. حماية الأطفال",
     "privacy_sec4_p": "ألعابنا مخصصة لجميع الأعمار ولا نجمع بيانات الأطفال عن قصد.",
     "privacy_sec5_title": "5. التواصل والدعم الفني",
-    "privacy_sec5_p": "لأي استفسارات أو اقتراحات أو دعم فني بخصوص ألعابنا، يمكنكم التواصل معنا مباشرة عبر البريد الإلكتروني: <a href=\"mailto:karakayaonur@yahoo.com\" style=\"color: var(--gold-light); font-weight: 600; text-decoration: underline;\">karakayaonur@yahoo.com</a>",
+    "privacy_sec5_p": "لأي استفسارات أو دعم فني بخصوص ألعابنا، يمكنكم التواصل معنا عبر صفحاتنا الرسمية في Google Play و App Store.",
     "footer_desc": "نقدم ألعاب الطاولة والورق التراثية لجميع اللاعبين حول العالم بأعلى معايير الحرفية والتصميم.",
     "footer_games": "ألعابنا",
     "footer_legal": "الروابط والقانونية",

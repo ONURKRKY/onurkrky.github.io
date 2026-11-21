@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gizlilik Politikası (Privacy Policy) | Darkrock Studio</title>
+  <meta name="description" content="Darkrock Studio Gizlilik Politikası, KVKK, GDPR ve Google AdSense çerez uyumluluğu beyanı.">
+  <link rel="canonical" href="https://darkrockstudio.net/privacy.html">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+
+  <!-- Google AdSense -->
+  <meta name="google-adsense-account" content="ca-pub-5059706166608811">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5059706166608811" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #120904;
+      --bg-card: #201107;
+      --bg-card-hover: #2a160a;
+      --accent-gold: #e2b755;
+      --gold-primary: #d4af37;
+      --gold-border: rgba(212, 175, 55, 0.35);
+      --text-main: #fff8eb;
+      --text-muted: #d4c0aa;
+      --text-subtle: #9e8975;
+      --font-display: 'Cinzel', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.7;
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(90, 46, 26, 0.3) 0%, transparent 60%),
+        radial-gradient(circle at 100% 100%, rgba(34, 17, 7, 0.5) 0%, transparent 50%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: rgba(32, 17, 7, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gold-border);
+      padding: 16px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .brand img {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      border: 1px solid var(--gold-border);
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+      letter-spacing: 0.5px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      background: rgba(0,0,0,0.2);
+      transition: all 0.2s ease;
+    }
+
+    .back-link:hover {
+      color: var(--accent-gold);
+      border-color: var(--accent-gold);
+      background: rgba(212, 175, 55, 0.1);
+    }
+
+    main {
+      flex: 1;
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    .policy-card {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-border);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .policy-tag {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .last-updated {
+      font-size: 0.85rem;
+      color: var(--text-subtle);
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    section {
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      color: var(--accent-gold);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    p {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      margin-left: 20px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    a {
+      color: var(--accent-gold);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      color: #fff;
+    }
+
+    .contact-box {
+      background: rgba(0, 0, 0, 0.25);
+      border-left: 3px solid var(--accent-gold);
+      padding: 16px 20px;
+      border-radius: 0 10px 10px 0;
+      margin-top: 16px;
+    }
+
+    footer {
+      border-top: 1px solid rgba(212, 175, 55, 0.15);
+      padding: 24px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-subtle);
+      background: #0f0703;
+    }
+
+    @media (max-width: 600px) {
+      .policy-card {
+        padding: 24px 18px;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="https://darkrockstudio.net" class="brand">
+        <img src="/assets/images/dr_logo.png" alt="Darkrock Studio Logo">
+        <span class="brand-title">DARKROCK STUDIO</span>
+      </a>
+      <a href="https://darkrockstudio.net" class="back-link">
+        <span>◆</span> Ana Sayfaya Dön
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <article class="policy-card">
+      <span class="policy-tag">YASAL &amp; GÜVENLİK BİLGİLENDİRMESİ</span>
+      <h1>Gizlilik Politikası (Privacy Policy)</h1>
+      <div class="last-updated">Son Güncelleme: Kasım 2026 • Yürürlük Tarihi: 1 Ocak 2026</div>
+
+      <section>
+        <h2>1. Genel Bilgilendirme ve Kapsam</h2>
+        <p>
+          Bu Gizlilik Politikası, <strong>Darkrock Studio</strong> ("Stüdyo", "biz") tarafından geliştirilen, yayımlanan ve işletilen tüm masa, zeka ve iskambil oyunları (Klasik Tavla, Klasik Pişti, Türk Daması ve gelecekteki tüm dijital servisler) ile <strong>darkrockstudio.net</strong> web sitesi için geçerlidir.
+        </p>
+        <p>
+          Kullanıcılarımızın gizliliğine, kişisel verilerinin güvenliğine ve şeffaflık ilkelerine en üst düzeyde önem vermekteyiz. Hizmetlerimizi kullanarak bu metinde belirtilen uygulamaları kabul etmiş sayılırsınız.
+        </p>
+      </section>
+
+      <section>
+        <h2>2. Toplanan Veriler ve Kullanım Amaçları</h2>
+        <p>
+          Darkrock Studio olarak veri minimizasyonu prensibini benimsemekteyiz. Oyunlarımızda kimliğinizi doğrudan belirleyecek gereksiz, hassas kişisel bilgiler (ad-soyad, T.C. kimlik numarası, ev adresi, telefon rehberi vb.) <strong>kesinlikle toplanmaz ve talep edilmez</strong>.
+        </p>
+        <ul>
+          <li><strong>Anonim Cihaz Tanımlayıcısı:</strong> Çok oyunculu (1v1) çevrimiçi eşleşmeleri sağlamak, misafir oturumlarını bağlamak ve oyun durumunu korumak amacıyla anonim kimlikler kullanılır.</li>
+          <li><strong>Oyun İçi İstatistikler:</strong> Galibiyet, mağlubiyet ve puan tablosu skorları cihazınızda yerel olarak saklanır.</li>
+          <li><strong>Teknik Tanılama:</strong> Oyun kilitlenmelerini gidermek ve performansı optimize etmek için genel işletim sistemi ve sürüm bilgisi anonim loglarda işlenebilir.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>3. Çerezler ve Google AdSense Reklam Teknolojileri</h2>
+        <p>
+          Web sitemizde ve web tabanlı oyun arayüzlerimizde kullanıcı deneyimini iyileştirmek, trafik analizi yapmak ve ücretsiz içerik sunabilmek adına çerezler (cookies) kullanılmaktadır.
+        </p>
+        <p>
+          Sitemizde ve uygulamalarımızda üçüncü taraf reklam sağlayıcısı olarak <strong>Google AdSense</strong> ve <strong>Google AdMob</strong> teknolojileri kullanılmaktadır. Google dahil olmak üzere üçüncü taraf tedarikçiler, kullanıcıların web sitemize veya diğer internet sitelerine yaptıkları önceki ziyaretlere dayalı olarak reklam sunmak için çerezlerden (DART çerezi dahil) faydalanır.
+        </p>
+        <p>
+          Google'ın reklam çerezlerini kullanması, Google ve iş ortaklarının kullanıcılarımıza ilgi alanlarına göre optimize edilmiş reklamlar sunmasını sağlar. Kullanıcılar dilerlerse <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google Reklam Ayarları</a> sayfası üzerinden kişiselleştirilmiş reklamcılığı devre dışı bırakabilir veya <a href="https://www.aboutads.info" target="_blank" rel="noopener">aboutads.info</a> adresinden üçüncü taraf çerezlerini yönetebilirler.
+        </p>
+      </section>
+
+      <section>
+        <h2>4. Avrupa Tüzükleri (GDPR) ve Çerez İzni</h2>
+        <p>
+          Avrupa Ekonomik Alanı (AEA), Birleşik Krallık ve İsviçre'den sitemizi ziyaret eden kullanıcılarımıza, Google Certified Consent Management Platform (CMP) aracılığıyla açık rıza mesajı sunulmaktadır. Kullanıcılar diledikleri zaman kişisel verilerinin reklam hedeflemesinde kullanılmasına izin verebilir, sınırlandırabilir veya tamamen reddedebilirler.
+        </p>
+      </section>
+
+      <section>
+        <h2>5. Veri Güvenliği ve Üçüncü Taraflarla Paylaşım</h2>
+        <p>
+          Kullanıcı verileriniz hiçbir koşulda ticari kazanç amacıyla üçüncü şahıslara veya veri simsarlarına <strong>satılmaz, kiralanmaz ve takas edilmez</strong>. Tüm veri aktarımları endüstri standardı HTTPS / WSS şifreleme protokolleriyle güvence altındadır.
+        </p>
+      </section>
+
+      <section>
+        <h2>6. Çocukların Gizliliği (COPPA &amp; GDPR-K)</h2>
+        <p>
+          Oyunlarımız her yaştan kitleye hitap eden geleneksel zeka ve strateji oyunlarıdır. Bilerek veya isteyerek 13 yaşından (veya yerel yargı alanına göre 16 yaşından) küçük çocuklardan kişisel bilgi toplanmamaktadır. Ebeveynlerin izni olmaksızın veri toplandığı tespit edilirse ilgili kayıtlar derhal sistemlerimizden silinir.
+        </p>
+      </section>
+
+      <section>
+        <h2>7. İletişim ve Haklarınız</h2>
+        <p>
+          Kişisel verilerinizin işlenmesi, silinmesi, düzeltilmesi veya Gizlilik Politikamızla ilgili her türlü soru ve talebiniz için resmi destek e-posta adresimiz üzerinden bizimle iletişime geçebilirsiniz:
+        </p>
+        <div class="contact-box">
+          <strong>Darkrock Studio Destek Masası:</strong><br>
+          E-posta: <a href="mailto:support@darkrockstudio.net">support@darkrockstudio.net</a><br>
+          Web: <a href="https://darkrockstudio.net">https://darkrockstudio.net</a>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Darkrock Studio. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -307,12 +307,12 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(35, 42, 54, 0.90);
+      background: rgba(22, 11, 4, 0.94);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-gold);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-      padding: 16px 0;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+      padding: 14px 0;
     }
 
     .nav-container {
@@ -774,9 +774,35 @@
     }
 
     .status-live {
-      background: rgba(16, 185, 129, 0.15);
-      border: 1px solid var(--accent-green);
-      color: #34D399;
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.38);
+      color: var(--gold-light);
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.08);
+    }
+
+    .status-pulse-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold-primary);
+      box-shadow: 0 0 8px rgba(212, 175, 55, 0.9);
+      display: inline-block;
+      animation: goldDotPulse 2s infinite ease-in-out;
+      margin-right: 4px;
+    }
+
+    @keyframes goldDotPulse {
+      0%, 100% { opacity: 0.6; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.2); box-shadow: 0 0 12px rgba(255, 215, 0, 0.95); }
+    }
+
+    .feature-bullet {
+      color: var(--gold-primary);
+      font-size: 0.7rem;
+      margin-right: 6px;
+      display: inline-block;
+      vertical-align: middle;
+      filter: drop-shadow(0 0 3px rgba(212, 175, 55, 0.5));
     }
 
     .status-soon {
@@ -1134,8 +1160,61 @@
     }
 
     @media (max-width: 768px) {
+      .navbar {
+        padding: 8px 0;
+      }
+
+      .nav-container {
+        padding: 0 14px;
+      }
+
+      .brand-logo {
+        gap: 8px;
+      }
+
+      .brand-emblem {
+        width: 36px;
+        height: 36px;
+        font-size: 17px;
+      }
+
+      .brand-title {
+        font-size: 1.12rem;
+      }
+
+      .brand-subtitle {
+        display: none !important;
+      }
+
       .nav-links {
         display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+
+      .nav-contact-btn {
+        padding: 0 !important;
+        width: 38px !important;
+        height: 38px !important;
+        min-width: 38px !important;
+        border-radius: 50% !important;
+        justify-content: center !important;
+        gap: 0 !important;
+      }
+
+      .nav-contact-text {
+        display: none !important;
+      }
+
+      .nav-contact-icon {
+        font-size: 1.15rem !important;
+        margin: 0 !important;
+      }
+
+      .lang-dropdown-btn {
+        padding: 6px 10px;
+        height: 38px;
+        font-size: 0.8rem;
       }
 
       .trust-strip {
@@ -1543,8 +1622,8 @@
         </div>
       </a>
       <div class="nav-links">
-        <button type="button" class="btn-outline" style="padding: 7px 16px; font-size: 0.85rem; cursor: pointer; gap: 6px; border-radius: 20px;" onclick="openContactModal()">
-          <span>✉️</span> <span data-i18n="nav_contact">İletişim &amp; Destek</span>
+        <button type="button" class="btn-outline nav-contact-btn" onclick="openContactModal()" aria-label="İletişim &amp; Destek">
+          <span class="nav-contact-icon">✉️</span> <span class="nav-contact-text" data-i18n="nav_contact">İletişim &amp; Destek</span>
         </button>
         <!-- LANGUAGE SELECTOR -->
         <div class="lang-selector-wrap">
@@ -1637,8 +1716,10 @@
             <div class="game-header-row">
               <img src="assets/images/tavla_icon.png" alt="Tavla Logosu" class="game-avatar">
               <div>
-                <span class="game-status-badge status-live" data-i18n="tavla_status">🟢 WEB &amp; GOOGLE PLAY'DE
-                  YAYINDA</span>
+                <span class="game-status-badge status-live">
+                  <span class="status-pulse-dot"></span>
+                  <span data-i18n="tavla_status">WEB &amp; GOOGLE PLAY'DE YAYINDA</span>
+                </span>
                 <h3 class="game-title" data-i18n="tavla_title">Klasik Tavla</h3>
                 <p class="game-tagline" data-i18n="tavla_tagline">Geleneksel Marküteri Ceviz Kasa &amp; 5 Lüks Çuha Masa
                 </p>
@@ -1649,18 +1730,12 @@
               Bordo, Safir). Web tarayıcısı ve mobil cihazlar arasında çapraz 1v1 canlı düello, tek tıkla
               WhatsApp/Telegram arkadaş daveti ve internetsiz yapay zeka modu.</p>
             <div class="game-features-list">
-              <div class="feature-item"><span>🎲</span> <span data-i18n="tavla_f1">620ms Sayı Çarkı Zar Hissi</span>
-              </div>
-              <div class="feature-item"><span>🚀</span> <span data-i18n="tavla_f2">2.5D Kavisli Taş Kayma Fiziği</span>
-              </div>
-              <div class="feature-item"><span>🪵</span> <span data-i18n="tavla_f3">Marküteri Kakma &amp; 5 Çuha
-                  Masa</span></div>
-              <div class="feature-item"><span>⚡</span> <span data-i18n="tavla_f4">Web &amp; Mobil Çapraz 1v1
-                  Eşleşme</span></div>
-              <div class="feature-item"><span>💬</span> <span data-i18n="tavla_f5">Hızlı Mesajlaşma &amp; Kayan
-                  Yazı</span></div>
-              <div class="feature-item"><span>🛡️</span> <span data-i18n="tavla_f6">%100 Hilesiz Adil Zar
-                  Garantisi</span></div>
+              <div class="feature-item"><span class="feature-bullet">◆</span> <span data-i18n="tavla_f1">620ms Sayı Çarkı Zar Hissi</span></div>
+              <div class="feature-item"><span class="feature-bullet">◆</span> <span data-i18n="tavla_f2">2.5D Kavisli Taş Kayma Fiziği</span></div>
+              <div class="feature-item"><span class="feature-bullet">◆</span> <span data-i18n="tavla_f3">Marküteri Kakma &amp; 5 Çuha Masa</span></div>
+              <div class="feature-item"><span class="feature-bullet">◆</span> <span data-i18n="tavla_f4">Web &amp; Mobil Çapraz 1v1 Eşleşme</span></div>
+              <div class="feature-item"><span class="feature-bullet">◆</span> <span data-i18n="tavla_f5">Hızlı Mesajlaşma &amp; Kayan Yazı</span></div>
+              <div class="feature-item"><span class="feature-bullet">◆</span> <span data-i18n="tavla_f6">%100 Hilesiz Adil Zar Garantisi</span></div>
             </div>
             <div class="store-badges">
               <a href="/tavla/" target="_blank" rel="noopener" class="primary-play-cta">
@@ -1700,8 +1775,10 @@
             <div class="game-header-row">
               <img src="assets/images/pisti_icon.png" alt="Pişti Logosu" class="game-avatar">
               <div>
-                <span class="game-status-badge status-live" data-i18n="pisti_status">🟢 WEB'DE CANLI • 📱 MOBİL ÇOK
-                  YAKINDA</span>
+                <span class="game-status-badge status-live">
+                  <span class="status-pulse-dot"></span>
+                  <span data-i18n="pisti_status">WEB'DE CANLI • MOBİL ÇOK YAKINDA</span>
+                </span>
                 <h3 class="game-title" data-i18n="pisti_title">Klasik Pişti</h3>
                 <p class="game-tagline" data-i18n="pisti_tagline">Zümrüt Çuha Masada Gerçek Zamanlı 1v1 İskambil
                   Düellosu</p>
@@ -1712,17 +1789,12 @@
               internetsiz modda stratejik yapay zekaya karşı yarışın. Zümrüt çuha ve lüks ceviz masa temaları, 2.5D
               kavisli kart fiziği ve çift pişti heyecanı!</p>
             <div class="game-features-list">
-              <div class="feature-item"><span>✨</span> <span data-i18n="pisti_f1">Web &amp; Mobil Çapraz 1v1</span>
-              </div>
-              <div class="feature-item"><span>🧠</span> <span data-i18n="pisti_f2">İnternetsiz Akıllı Bot</span></div>
-              <div class="feature-item"><span>📲</span> <span data-i18n="pisti_f3">WhatsApp &amp; Link Daveti</span>
-              </div>
-              <div class="feature-item"><span>🏆</span> <span data-i18n="pisti_f4">Kariyer &amp; Skor Takibi</span>
-              </div>
-              <div class="feature-item"><span>🎨</span> <span data-i18n="pisti_f5">Lüks Ahşap &amp; Çuha Temaları</span>
-              </div>
-              <div class="feature-item"><span>🔒</span> <span data-i18n="pisti_f6">Karşılıklı Mola &amp; Devam Et</span>
-              </div>
+              <div class="feature-item"><span class="feature-bullet">◆</span> <span data-i18n="pisti_f1">Web &amp; Mobil Çapraz 1v1</span></div>
+              <div class="feature-item"><span class="feature-bullet">◆</span> <span data-i18n="pisti_f2">İnternetsiz Akıllı Bot</span></div>
+              <div class="feature-item"><span class="feature-bullet">◆</span> <span data-i18n="pisti_f3">WhatsApp &amp; Link Daveti</span></div>
+              <div class="feature-item"><span class="feature-bullet">◆</span> <span data-i18n="pisti_f4">Kariyer &amp; Skor Takibi</span></div>
+              <div class="feature-item"><span class="feature-bullet">◆</span> <span data-i18n="pisti_f5">Lüks Ahşap &amp; Çuha Temaları</span></div>
+              <div class="feature-item"><span class="feature-bullet">◆</span> <span data-i18n="pisti_f6">Karşılıklı Mola &amp; Devam Et</span></div>
             </div>
             <div class="store-badges">
               <a href="/pisti/" target="_blank" rel="noopener" class="primary-play-cta">
@@ -2210,7 +2282,7 @@
         "sec_games_tag": "PORTFÖYÜMÜZ",
         "sec_games_title": "Öne Çıkan Oyunlarımız",
         "sec_games_desc": "Milyonların tutkusu geleneksel oyunlar, üstün mühendislik ve lüks görsel tasarımla yeniden canlandı.",
-        "pisti_status": "🟢 WEB'DE CANLI • 📱 MOBİL ÇOK YAKINDA",
+        "pisti_status": "WEB'DE CANLI • MOBİL ÇOK YAKINDA",
         "pisti_title": "Klasik Pişti",
         "pisti_tagline": "Zümrüt Çuha Masada Gerçek Zamanlı 1v1 İskambil Düellosu",
         "pisti_desc": "En popüler geleneksel iskambil oyunu Pişti! Arkadaşlarınızı tek tıkla WhatsApp veya Telegram üzerinden davet ederek Web ve Mobil çapraz masada canlı oynayın ya da internetsiz modda stratejik yapay zekaya karşı yarışın. Zümrüt çuha ve lüks ceviz masa temaları, 2.5D kavisli kart fiziği ve çift pişti heyecanı!",
@@ -2223,7 +2295,7 @@
         "pisti_web_play": "Web'de Hemen Oyna",
         "store_review": "İnceleme Aşamasında",
         "store_closed_test": "Kapalı Testte",
-        "tavla_status": "🟢 WEB & GOOGLE PLAY'DE YAYINDA",
+        "tavla_status": "WEB & GOOGLE PLAY'DE YAYINDA",
         "tavla_title": "Klasik Tavla",
         "tavla_tagline": "Geleneksel Marküteri Ceviz Kasa & 5 Lüks Çuha Masa",
         "tavla_desc": "Sedef ve abanoz kakmalı geleneksel marküteri ceviz tahta, 8 köşeli yıldız madalyonlar ve 5 farklı lüks kulüp çuhası (Kaşmir Kehribar, Kraliyet Firuzesi, Zümrüt, Bordo, Safir). Web tarayıcısı ve mobil cihazlar arasında çapraz 1v1 canlı düello, tek tıkla WhatsApp/Telegram arkadaş daveti ve internetsiz yapay zeka modu.",
@@ -2364,7 +2436,7 @@
         "sec_games_tag": "OUR PORTFOLIO",
         "sec_games_title": "Featured Games",
         "sec_games_desc": "Timeless traditional games brought to life with premium craftsmanship, cutting-edge engineering, and luxury design.",
-        "pisti_status": "🟢 LIVE ON WEB • 📱 MOBILE COMING SOON",
+        "pisti_status": "LIVE ON WEB • MOBILE COMING SOON",
         "pisti_title": "Classic Pishti",
         "pisti_tagline": "Real-time 1v1 Traditional Card Duels on Luxury Emerald Felt",
         "pisti_desc": "The most popular classic card game Pishti! Invite friends via WhatsApp or Telegram with a single click for Web & Mobile cross-platform live duels, or challenge smart strategic AI offline. Emerald felt and walnut tables, 2.5D curved card physics, and double Pishti excitement!",
@@ -2377,7 +2449,7 @@
         "pisti_web_play": "Play in Browser",
         "store_review": "In Review",
         "store_closed_test": "Closed Testing",
-        "tavla_status": "🟢 LIVE ON WEB & GOOGLE PLAY",
+        "tavla_status": "LIVE ON WEB & GOOGLE PLAY",
         "tavla_title": "Classic Backgammon",
         "tavla_tagline": "Traditional Marquetry Walnut Cabinet & 5 Club Felt Tables",
         "tavla_desc": "Handcrafted marquetry walnut board with mother-of-pearl & ebony inlays, 8-pointed star medallions, and 5 luxury club felt themes (Cashmere Amber, Royal Turquoise, Emerald, Burgundy, Sapphire). Cross-platform 1v1 duels between Web and Mobile, instant friend invite, and offline smart AI.",
@@ -2518,7 +2590,7 @@
         "sec_games_tag": "PORTFOLIO",
         "sec_games_title": "Ausgewählte Spiele",
         "sec_games_desc": "Zeitlose traditionelle Spiele, wiederbelebt mit meisterhafter Handwerkskunst und modernem Design.",
-        "pisti_status": "🟢 IM WEB LIVE • 📱 MOBIL BALD VERFÜGBAR",
+        "pisti_status": "IM WEB LIVE • MOBIL BALD VERFÜGBAR",
         "pisti_title": "Klassisches Pishti",
         "pisti_tagline": "1v1 Echtzeit-Kartenduelle auf edlem Smaragd-Filz",
         "pisti_desc": "Das beliebteste traditionelle Kartenspiel Pishti! Lade Freunde per WhatsApp oder Telegram ein für plattformübergreifende Web- & Mobil-Duelle oder spiele offline gegen strategische KI.",
@@ -2531,7 +2603,7 @@
         "pisti_web_play": "Im Browser spielen",
         "store_review": "In Prüfung",
         "store_closed_test": "Geschlossener Test",
-        "tavla_status": "🟢 IM WEB & AUF GOOGLE PLAY LIVE",
+        "tavla_status": "IM WEB & AUF GOOGLE PLAY LIVE",
         "tavla_title": "Klassisches Backgammon",
         "tavla_tagline": "Marketerie-Walnussgehäuse & 5 Luxus-Filztische",
         "tavla_desc": "Traditionelles Marketerie-Walnussbrett mit Perlmutt- & Ebenholz-Intarsien, 8-zackigen Sternmedaillons und 5 Club-Filzthemen (Kaschmir-Bernstein, Türkis, Smaragd, Burgund, Saphir). Web- & Mobil-Cross-Play sowie Offline-KI.",
@@ -2672,7 +2744,7 @@
         "sec_games_tag": "НАШЕ ПОРТФОЛИО",
         "sec_games_title": "Избранные игры",
         "sec_games_desc": "Вечные классические игры, воссозданные с безупречным качеством и роскошным дизайном.",
-        "pisti_status": "🟢 ДОСТУПНО В БРАУЗЕРЕ • 📱 СКОРО НА МОБИЛЬНЫХ",
+        "pisti_status": "ДОСТУПНО В БРАУЗЕРЕ • СКОРО НА МОБИЛЬНЫХ",
         "pisti_title": "Классический Пишти",
         "pisti_tagline": "Карточные дуэли 1 на 1 на роскошном изумрудном сукне",
         "pisti_desc": "Популярнейшая карточная игра Пишти! Приглашайте друзей через WhatsApp или Telegram для кроссплатформенной игры между браузером и телефоном или играйте офлайн против умного ИИ.",
@@ -2685,7 +2757,7 @@
         "pisti_web_play": "Играть в браузере",
         "store_review": "На проверке",
         "store_closed_test": "Закрытый тест",
-        "tavla_status": "🟢 ДОСТУПНО В БРАУЗЕРЕ И GOOGLE PLAY",
+        "tavla_status": "ДОСТУПНО В БРАУЗЕРЕ И GOOGLE PLAY",
         "tavla_title": "Классические Короткие Нарды",
         "tavla_tagline": "Ореховая доска маркетри и 5 клубных тем сукна",
         "tavla_desc": "Традиционная ореховая доска маркетри с инкрустацией перламутром и черным деревом, 8-конечными звездами и 5 темами клубного сукна (Янтарь, Бирюза, Изумруд, Бордо, Сапфир). Кроссплей 1 на 1 и офлайн ИИ.",
@@ -2826,7 +2898,7 @@
         "sec_games_tag": "محفظتنا",
         "sec_games_title": "ألعابنا المميزة",
         "sec_games_desc": "ألعاب تراثية خالدة تنبض بالحياة بحرفية متقونة وتصميم فاخر.",
-        "pisti_status": "🟢 متاح على الويب • 📱 قريباً على الجوال",
+        "pisti_status": "متاح على الويب • قريباً على الجوال",
         "pisti_title": "بيشتي كلاسيك",
         "pisti_tagline": "مبارزات ورق حية 1 ضد 1 على طاولة الجوخ الزمردي الفاخر",
         "pisti_desc": "أشهر لعبة ورق كلاسيكية بيشتي! ادعُ أصدقاءك بضغطة واحدة عبر واتساب أو تيليجرام للعب المشترك بين المتصفح والجوال أو تحدَّ الذكاء الاصطناعي أوفلاين.",
@@ -2839,7 +2911,7 @@
         "pisti_web_play": "العب في المتصفح",
         "store_review": "قيد المراجعة",
         "store_closed_test": "اختبار مغلق",
-        "tavla_status": "🟢 متاح على الويب و GOOGLE PLAY",
+        "tavla_status": "متاح على الويب و GOOGLE PLAY",
         "tavla_title": "طاولة الزهر الكلاسيكية",
         "tavla_tagline": "لوح خشب الجوز المطعم بالصدف و 5 طاولات جوخ ملكية",
         "tavla_desc": "طاولة الزهر الحقيقية بتطعيمات الماركتري من الصدف والأبنوس ونجمة ثمانية، مع 5 ثيمات لطاولة الجوخ الفاخرة (الكشمير الكهرماني، الفيروزي الملكي، الزمردي، العنابي، الياقوتي). لعب مشترك بين المتصفح والجوال وذكاء اصطناعي أوفلاين.",

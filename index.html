@@ -1375,6 +1375,158 @@
       background: #10b981;
       box-shadow: 0 0 8px #10b981;
     }
+
+    /* STRATEGY ACADEMY CARDS */
+    .strategy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 36px;
+    }
+
+    .strategy-card {
+      background: linear-gradient(145deg, rgba(36, 20, 9, 0.8), rgba(27, 14, 6, 0.95));
+      border: 1px solid rgba(212, 175, 55, 0.22);
+      border-radius: 16px;
+      padding: 26px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      cursor: pointer;
+    }
+
+    .strategy-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-gold);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7), 0 0 24px rgba(212, 175, 55, 0.16);
+    }
+
+    .strategy-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      font-size: 0.8rem;
+    }
+
+    .strategy-tag {
+      color: var(--gold-primary);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .strategy-read-time {
+      color: var(--text-subtle);
+    }
+
+    .strategy-card-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.25rem;
+      color: var(--gold-light);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .strategy-card-excerpt {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .strategy-read-btn {
+      color: var(--gold-primary);
+      font-weight: 600;
+      font-size: 0.88rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s ease;
+    }
+
+    .strategy-card:hover .strategy-read-btn {
+      gap: 10px;
+      color: #fff;
+    }
+
+    /* ARTICLE READER MODAL */
+    .article-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 5, 2, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2100;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      padding: 20px;
+    }
+
+    .article-modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .article-modal-card {
+      background: linear-gradient(150deg, #241409, #180c05);
+      border: 1.5px solid var(--border-gold);
+      border-radius: 20px;
+      max-width: 760px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 36px 32px;
+      position: relative;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9), 0 0 35px rgba(212, 175, 55, 0.2);
+      transform: translateY(24px) scale(0.96);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .article-modal-overlay.active .article-modal-card {
+      transform: translateY(0) scale(1);
+    }
+
+    .article-modal-body h4 {
+      font-family: 'Cinzel', serif;
+      color: var(--gold-light);
+      margin: 24px 0 10px;
+      font-size: 1.18rem;
+    }
+
+    .article-modal-body p {
+      color: var(--text-light);
+      font-size: 0.98rem;
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+
+    .article-modal-body ul {
+      margin: 10px 0 18px 20px;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    .article-modal-body li {
+      margin-bottom: 8px;
+    }
+
+    .article-tip-box {
+      background: rgba(212, 175, 55, 0.08);
+      border-left: 3px solid var(--gold-primary);
+      padding: 14px 18px;
+      border-radius: 0 10px 10px 0;
+      margin: 20px 0;
+      font-size: 0.92rem;
+      color: var(--gold-light);
+    }
   </style>
 </head>
 
@@ -1788,6 +1940,94 @@
     </div>
   </section>
 
+  <!-- STRATEGY ACADEMY & MASTER GUIDES -->
+  <section id="strategy-academy" style="padding: 60px 0 30px;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="strat_tag">👑 STRATEJİ AKADEMİSİ &amp; USTA REHBERLERİ</span>
+        <h2 class="section-title" data-i18n="strat_title">Usta Seviyesinde Tavla ve Pişti Taktikleri</h2>
+        <p class="section-desc" data-i18n="strat_desc">Açılış hamleleri, kart sayma teknikleri, risk-kazanç dengesi ve 5000 yıllık geleneksel oyun kültürü rehberleri.</p>
+      </div>
+
+      <div class="strategy-grid">
+        <!-- Article 1: Tavla Açılış Stratejisi -->
+        <article class="strategy-card" onclick="openArticle('tavla_opening')">
+          <div>
+            <div class="strategy-meta">
+              <span class="strategy-tag" data-i18n="art1_tag">🎲 Tavla Stratejisi</span>
+              <span class="strategy-read-time" data-i18n="art1_time">5 dk okuma</span>
+            </div>
+            <h3 class="strategy-card-title" data-i18n="art1_title">Tavlada Stratejik Açılış &amp; Kapı Alma Sanatı</h3>
+            <p class="strategy-card-excerpt" data-i18n="art1_excerpt">Altın kapı (5. kapı) neden oyunun kaderini belirler? 3-1, 4-2, 6-1 açılış zarlarında ideal hamleler, blokaj kurma ve açık vermeden güvenli ilerleme yöntemleri.</p>
+          </div>
+          <div class="strategy-read-btn">
+            <span data-i18n="strat_read_more">Rehberi Oku</span> <span>→</span>
+          </div>
+        </article>
+
+        <!-- Article 2: Mars ve Katmerli Mars -->
+        <article class="strategy-card" onclick="openArticle('tavla_mars')">
+          <div>
+            <div class="strategy-meta">
+              <span class="strategy-tag" data-i18n="art2_tag">🏆 Skor &amp; Risk Analizi</span>
+              <span class="strategy-read-time" data-i18n="art2_time">4 dk okuma</span>
+            </div>
+            <h3 class="strategy-card-title" data-i18n="art2_title">Tavlada Mars ve Katmerli Mars Nedir?</h3>
+            <p class="strategy-card-excerpt" data-i18n="art2_excerpt">Düz oyun ile Mars arasındaki ince çizgi. Rakip toplama bölgesine girmeden önce risk almalı mısınız? Katmerli Mars'tan kaçınma yolları ve pozisyonel zamanlama.</p>
+          </div>
+          <div class="strategy-read-btn">
+            <span data-i18n="strat_read_more">Rehberi Oku</span> <span>→</span>
+          </div>
+        </article>
+
+        <!-- Article 3: Piştide Kart Sayma -->
+        <article class="strategy-card" onclick="openArticle('pisti_counting')">
+          <div>
+            <div class="strategy-meta">
+              <span class="strategy-tag" data-i18n="art3_tag">♠️ Pişti Stratejisi</span>
+              <span class="strategy-read-time" data-i18n="art3_time">5 dk okuma</span>
+            </div>
+            <h3 class="strategy-card-title" data-i18n="art3_title">Piştide Kart Sayma &amp; Hafıza Stratejisi</h3>
+            <p class="strategy-card-excerpt" data-i18n="art3_excerpt">52 kartlık destede kritik puan kartlarını (Karo 10'lu, Sinek 2'li, Aslar) zihinde tutarak rakibin elindeki son kağıdı tahmin etme matematiği.</p>
+          </div>
+          <div class="strategy-read-btn">
+            <span data-i18n="strat_read_more">Rehberi Oku</span> <span>→</span>
+          </div>
+        </article>
+
+        <!-- Article 4: Piştide Vale Zamanlaması -->
+        <article class="strategy-card" onclick="openArticle('pisti_jack')">
+          <div>
+            <div class="strategy-meta">
+              <span class="strategy-tag" data-i18n="art4_tag">🃏 Taktiksel Zamanlama</span>
+              <span class="strategy-read-time" data-i18n="art4_time">4 dk okuma</span>
+            </div>
+            <h3 class="strategy-card-title" data-i18n="art4_title">Pişti Oyununda Vale Ne Zaman Kullanılmalı?</h3>
+            <p class="strategy-card-excerpt" data-i18n="art4_excerpt">Yeni başlayanların en sık yaptığı hata valeyi erken harcamaktır. Valeyi saklama, yerdeki kart çoğunluğunu ele geçirme ve el sonu kilitleme teknikleri.</p>
+          </div>
+          <div class="strategy-read-btn">
+            <span data-i18n="strat_read_more">Rehberi Oku</span> <span>→</span>
+          </div>
+        </article>
+
+        <!-- Article 5: Tavla Tarihçesi -->
+        <article class="strategy-card" onclick="openArticle('tavla_history')">
+          <div>
+            <div class="strategy-meta">
+              <span class="strategy-tag" data-i18n="art5_tag">📜 Tarih &amp; Kültür</span>
+              <span class="strategy-read-time" data-i18n="art5_time">6 dk okuma</span>
+            </div>
+            <h3 class="strategy-card-title" data-i18n="art5_title">Tavla Tarihçesi ve Geleneksel Oyun Kültürü</h3>
+            <p class="strategy-card-excerpt" data-i18n="art5_excerpt">M.Ö. 3000 Ur kraliyet mezarlarından Sasani saraylarına ve Osmanlı kıraathanelerine uzanan felsefe: 24 kapı, 12 ay ve zarların kozmik sembolizmi.</p>
+          </div>
+          <div class="strategy-read-btn">
+            <span data-i18n="strat_read_more">Rehberi Oku</span> <span>→</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- FREQUENTLY ASKED QUESTIONS (FAQ) -->
   <section id="faq" class="faq-section">
     <div class="container">
@@ -1870,10 +2110,15 @@
           isteyerek 13 yaşından küçük çocuklardan kişisel veri toplanmamaktadır.
         </p>
 
-        <h3 data-i18n="privacy_sec5_title">5. İletişim &amp; Destek</h3>
+        <h3 data-i18n="privacy_sec5_title">5. Çerezler ve Reklam Teknolojileri (Google AdSense)</h3>
         <p data-i18n="privacy_sec5_p">
+          Web sitemizde ve web tabanlı oyunlarımızda kullanıcı deneyimini zenginleştirmek, site trafiğini analiz etmek ve hizmetlerimizin devamlılığını sağlamak amacıyla çerezler (cookies) kullanılmaktadır. Sitemizde üçüncü taraf reklam sağlayıcısı olarak Google AdSense teknolojisi kullanılmaktadır. Google dahil olmak üzere üçüncü taraf tedarikçiler, kullanıcıların web sitemize veya diğer internet sitelerine yaptıkları önceki ziyaretlere dayalı olarak reklam sunmak için çerezlerden (DART çerezi dahil) faydalanır. Google'ın reklam çerezlerini kullanması, iş ortaklarının kullanıcılarımıza ilgi alanlarına göre optimize edilmiş kişiselleştirilmiş reklamlar sunmasını sağlar. Kullanıcılar dilerlerse <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener" style="color: var(--gold-primary);">Google Reklam Ayarları</a> üzerinden kişiselleştirilmiş reklamcılığı devre dışı bırakabilir veya <a href="https://www.aboutads.info" target="_blank" rel="noopener" style="color: var(--gold-primary);">aboutads.info</a> adresinden üçüncü taraf çerezlerini yönetebilirler.
+        </p>
+
+        <h3 data-i18n="privacy_sec6_title">6. İletişim &amp; Destek</h3>
+        <p data-i18n="privacy_sec6_p">
           Oyunlarımız, gizlilik politikamız veya teknik destek talepleriniz için Google Play ve App Store mağaza
-          sayfalarımız üzerinden bizimle iletişime geçebilirsiniz.
+          sayfalarımız veya doğrudan resmi destek e-posta adresimiz üzerinden bizimle iletişime geçebilirsiniz.
         </p>
         <div style="margin-top: 14px;">
           <button type="button" class="btn-outline" style="padding: 9px 20px; font-size: 0.9rem; cursor: pointer; gap: 8px; border-radius: 10px;" onclick="openContactModal()">
@@ -1926,6 +2171,7 @@
           <ul class="footer-links">
             <li><a href="#how-to-play" data-i18n="steps_title">Arkadaşınla Nasıl Oynarsın?</a></li>
             <li><a href="#guides" data-i18n="guides_tag">Oyun Rehberi &amp; Kurallar</a></li>
+            <li><a href="#strategy-academy" data-i18n="strat_nav">Strateji Akademisi</a></li>
             <li><a href="#faq" data-i18n="faq_title">Sıkça Sorulan Sorular</a></li>
             <li><a href="#privacy" data-i18n="nav_privacy">Gizlilik Politikası</a></li>
             <li><a href="javascript:void(0)" onclick="openContactModal()" data-i18n="nav_contact">İletişim &amp; Destek</a></li>
@@ -2052,8 +2298,35 @@
         "privacy_sec3_p": "Kullanıcı verileriniz üçüncü şahıslara satılmaz, kiralanmaz ve ticari amaçlarla paylaşılmaz. Oyun deneyiminizin güvenliği için endüstri standardı güvenlik önlemleri uygulanmaktadır.",
         "privacy_sec4_title": "4. Çocukların Gizliliği",
         "privacy_sec4_p": "Oyunlarımız her yaştan kullanıcının güvenle oynayabileceği geleneksel zeka oyunlarıdır. Bilerek 13 yaşından küçük çocuklardan veri toplanmaz.",
-        "privacy_sec5_title": "5. İletişim & Destek",
-        "privacy_sec5_p": "Oyunlarımız, gizlilik politikamız veya teknik destek talepleriniz için Google Play ve App Store mağaza sayfalarımız üzerinden bizimle iletişime geçebilirsiniz.",
+        "privacy_sec5_title": "5. Çerezler ve Reklam Teknolojileri (Google AdSense)",
+        "privacy_sec5_p": "Web sitemizde ve web tabanlı oyunlarımızda kullanıcı deneyimini zenginleştirmek, site trafiğini analiz etmek ve hizmetlerimizin devamlılığını sağlamak amacıyla çerezler (cookies) kullanılmaktadır. Sitemizde üçüncü taraf reklam sağlayıcısı olarak Google AdSense teknolojisi kullanılmaktadır. Google dahil olmak üzere üçüncü taraf tedarikçiler, kullanıcıların web sitemize veya diğer internet sitelerine yaptıkları önceki ziyaretlere dayalı olarak reklam sunmak için çerezlerden (DART çerezi dahil) faydalanır. Google'ın reklam çerezlerini kullanması, iş ortaklarının kullanıcılarımıza ilgi alanlarına göre optimize edilmiş kişiselleştirilmiş reklamlar sunmasını sağlar. Kullanıcılar dilerlerse <a href='https://www.google.com/settings/ads' target='_blank' rel='noopener' style='color: var(--gold-primary);'>Google Reklam Ayarları</a> üzerinden kişiselleştirilmiş reklamcılığı devre dışı bırakabilir veya <a href='https://www.aboutads.info' target='_blank' rel='noopener' style='color: var(--gold-primary);'>aboutads.info</a> adresinden üçüncü taraf çerezlerini yönetebilirler.",
+        "privacy_sec6_title": "6. İletişim & Destek",
+        "privacy_sec6_p": "Oyunlarımız, gizlilik politikamız veya teknik destek talepleriniz için Google Play ve App Store mağaza sayfalarımız veya doğrudan resmi destek e-posta adresimiz üzerinden bizimle iletişime geçebilirsiniz.",
+        "strat_tag": "👑 STRATEJİ AKADEMİSİ & USTA REHBERLERİ",
+        "strat_title": "Usta Seviyesinde Tavla ve Pişti Taktikleri",
+        "strat_desc": "Açılış hamleleri, kart sayma teknikleri, risk-kazanç dengesi ve 5000 yıllık geleneksel oyun kültürü rehberleri.",
+        "strat_nav": "Strateji Akademisi",
+        "strat_read_more": "Rehberi Oku",
+        "art1_tag": "🎲 Tavla Stratejisi",
+        "art1_time": "5 dk okuma",
+        "art1_title": "Tavlada Stratejik Açılış & Kapı Alma Sanatı",
+        "art1_excerpt": "Altın kapı (5. kapı) neden oyunun kaderini belirler? 3-1, 4-2, 6-1 açılış zarlarında ideal hamleler, blokaj kurma ve açık vermeden güvenli ilerleme yöntemleri.",
+        "art2_tag": "🏆 Skor & Risk Analizi",
+        "art2_time": "4 dk okuma",
+        "art2_title": "Tavlada Mars ve Katmerli Mars Nedir?",
+        "art2_excerpt": "Düz oyun ile Mars arasındaki ince çizgi. Rakip toplama bölgesine girmeden önce risk almalı mısınız? Katmerli Mars'tan kaçınma yolları ve pozisyonel zamanlama.",
+        "art3_tag": "♠️ Pişti Stratejisi",
+        "art3_time": "5 dk okuma",
+        "art3_title": "Piştide Kart Sayma & Hafıza Stratejisi",
+        "art3_excerpt": "52 kartlık destede kritik puan kartlarını (Karo 10'lu, Sinek 2'li, Aslar) zihinde tutarak rakibin elindeki son kağıdı tahmin etme matematiği.",
+        "art4_tag": "🃏 Taktiksel Zamanlama",
+        "art4_time": "4 dk okuma",
+        "art4_title": "Pişti Oyununda Vale Ne Zaman Kullanılmalı?",
+        "art4_excerpt": "Yeni başlayanların en sık yaptığı hata valeyi erken harcamaktır. Valeyi saklama, yerdeki kart çoğunluğunu ele geçirme ve el sonu kilitleme teknikleri.",
+        "art5_tag": "📜 Tarih & Kültür",
+        "art5_time": "6 dk okuma",
+        "art5_title": "Tavla Tarihçesi ve Geleneksel Oyun Kültürü",
+        "art5_excerpt": "M.Ö. 3000 Ur kraliyet mezarlarından Sasani saraylarına ve Osmanlı kıraathanelerine uzanan felsefe: 24 kapı, 12 ay ve zarların kozmik sembolizmi.",
         "footer_desc": "Geleneksel masa ve iskambil oyunlarını en üstün işçilik, lüks görsel tasarım ve modern multiplayer teknolojisiyle dünya standartlarında oyuncularla buluşturuyoruz.",
         "footer_games": "Oyunlarımız",
         "footer_legal": "Bağlantılar & Yasal",
@@ -2179,8 +2452,35 @@
         "privacy_sec3_p": "Your data is never sold, rented, or shared with unauthorized third parties. Industry-standard security practices are implemented.",
         "privacy_sec4_title": "4. Children's Privacy",
         "privacy_sec4_p": "Our games are safe strategic games suitable for all ages. We do not knowingly collect personal data from children under 13.",
-        "privacy_sec5_title": "5. Contact & Support",
-        "privacy_sec5_p": "For feedback, questions, or technical support regarding our games, please reach out via our official Google Play and App Store pages.",
+        "privacy_sec5_title": "5. Cookies & Advertising Technologies (Google AdSense)",
+        "privacy_sec5_p": "Cookies are used on our website and web games to improve user experience, analyze site traffic, and support our operations. We use Google AdSense as a third-party advertising partner. Third-party vendors, including Google, use cookies (including the DART cookie) to serve ads based on prior visits to our website or other sites on the Internet. Google's use of advertising cookies enables it and its partners to serve personalized ads based on users' visits to sites on the Internet. Users may opt out of personalized advertising by visiting <a href='https://www.google.com/settings/ads' target='_blank' rel='noopener' style='color: var(--gold-primary);'>Google Ads Settings</a> or manage third-party vendor cookies via <a href='https://www.aboutads.info' target='_blank' rel='noopener' style='color: var(--gold-primary);'>aboutads.info</a>.",
+        "privacy_sec6_title": "6. Contact & Support",
+        "privacy_sec6_p": "For questions regarding our games, privacy policy, or technical support, please contact us via our official email address or our store pages on Google Play and Apple App Store.",
+        "strat_tag": "👑 STRATEGY ACADEMY & MASTER GUIDES",
+        "strat_title": "Master-Level Backgammon & Pisti Tactics",
+        "strat_desc": "Opening moves, card counting techniques, risk-reward balance, and 5,000-year traditional board game heritage.",
+        "strat_nav": "Strategy Academy",
+        "strat_read_more": "Read Guide",
+        "art1_tag": "🎲 Backgammon Strategy",
+        "art1_time": "5 min read",
+        "art1_title": "Strategic Openings & Point Making in Backgammon",
+        "art1_excerpt": "Why the 5-point (golden point) defines the match. Ideal moves for 3-1, 4-2, 6-1 rolls, building primes, and advancing checkers safely.",
+        "art2_tag": "🏆 Scoring & Risk Analysis",
+        "art2_time": "4 min read",
+        "art2_title": "Gammon and Backgammon Explained",
+        "art2_excerpt": "The thin line between a single win and a gammon. When should you gamble before the opponent enters the home board? Avoiding backgammons and timing.",
+        "art3_tag": "♠️ Pisti Strategy",
+        "art3_time": "5 min read",
+        "art3_title": "Card Counting & Memory Strategy in Pisti",
+        "art3_excerpt": "Tracking high-value scoring cards (10 of Diamonds, 2 of Clubs, Aces) across the 52-card deck to read your opponent's final cards.",
+        "art4_tag": "🃏 Tactical Timing",
+        "art4_time": "4 min read",
+        "art4_title": "When to Play the Jack (Joker) in Pisti",
+        "art4_excerpt": "The most common beginner mistake is wasting the Jack too early. Storing Jacks for card majorities, double pisti traps, and late-game sweeps.",
+        "art5_tag": "📜 History & Heritage",
+        "art5_time": "6 min read",
+        "art5_title": "5,000-Year Backgammon History & Culture",
+        "art5_excerpt": "From the Royal Game of Ur (3000 BC) to Sasanian palaces and Mediterranean cafes: cosmic symbolism of 24 points, 12 months, and dice rolls.",
         "footer_desc": "Delivering classic traditional board and card games to players worldwide with exquisite craftsmanship, luxury design, and modern multiplayer tech.",
         "footer_games": "Our Games",
         "footer_legal": "Links & Legal",
@@ -2306,8 +2606,35 @@
         "privacy_sec3_p": "Ihre Daten werden niemals an unbefugte Dritte weitergegeben oder verkauft.",
         "privacy_sec4_title": "4. Jugendschutz",
         "privacy_sec4_p": "Unsere Spiele sind für alle Altersgruppen geeignet. Wir erfassen keine Daten von Kindern unter 13 Jahren.",
-        "privacy_sec5_title": "5. Kontakt & Support",
-        "privacy_sec5_p": "Bei Fragen, Feedback oder Support erreichen Sie uns über unsere Store-Seiten im Google Play und App Store.",
+        "privacy_sec5_title": "5. Cookies & Werbetechnologien (Google AdSense)",
+        "privacy_sec5_p": "Auf unserer Website und in Webspielen werden Cookies verwendet, um die Nutzererfahrung zu verbessern und Werbung bereitzustellen. Wir nutzen Google AdSense als Drittanbieter. Drittanbieter, einschließlich Google, verwenden Cookies (einschließlich des DART-Cookies), um Anzeigen basierend auf früheren Besuchen bereitzustellen. Nutzer können personalisierte Werbung unter <a href='https://www.google.com/settings/ads' target='_blank' rel='noopener' style='color: var(--gold-primary);'>Google-Anzeigeneinstellungen</a> deaktivieren.",
+        "privacy_sec6_title": "6. Kontakt & Support",
+        "privacy_sec6_p": "Bei Fragen zu unseren Spielen, Datenschutz oder Support erreichen Sie uns per E-Mail oder über Google Play und den App Store.",
+        "strat_tag": "👑 STRATEGIE-AKADEMIE & MEISTER-GUIDES",
+        "strat_title": "Taktiken für Backgammon & Pisti auf Meisterniveau",
+        "strat_desc": "Eröffnungszüge, Kartenzähltechniken, Risikomanagement und 5.000 Jahre Spielkultur.",
+        "strat_nav": "Strategie-Akademie",
+        "strat_read_more": "Guide lesen",
+        "art1_tag": "🎲 Backgammon-Strategie",
+        "art1_time": "5 Min. Lesezeit",
+        "art1_title": "Eröffnungszüge & Blockaden im Backgammon",
+        "art1_excerpt": "Warum der 5er-Punkt das Spiel entscheidet. Richtige Züge für 3-1, 4-2, 6-1 und sicheres Vorrücken.",
+        "art2_tag": "🏆 Punkte & Risikoanalyse",
+        "art2_time": "4 Min. Lesezeit",
+        "art2_title": "Gammon und Backgammon erklärt",
+        "art2_excerpt": "Der schmale Grat zwischen einfachem Sieg und Gammon. Risikominimierung und perfektes Timing.",
+        "art3_tag": "♠️ Pisti-Strategie",
+        "art3_time": "5 Min. Lesezeit",
+        "art3_title": "Kartenzählen & Gedächtnisstrategie in Pisti",
+        "art3_excerpt": "Wertvolle Karten (Karo 10, Kreuz 2, Asse) im 52-Karten-Deck im Gedächtnis behalten.",
+        "art4_tag": "🃏 Taktisches Timing",
+        "art4_time": "4 Min. Lesezeit",
+        "art4_title": "Wann sollte der Bube (Joker) in Pisti gespielt werden?",
+        "art4_excerpt": "Typische Anfängerfehler vermeiden: Buben aufsparen, Kartenmehrheiten sichern und Doppel-Pisti-Fallen.",
+        "art5_tag": "📜 Geschichte & Kultur",
+        "art5_time": "6 Min. Lesezeit",
+        "art5_title": "5.000 Jahre Backgammon-Geschichte & Tradition",
+        "art5_excerpt": "Vom königlichen Spiel von Ur (3000 v. Chr.) bis zu osmanischen Teehäusern: kosmische Symbolik der 24 Punkte.",
         "footer_desc": "Klassische Spiele in weltweiter Spitzenqualität mit edlem Holzdesign und moderner Mehrspieler-Technik.",
         "footer_games": "Spiele",
         "footer_legal": "Rechtliches",
@@ -2433,8 +2760,35 @@
         "privacy_sec3_p": "Ваши данные никогда не продаются и не передаются третьим лицам.",
         "privacy_sec4_title": "4. Дети и безопасность",
         "privacy_sec4_p": "Наши игры предназначены для всех возрастов. Мы сознательно не собираем данные детей до 13 лет.",
-        "privacy_sec5_title": "5. Контакты и поддержка",
-        "privacy_sec5_p": "По всем вопросам и для технической поддержки свяжитесь с нами через страницы в Google Play и App Store.",
+        "privacy_sec5_title": "5. Файлы cookie и рекламные технологии (Google AdSense)",
+        "privacy_sec5_p": "На нашем сайте и в веб-играх используются файлы cookie для улучшения пользовательского опыта и показа рекламы. Мы используем Google AdSense. Сторонние поставщики, включая Google, используют cookie (включая DART) для показа объявлений на основе предыдущих посещений. Пользователи могут отключить персонализированную рекламу на странице <a href='https://www.google.com/settings/ads' target='_blank' rel='noopener' style='color: var(--gold-primary);'>Настройки рекламы Google</a>.",
+        "privacy_sec6_title": "6. Контакты и поддержка",
+        "privacy_sec6_p": "По всем вопросам и для технической поддержки свяжитесь с нами по официальной почте или через страницы в Google Play и App Store.",
+        "strat_tag": "👑 АКАДЕМИЯ СТРАТЕГИИ И РУКОВОДСТВА",
+        "strat_title": "Мастерские тактики для нард и пишти",
+        "strat_desc": "Начальные ходы, подсчет карт, оценка рисков и 5000-летнее культурное наследие настольных игр.",
+        "strat_nav": "Академия стратегии",
+        "strat_read_more": "Читать руководство",
+        "art1_tag": "🎲 Стратегия нард",
+        "art1_time": "5 мин чтения",
+        "art1_title": "Стратегический дебют и блокировка в нардах",
+        "art1_excerpt": "Почему 5-й пункт решает исход игры. Идеальные ходы для 3-1, 4-2, 6-1, построение прайма и безопасное продвижение шашек.",
+        "art2_tag": "🏆 Очки и анализ рисков",
+        "art2_time": "4 мин чтения",
+        "art2_title": "Марс и кокс в нардах",
+        "art2_excerpt": "Тонкая грань между обычной победой и марсом. Когда стоит рисковать до входа соперника в дом? Защитные техники.",
+        "art3_tag": "♠️ Стратегия пишти",
+        "art3_time": "5 мин чтения",
+        "art3_title": "Подсчет карт и память в пишти",
+        "art3_excerpt": "Отслеживание ключевых карт (10 бубен, 2 треф, тузы) в колоде из 52 карт для чтения руки соперника.",
+        "art4_tag": "🃏 Тактическое время",
+        "art4_time": "4 мин чтения",
+        "art4_title": "Когда использовать валета (джокер) в пишти?",
+        "art4_excerpt": "Ошибки новичков: почему нельзя тратить валета рано. Сбор большинства карт и ловушки двойного пишти.",
+        "art5_tag": "📜 История и культура",
+        "art5_time": "6 мин чтения",
+        "art5_title": "5000 лет истории и культуры нард",
+        "art5_excerpt": "От Царской игры Ура (3000 до н.э.) до восточных чайных: космический символизм 24 пунктов и костей.",
         "footer_desc": "Классические игры мирового уровня с премиальным деревянным дизайном и современным мультиплеером.",
         "footer_games": "Наши игры",
         "footer_legal": "Юридическая информация",
@@ -2560,8 +2914,35 @@
         "privacy_sec3_p": "لا يتم بيع بياناتكم أو مشاركتها مع أي جهات خارجية غير مصرح بها.",
         "privacy_sec4_title": "4. حماية الأطفال",
         "privacy_sec4_p": "ألعابنا مخصصة لجميع الأعمار ولا نجمع بيانات الأطفال عن قصد.",
-        "privacy_sec5_title": "5. التواصل والدعم الفني",
-        "privacy_sec5_p": "لأي استفسارات أو دعم فني بخصوص ألعابنا، يمكنكم التواصل معنا عبر صفحاتنا الرسمية في Google Play و App Store.",
+        "privacy_sec5_title": "5. ملفات تعريف الارتباط وتقنيات الإعلانات (Google AdSense)",
+        "privacy_sec5_p": "تُستخدم ملفات تعريف الارتباط في موقعنا وألعابنا لتحسين تجربة المستخدم وعرض الإعلانات. نستخدم تقنية Google AdSense كشريك إعلاني. يستخدم الموردون الخارجيون بما فيهم Google ملفات تعريف الارتباط لعرض الإعلانات بناءً على زيارات المستخدمين السابقة. يمكن للمستخدمين إلغاء تخصيص الإعلانات عبر <a href='https://www.google.com/settings/ads' target='_blank' rel='noopener' style='color: var(--gold-primary);'>إعدادات إعلانات Google</a>.",
+        "privacy_sec6_title": "6. التواصل والدعم الفني",
+        "privacy_sec6_p": "لأي استفسارات أو دعم فني بخصوص ألعابنا، يمكنكم التواصل معنا عبر البريد الإلكتروني الرسمي أو صفحاتنا في Google Play و App Store.",
+        "strat_tag": "👑 أكاديمية الاستراتيجية وأدلة المحترفين",
+        "strat_title": "تكتيكات متقدمة لطاولة الزهر وبيشتي",
+        "strat_desc": "افتتاحيات استراتيجية، تقنيات عد البطاقات، إدارة المخاطر وتاريخ الألعاب التراثية عبر 5000 عام.",
+        "strat_nav": "أكاديمية الاستراتيجية",
+        "strat_read_more": "قراءة الدليل",
+        "art1_tag": "🎲 استراتيجية طاولة الزهر",
+        "art1_time": "5 دقائق قراءة",
+        "art1_title": "الافتتاحيات الاستراتيجية وبناء الحصون",
+        "art1_excerpt": "أهمية الخانة 5 (الخانة الذهبية) في حسم المباراة، والتحركات المثالية لرميات 3-1 و 4-2 و 6-1.",
+        "art2_tag": "🏆 النقاط وتحليل المخاطر",
+        "art2_time": "4 دقائق قراءة",
+        "art2_title": "الفوز بمارس ومارس مضاعف في طاولة الزهر",
+        "art2_excerpt": "الفرق الدقيق بين الفوز الفردي ومارس، وكيفية تجنب الخسائر الكبيرة بالتحكم في التوقيت.",
+        "art3_tag": "♠️ استراتيجية بيشتي",
+        "art3_time": "5 دقائق قراءة",
+        "art3_title": "عد البطاقات واستراتيجية الذاكرة في بيشتي",
+        "art3_excerpt": "تتبع بطاقات النقاط الثمينة (10 ديناري، 2 سباتي، الآسات والولاد) لقراءة أوراق الخصم المتبقية.",
+        "art4_tag": "🃏 التوقيت التكتيكي",
+        "art4_time": "4 دقائق قراءة",
+        "art4_title": "متى يجب استخدام الولد (الجوكر) في بيشتي؟",
+        "art4_excerpt": "تجنب خطأ المبتدئين بحرق الولد مبكراً، واستخدامه للسيطرة على أغلبية الأوراق ومصيدة بيشتي المزدوجة.",
+        "art5_tag": "📜 التاريخ والتراث",
+        "art5_time": "6 دقائق قراءة",
+        "art5_title": "5000 عام من تاريخ وثقافة طاولة الزهر",
+        "art5_excerpt": "من لعبة أور الملكية (3000 ق.م) إلى بلاط الساسانيين والمقاهي العثمانية: الرمزية الفلكية لـ 24 خانة.",
         "footer_desc": "نقدم ألعاب الطاولة والورق التراثية لجميع اللاعبين حول العالم بأعلى معايير الحرفية والتصميم.",
         "footer_games": "ألعابنا",
         "footer_legal": "الروابط والقانونية",
@@ -2677,8 +3058,176 @@
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
         closeContactModal();
+        closeArticleModal();
       }
     });
+
+    // Strategy Articles Data & Reader
+    const strategyArticles = {
+      tavla_opening: {
+        badge: '🎲 Tavla Stratejisi',
+        time: '5 dk okuma',
+        title: 'Tavlada Stratejik Açılış & Kapı Alma Sanatı',
+        content: `
+          <p>Tavla, şans ile stratejinin mükemmel bir dengesidir. Zarlar şansı belirlerken, her bir zarı nasıl kullandığınız oyunun sonucunu belirler. Usta oyuncuların en belirgin özelliği, ilk 3-4 hamlede tahtanın kontrolünü ele geçirecek kapıları süratle inşa etmeleridir.</p>
+          
+          <h4>1. "Altın Kapı" (5. Kapı) Neden Hayatidir?</h4>
+          <p>Tavla teorisinde 5. kapı (kendi evinizin ön kapısı) <strong>Altın Kapı</strong> olarak adlandırılır. Bu kapıyı erkenden kapatmanın iki muazzam stratejik faydası vardır:</p>
+          <ul>
+            <li><strong>Rakibin kaçışını engeller:</strong> Rakibin 24 numaralı kapıda bekleyen iki pulunun dışarı kaçması için 6 atmasını zorunlu kılar.</li>
+            <li><strong>Kendi evinizi inşa eder:</strong> İlerleyen ellerde rakibin kırılan pullarının oyuna girmesini zorlaştırır veya tamamen kilitler.</li>
+          </ul>
+
+          <div class="article-tip-box">
+            💡 <strong>Altın Kural:</strong> 3-1 zarı tavladaki en değerli açılış zarıdır; doğrudan 5. kapıyı (8'den 5'e ve 6'dan 5'e) almanızı sağlar. Bu zarı asla başka şekilde oynamayın.
+          </div>
+
+          <h4>2. Temel Açılış Zarları Rehberi</h4>
+          <ul>
+            <li><strong>4-2 Zarı:</strong> 4. kapıyı (kendi evinizin 4 numaralı hanesini) doğrudan kapatır. 3-1'den sonraki en güçlü ev kapısı hamlesidir.</li>
+            <li><strong>6-1 Zarı (Bar Kapısı):</strong> 7. kapıyı kapatarak rakibin 1 kapısındaki pullarını içeride hapseder ve "barikad" başlangıcını oluşturur.</li>
+            <li><strong>5-3 Zarı:</strong> 3. kapıyı kapatır. Hücum gücünüzü önemli ölçüde artırır.</li>
+            <li><strong>6-5 (Aşık Zarı):</strong> Kapı alma imkanı olmadığında, arkadaki savunmasız pulu 24'ten 13'e (orta nokta) tek hamlede güvenli bölgeye kaçırır.</li>
+          </ul>
+
+          <h4>3. Blokaj (Prime) Sanatı: 6'lı Duvar Örmek</h4>
+          <p>Yan yana kesintisiz 6 kapı aldığınızda ("Full Prime"), rakip hangi zarı atarsa atsın o duvarın üzerinden atlayamaz; çünkü bir zarla en fazla 6 hane ilerlenebilir. Blokaj kurarken acele edip savunmasız açıklar vermemeye ve pulları gereksiz yere tek hanede istiflememeye dikkat edilmelidir.</p>
+        `
+      },
+      tavla_mars: {
+        badge: '🏆 Skor & Risk Analizi',
+        time: '4 dk okuma',
+        title: 'Tavlada Mars ve Katmerli Mars Nedir? Risk-Kazanç Dengesi',
+        content: `
+          <p>Tavla maçlarında tek bir galibiyetle yetinmek yerine Mars fırsatını değerlendirmek, turnuvalarda ve arkadaş düellolarında skoru anında lehinize çevirir. Ancak gereksiz yere Mars'a gitmek, kazanılmış bir maçı kaybetme riski de doğurabilir.</p>
+
+          <h4>1. Galibiyet Seviyeleri ve Puan Karşılıkları</h4>
+          <ul>
+            <li><strong>Normal Galibiyet (1 Puan):</strong> Siz 15 pulunuzu topladığınızda, rakip de en az 1 pulunu dışarı toplamışsa oyun 1 puan ile biter.</li>
+            <li><strong>Mars (2 Puan):</strong> Rakip tek bir pulunu bile toplayamadan siz 15 pulunuzun tamamını tahtadan toplarsanız Mars yaparsınız ve 2 puan kazanırsınız.</li>
+            <li><strong>Katmerli Mars / Tavla (3 Puan):</strong> Rakip hiç pul toplayamadığı gibi, en az bir pulu ya barda (kırıkta) ya da sizin ev bölgenizde kalmışsa 3 kat puan (Katmerli Mars) yazılır.</li>
+          </ul>
+
+          <div class="article-tip-box">
+            🎯 <strong>Usta Tavsiyesi:</strong> Rakibin evinizde veya barda kalmış bir pulu varsa, kendi pullarınızı aceleyle toplamak yerine rakibin pulunu içeride hapis tutacak kapıları koruyun. Bu hamle maçı düz galibiyetten Mars'a taşır.
+          </div>
+
+          <h4>2. Ne Zaman Mars Aranmalı?</h4>
+          <p>Rakibin tüm pulları henüz kendi dış sahasında veya sizin evinizdeyken ve siz evinizi 4-5 kapıyla tamamen kapatmışsanız, agresif oynayarak rakip pullarını bara göndermek ve Mars kovalamak matematiksel olarak doğrudur.</p>
+
+          <h4>3. Marstan Kurtulma (Defansif) Stratejisi</h4>
+          <p>Eğer geride kaldıysanız ve rakibin pullarını toplamaya başladığını gördüyseniz, artık oyunu kazanma hülyasından vazgeçip tek bir amaca odaklanmalısınız: <strong>En az 1 pul toplamak</strong>. Zarları eve pul sokmak ve ilk pulu dışarı almak için optimize edin; böylece 2 puan kaybetmek yerine zararı 1 puanda sınırlandırırsınız.</p>
+        `
+      },
+      pisti_counting: {
+        badge: '♠️ Pişti Stratejisi',
+        time: '5 dk okuma',
+        title: 'Piştide Kart Sayma & Hafıza Stratejisi',
+        content: `
+          <p>Pişti sadece şans oyunu değil, zihinsel bir konsantrasyon ve kart takip mücadelesidir. 52 kartlık destede hangi kartların oynandığını takip edebilen bir oyuncu, rakibin elindeki kartları adeta açık bir kitap gibi okur.</p>
+
+          <h4>1. Skor Tablosunu Belirleyen Kritik 16 Puan</h4>
+          <p>Standart bir pişti oyununda desteden toplam 16 puan çıkar (piştiler hariç):</p>
+          <ul>
+            <li><strong>Karo 10'lu (3 Puan):</strong> Oyunun en değerli tek kartıdır. Yere atıldığında mutlak suretle alınmalıdır.</li>
+            <li><strong>Sinek 2'li (2 Puan):</strong> İkinci en değerli küçük karttır.</li>
+            <li><strong>Aslar (4 Adet - 1'er Puan):</strong> Toplam 4 puan değerindedir.</li>
+            <li><strong>Valeler (4 Adet - 1'er Puan):</strong> Toplam 4 puan değerindedir ve tüm desteyi süpürür.</li>
+            <li><strong>Kart Çoğunluğu (+3 Puan):</strong> Toplam 52 kartın 27 veya daha fazlasını toplayan tarafa verilir.</li>
+          </ul>
+
+          <div class="article-tip-box">
+            🧠 <strong>Hafıza Pratiği:</strong> 52 kartın tamamını ezberlemenize gerek yoktur. Sadece <strong>Karo 10'lu, Sinek 2'li, Aslar ve Valeleri</strong> takip etmeniz bile oyunun %80'lik stratejik kontrolünü size verir.
+          </div>
+
+          <h4>2. Son Ele Kalan Kartları Tahmin Etme</h4>
+          <p>Her oyuncuya 4'er kart dağıtılır ve toplam 6 tur oynanır. Masaya atılan kartları takip edip hangi sayıdan 3 adet çıktığını bilirseniz, elinizde o sayının 4. kartı varsa rahatlıkla yere atabilirsiniz; çünkü rakibin o kartla pişti yapma ihtimali sıfırdır.</p>
+        `
+      },
+      pisti_jack: {
+        badge: '🃏 Taktiksel Zamanlama',
+        time: '4 dk okuma',
+        title: 'Pişti Oyununda Vale (Joker) Ne Zaman Kullanılmalı?',
+        content: `
+          <p>Piştide Vale, destenin en güçlü ve en stratejik silahıdır. Yerde kaç kart olursa olsun hepsini hanenize çeker. Ancak acemi oyuncuların en sık yaptığı hata, yerdeki 1-2 değersiz kağıdı almak için sabırsızca Valeyi harcamaktır.</p>
+
+          <h4>1. Erken Vale Harcamanın Tehlikesi</h4>
+          <p>Elinizdeki Valeyi ilk ellerde küçük bir yığın için harcarsanız, ilerleyen ellerde rakip yerdeki büyük bir kart yığınını (veya puan kartlarını) süpürdüğünde karşı hamlesiz kalırsınız. Vale bir "acil durum freni" ve "büyük hasat aracı"dır.</p>
+
+          <h4>2. Vale Ne Zaman Masaya İnmelidir?</h4>
+          <ul>
+            <li><strong>Büyük Puan Biriktiğinde:</strong> Yerde Karo 10'lu, Sinek 2'li veya 1-2 As varsa ve elinizde eşleşen kart yoksa, hiç düşünmeden Vale ile toplayın.</li>
+            <li><strong>Kart Çoğunluğu Kritik Eşikteyse:</strong> Oyunun son iki turunda yerde 6 veya daha fazla kart birikmişse, kart çoğunluğu (+3 puan) garantilemek için Vale kullanılmalıdır.</li>
+            <li><strong>Rakibin Pişti Tehdidi Varsa:</strong> Rakip yere riskli veya tek bir açık kart bıraktığında ve sizde o kart yoksa, pişti riskini ortadan kaldırmak için Vale güvenli hamledir.</li>
+          </ul>
+
+          <div class="article-tip-box">
+            ⚠️ <strong>Çift Pişti Tuzağı:</strong> Yere tek başına Vale atarken iki kez düşünün! Eğer rakibin elinde de Vale varsa, Valenizin üzerine Vale atarak <strong>Çift Pişti (20 Puan)</strong> yapar. Diğer Valeler çıkmadan asla yere tek Vale atmayın.
+          </div>
+
+          <h4>3. Dağıtıcının Son El Avantajı</h4>
+          <p>Kartları dağıtan oyuncu son eli oynar. Eğer dağıtıcıysanız ve elinizde bir Vale saklamayı başardıysanız, son turda yerdeki tüm kağıtları süpürerek oyunu büyük bir skorla tamamlarsınız.</p>
+        `
+      },
+      tavla_history: {
+        badge: '📜 Tarih & Kültür',
+        time: '6 dk okuma',
+        title: 'Tavla Tarihçesi ve Geleneksel Masa Oyunu Kültürü',
+        content: `
+          <p>Tavla, insanoğlunun bilinen en eski strateji ve masa oyunlarından biridir. Yaklaşık 5.000 yıllık bir geçmişe sahip olan bu kadim oyun, sadece bir eğlence aracı değil, aynı zamanda Doğu felsefesinin, astrolojinin ve insan kaderinin tahtaya yansımış bir alegorisidir.</p>
+
+          <h4>1. Ur Kraliyet Mezarları ve Oyunun Doğuşu</h4>
+          <p>1920'li yıllarda İngiliz arkeolog Sir Leonard Woolley tarafından antik Mezopotamya kenti Ur'da yapılan kazılarda, M.Ö. 2600-3000 yıllarına tarihlenen mozaikli ahşap tahtalar bulunmuştur. "Ur Kraliyet Oyunu" olarak bilinen bu eser, tavlanın bilinen en eski atasıdır. Antik Mısır firavunu Tutankhamun'un mezarında da tavla benzeri "Senet" oyunu bulunmuştur.</p>
+
+          <h4>2. Sasani Sarayı ve Kozmik Felsefe</h4>
+          <p>Tavla, bugünkü 24 kapılı formunu ve felsefi derinliğini Sasani İmparatorluğu döneminde kazanmıştır. Efsaneye göre Hint hükümdarı Sasani Şahı Nuşirevan'a satrancı bir zeka meydan okuması olarak gönderdiğinde, bilge vezir Büzürgmihr satrancın kurallarını çözmüş ve karşılık olarak tavlayı tasarlamıştır.</p>
+          <p>Vezir Büzürgmihr tavlaya derin bir kozmolojik sembolizm yüklemiştir:</p>
+          <ul>
+            <li><strong>24 Kapı:</strong> Günün 24 saatini,</li>
+            <li><strong>12'şer Karşılıklı Hane:</strong> Yılın 12 ayını,</li>
+            <li><strong>30 Pul (15 Beyaz, 15 Siyah):</strong> Ayın 30 gününü; 15 gün aydınlık (gündüz), 15 gün karanlık (gece) dengesini,</li>
+            <li><strong>Zarlar:</strong> İnsanın iradesi dışındaki kaderi ve talihi, pulların hareketi ise insanın kendi aklı ve seçimlerini temsil eder.</li>
+          </ul>
+
+          <div class="article-tip-box">
+            🎲 <strong>Zar Matematiği:</strong> Tavla zarının karşılıklı yüzlerinin toplamı her zaman 7'dir (1+6=7, 2+5=7, 3+4=7). Bu da haftanın 7 gününü ve antik dünyanın 7 göksel gezegenini simgeler.
+          </div>
+
+          <h4>3. Osmanlı Kıraathanelerinden Günümüze</h4>
+          <p>Tavla, Osmanlı İmparatorluğu döneminde saraylardan mahalle kıraathanelerine kadar toplumun her kesiminde en popüler centilmenlik ritüeli haline gelmiştir. Zarların geleneksel Farsça sayı adlarıyla (Yek, Dü, Se, Cihar, Penç, Şeş) söylenmesi ve oyun sonu dostça çay ikramı bu köklü Akdeniz kültürünün yaşayan birer mirasıdır.</p>
+        `
+      }
+    };
+
+    function openArticle(articleId) {
+      const art = strategyArticles[articleId];
+      if (!art) return;
+
+      document.getElementById('articleModalBadge').innerText = art.badge;
+      document.getElementById('articleModalTime').innerText = art.time;
+      document.getElementById('articleModalTitle').innerText = art.title;
+      document.getElementById('articleModalContent').innerHTML = art.content;
+
+      const modal = document.getElementById('articleModal');
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeArticleModal() {
+      const modal = document.getElementById('articleModal');
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function handleArticleOverlayClick(e) {
+      if (e.target && e.target.id === 'articleModal') {
+        closeArticleModal();
+      }
+    }
 
     function copySupportEmail(btn) {
       const email = 'support@darkrockstudio.net';
@@ -2759,6 +3308,30 @@
       <div class="contact-response-badge">
         <span class="contact-status-dot"></span>
         <span data-i18n="modal_response_time">Ortalama yanıt süresi: 24 - 48 saat</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ARTICLE READER MODAL -->
+  <div id="articleModal" class="article-modal-overlay" onclick="handleArticleOverlayClick(event)" role="dialog" aria-modal="true" aria-labelledby="articleModalTitle">
+    <div class="article-modal-card">
+      <button type="button" class="contact-modal-close" onclick="closeArticleModal()" aria-label="Kapat">&times;</button>
+      
+      <div style="margin-bottom: 20px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+          <span id="articleModalBadge" class="strategy-tag" style="background: rgba(212, 175, 55, 0.12); padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(212, 175, 55, 0.25);">Kategori</span>
+          <span id="articleModalTime" style="font-size: 0.85rem; color: var(--text-subtle);">Okuma Süresi</span>
+        </div>
+        <h3 id="articleModalTitle" style="font-family: 'Cinzel', serif; font-size: 1.5rem; color: var(--gold-light); line-height: 1.35;">Makale Başlığı</h3>
+      </div>
+
+      <div id="articleModalContent" class="article-modal-body">
+        <!-- Content dynamically injected from strategyArticles -->
+      </div>
+      
+      <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(212, 175, 55, 0.2); display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 0.85rem; color: var(--text-subtle);">Darkrock Games • Strateji Akademisi</span>
+        <button type="button" class="btn-outline" style="padding: 7px 18px; font-size: 0.88rem; cursor: pointer; border-radius: 8px;" onclick="closeArticleModal()">Kapat</button>
       </div>
     </div>
   </div>

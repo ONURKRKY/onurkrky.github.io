@@ -8,9 +8,9 @@
 
   <!-- SEO & Social Meta Tags -->
   <meta name="description"
-    content="Klasik Tavla, Pişti Online ve Türk Daması! Geleneksel masa ve iskambil oyunları, lüks ahşap ve altın teması, akıllı botlar ve 1'e 1 canlı online düellolarla Google Play ve App Store'da.">
+    content="Klasik Tavla, Klasik Pişti, Klasik Konken ve Türk Daması! Geleneksel masa ve iskambil oyunları, lüks ahşap ve altın teması, akıllı botlar ve 1'e 1 canlı online düellolarla web tarayıcısında ve mağazalarda.">
   <meta name="keywords"
-    content="tavla, pişti, pisti, klasik pişti online, klasik tavla, türk daması, dama, masa oyunları, iskambil oyunları, online oyun, app store, google play">
+    content="tavla, pişti, pisti, konken, klasik konken, konken online, klasik pişti online, klasik tavla, türk daması, dama, masa oyunları, iskambil oyunları, online oyun, app store, google play">
   <meta name="author" content="Darkrock Games">
   <meta name="theme-color" content="#232A36">
   <link rel="canonical" href="https://darkrockstudio.net/">
@@ -62,6 +62,22 @@
         "url": "https://darkrockstudio.net/pisti/",
         "image": "https://darkrockstudio.net/assets/images/pisti_banner.png",
         "description": "Geleneksel Türk iskambil oyunu Pişti; Web ve Mobil çapraz 1v1 canlı online maçlar, WhatsApp/Telegram arkadaş daveti ve internetsiz akıllı bot modu.",
+        "genre": ["Card Game", "Strategy"],
+        "gamePlatform": ["Web Browser", "Android", "iOS"],
+        "applicationCategory": "Game",
+        "operatingSystem": "Web, Android, iOS",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "VideoGame",
+        "name": "Klasik Konken",
+        "url": "https://darkrockstudio.net/konken/",
+        "image": "https://darkrockstudio.net/assets/images/konken_banner.png",
+        "description": "Klasik Türk Konken oyunu; 10 kartlı rummy kuralları, Elden Konken x2 bonusu, tek tık per bulma, Web ve Mobil çapraz 1v1 canlı online düello ve akıllı bot modu.",
         "genre": ["Card Game", "Strategy"],
         "gamePlatform": ["Web Browser", "Android", "iOS"],
         "applicationCategory": "Game",
@@ -696,10 +712,30 @@
 
     .games-showcase-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
       margin-bottom: 48px;
       align-items: stretch;
+    }
+
+    .games-showcase-grid .game-content {
+      padding: 22px 22px;
+    }
+
+    .games-showcase-grid .game-title {
+      font-size: 1.48rem;
+    }
+
+    .games-showcase-grid .game-features-list {
+      grid-template-columns: 1fr;
+      gap: 9px;
+      margin-bottom: 22px;
+    }
+
+    @media (max-width: 1180px) {
+      .games-showcase-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
     .game-card-large {
@@ -1672,6 +1708,8 @@
             data-i18n="tavla_title">Klasik Tavla</span></a>
         <a href="/pisti/" class="btn-outline"><span style="margin-right: 6px; font-size: 0.8rem;">◆</span> <span
             data-i18n="pisti_title">Klasik Pişti</span></a>
+        <a href="/konken/" class="btn-outline"><span style="margin-right: 6px; font-size: 0.8rem;">◆</span> <span
+            data-i18n="konken_title">Klasik Konken</span></a>
       </div>
 
       <!-- 4-BADGE TRUST & TECH STRIP -->
@@ -1835,6 +1873,60 @@
             </div>
           </div>
         </div>
+
+        <!-- GAME 3: KLASİK KONKEN -->
+        <div class="game-card-large">
+          <div class="game-visual">
+            <img src="assets/images/konken_banner.png" alt="Klasik Konken Afiş" class="game-banner-img" loading="lazy">
+          </div>
+          <div class="game-content">
+            <div class="game-header-row">
+              <img src="assets/images/konken_icon.png" alt="Konken Logosu" class="game-avatar" loading="lazy">
+              <div>
+                <span class="game-status-badge status-live">
+                  <span class="status-pulse-dot"></span>
+                  <span data-i18n="konken_status">WEB'DE CANLI • MOBİL ÇOK YAKINDA</span>
+                </span>
+                <h3 class="game-title" data-i18n="konken_title">Klasik Konken</h3>
+                <p class="game-tagline" data-i18n="konken_tagline">10 Kartlı Stratejik Rummy &amp; Elden Konken ×2 Düellosu</p>
+              </div>
+            </div>
+            <p class="game-desc" data-i18n="konken_desc">Geleneksel 10 kartlı Klasik Konken! Seri ve Grup perlerini kur, masaya aç, rakibinin perlerine kart işle ve tek elde Elden Konken (×2) ile oyunu bitir. Web ve Mobil çapraz 1v1 canlı online düello, tek tıkla arkadaş daveti ve akıllı yapay zeka modu!</p>
+            <div class="game-features-list">
+              <div class="feature-item"><span class="feature-bullet">◆</span> <span data-i18n="konken_f1">Web &amp; Mobil Çapraz 1v1</span></div>
+              <div class="feature-item"><span class="feature-bullet">◆</span> <span data-i18n="konken_f2">Elden Konken ×2 Bonusu</span></div>
+              <div class="feature-item"><span class="feature-bullet">◆</span> <span data-i18n="konken_f3">İnternetsiz Akıllı Bot</span></div>
+              <div class="feature-item"><span class="feature-bullet">◆</span> <span data-i18n="konken_f4">Tek Tık Per Bul &amp; İşleme</span></div>
+              <div class="feature-item"><span class="feature-bullet">◆</span> <span data-i18n="konken_f5">4 Lüks Çuha Masa Teması</span></div>
+              <div class="feature-item"><span class="feature-bullet">◆</span> <span data-i18n="konken_f6">Karşılıklı Mola &amp; Devam Et</span></div>
+            </div>
+            <div class="store-badges">
+              <a href="/konken/" class="primary-play-cta">
+                <span style="font-size: 0.8rem; margin-right: 4px;">◆</span> <span data-i18n="konken_web_play">Web'de Hemen Oyna</span>
+              </a>
+              <div class="store-badge-btn" style="border-color: rgba(212, 175, 55, 0.4);">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 0 1-.22-.986V2.8a2.38 2.38 0 0 1 .219-.986zm11.233 11.234l2.42 2.42-11.75 6.643 9.33-9.063zm0-2.096L5.512 1.89l11.75 6.642-2.42 2.42zm1.485 1.048l3.414 1.929c.954.54.954 1.419 0 1.958l-3.414 1.93-2.148-2.148 2.148-2.148z" />
+                </svg>
+                <div class="store-badge-text">
+                  <div class="store-badge-sub">Google Play</div>
+                  <div class="store-badge-main" style="color: #FFE082;" data-i18n="store_soon">Çok Yakında</div>
+                </div>
+              </div>
+              <div class="store-badge-btn" style="border-color: rgba(212, 175, 55, 0.4);">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.99.6-2.63 1.35-.57.65-1.07 1.72-.94 2.74 1 .08 2.03-.49 2.65-1.24z" />
+                </svg>
+                <div class="store-badge-text">
+                  <div class="store-badge-sub">App Store (iOS)</div>
+                  <div class="store-badge-main" style="color: #FFE082;" data-i18n="store_soon">Çok Yakında</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- UPCOMING GAMES -->
@@ -1972,7 +2064,7 @@
           kuralları, puanlama sistemi ve strateji ipuçları.</p>
       </div>
 
-      <div class="grid-2">
+      <div class="steps-grid">
         <div class="mini-game-card">
           <div>
             <h3 class="game-title" style="font-size: 1.35rem; margin-bottom: 12px;" data-i18n="guide_tavla_title">Klasik Tavla Kuralları ve Stratejisi</h3>
@@ -2015,6 +2107,28 @@
                 Puan</strong>, her bir As (A) ve Vale (J) <strong>1'er Puan</strong>, deste sonunda en çok kağıt
               toplayan oyuncu ise <strong>+3 Kart Çoğunluğu Puanı</strong> alır. Toplamda 101 puana ilk ulaşan oyuncu
               maçı kazanır.
+            </p>
+          </div>
+        </div>
+
+        <div class="mini-game-card">
+          <div>
+            <h3 class="game-title" style="font-size: 1.35rem; margin-bottom: 12px;" data-i18n="guide_konken_title">Klasik Konken Kuralları ve Puanlama</h3>
+            <p class="game-desc" style="margin-bottom: 14px;" data-i18n="guide_konken_p1">
+              Klasik Konken, 52 kartlık standart iskambil destesiyle iki oyuncu arasında 10'ar kartla oynanan köklü bir
+              per kurma (Rummy) oyunudur. Sırası gelen oyuncu kapalı desteden veya yerdeki açık karttan 1 kart çeker,
+              ardından elindeki uygun Grup (aynı değer, farklı tür 3–4 kart) veya Seri (aynı tür, ardışık 3+ kart)
+              perlerini masaya açabilir ve tur sonunda 1 kart atar.
+            </p>
+            <p class="game-desc" style="margin-bottom: 14px;" data-i18n="guide_konken_p2">
+              <strong>İşleme ve Elden Konken:</strong> Kendi elinden en az bir per açan oyuncu, masadaki tüm açık perlere
+              tek kart işleyebilir. Daha önce hiç per açmadan tek bir turda tüm kartlarını bitiren oyuncu <strong>Elden
+                Konken (×2)</strong> yapar ve kazandığı puan ikiye katlanır!
+            </p>
+            <p class="game-desc" style="margin-bottom: 0;" data-i18n="guide_konken_p3">
+              <strong>Resmi Puanlama (101 Hedef):</strong> Elini bitiren oyuncu, rakibin elinde kalan ceza kartlarının
+              toplamını hanesine yazar (As = <strong>11 Puan</strong>, K/Q/J/10 = <strong>10 Puan</strong>, 2–9 = yüz
+              değeri). Toplamda 101 puana ulaşan oyuncu maçı kazanır.
             </p>
           </div>
         </div>
@@ -2246,6 +2360,7 @@
             <li><a href="https://play.google.com/store/apps/details?id=com.darkrock.pisti" target="_blank"
                 rel="noopener">Klasik Pişti (Android)</a></li>
             <li><a href="/pisti/">Klasik Pişti (Web Oyunu)</a></li>
+            <li><a href="/konken/">Klasik Konken (Web Oyunu)</a></li>
             <li><a href="https://play.google.com/store/apps/details?id=com.darkrock.tavla" target="_blank"
                 rel="noopener">Klasik Tavla (Android)</a></li>
             <li><a href="/tavla/">Klasik Tavla (Web Oyunu)</a></li>
@@ -2308,6 +2423,17 @@
         "pisti_f5": "Lüks Ahşap & Çuha Temaları",
         "pisti_f6": "Karşılıklı Mola & Devam Et",
         "pisti_web_play": "Web'de Hemen Oyna",
+        "konken_status": "WEB'DE CANLI • MOBİL ÇOK YAKINDA",
+        "konken_title": "Klasik Konken",
+        "konken_tagline": "10 Kartlı Stratejik Rummy & Elden Konken ×2 Düellosu",
+        "konken_desc": "Geleneksel 10 kartlı Klasik Konken! Seri ve Grup perlerini kur, masaya aç, rakibinin perlerine kart işle ve tek elde Elden Konken (×2) ile oyunu bitir. Web ve Mobil çapraz 1v1 canlı online düello, tek tıkla arkadaş daveti ve akıllı yapay zeka modu!",
+        "konken_f1": "Web & Mobil Çapraz 1v1",
+        "konken_f2": "Elden Konken ×2 Bonusu",
+        "konken_f3": "İnternetsiz Akıllı Bot",
+        "konken_f4": "Tek Tık Per Bul & İşleme",
+        "konken_f5": "4 Lüks Çuha Masa Teması",
+        "konken_f6": "Karşılıklı Mola & Devam Et",
+        "konken_web_play": "Web'de Hemen Oyna",
         "store_review": "İnceleme Aşamasında",
         "store_closed_test": "Kapalı Testte",
         "tavla_status": "WEB & GOOGLE PLAY'DE YAYINDA",
@@ -2363,6 +2489,10 @@
         "guide_pisti_p1": "Klasik Pişti, 52 kartlık standart iskambil destesiyle oynanan, hafıza, olasılık takibi ve hızlı karar vermeye dayalı en sevilen geleneksel kart oyunudur. Oyunun başında yere 3 kapalı ve 1 açık kart konulur, oyunculara dörder kart dağıtılır.",
         "guide_pisti_p2": "<strong>Pişti ve Vale (J) Kuralı:</strong> Yerdeki en üst kartla aynı değerde bir kart atan oyuncu yerdeki tüm kağıtları toplar. Vale (J), yerde kaç kağıt olursa olsun hepsini alma gücüne sahiptir. Yerde yalnızca <strong>tek bir kağıt</strong> varken rakibin attığı kağıtla aynı sayıda kağıt atılırsa <strong>Pişti (+10 Puan)</strong>, Vale üzerine Vale ile pişti yapılırsa <strong>Çift Pişti (+20 Puan)</strong> kazanılır.",
         "guide_pisti_p3": "<strong>Resmi Puanlama (101 Hedef):</strong> Karo 10'lu <strong>3 Puan</strong>, Sinek 2'li <strong>2 Puan</strong>, her bir As (A) ve Vale (J) <strong>1'er Puan</strong>, deste sonunda en çok kağıt toplayan oyuncu ise <strong>+3 Kart Çoğunluğu Puanı</strong> alır. Toplamda 101 puana ilk ulaşan oyuncu maçı kazanır. Lobideki <strong>Çevrimiçi Kariyer</strong> skoru, yalnızca gerçek rakiplere karşı yapılan 1v1 online maçları kayıt altına alır.",
+        "guide_konken_title": "Klasik Konken Kuralları ve Puanlama",
+        "guide_konken_p1": "Klasik Konken, 52 kartlık standart iskambil destesiyle iki oyuncu arasında 10'ar kartla oynanan köklü bir per kurma (Rummy) oyunudur. Sırası gelen oyuncu kapalı desteden veya yerdeki açık karttan 1 kart çeker, ardından elindeki uygun Grup (aynı değer, farklı tür 3–4 kart) veya Seri (aynı tür, ardışık 3+ kart) perlerini masaya açabilir ve tur sonunda 1 kart atar.",
+        "guide_konken_p2": "<strong>İşleme ve Elden Konken:</strong> Kendi elinden en az bir per açan oyuncu, masadaki tüm açık perlere tek kart işleyebilir. Daha önce hiç per açmadan tek bir turda tüm kartlarını bitiren oyuncu <strong>Elden Konken (×2)</strong> yapar ve kazandığı puan ikiye katlanır!",
+        "guide_konken_p3": "<strong>Resmi Puanlama (101 Hedef):</strong> Elini bitiren oyuncu, rakibin elinde kalan ceza kartlarının toplamını hanesine yazar (As = <strong>11 Puan</strong>, K/Q/J/10 = <strong>10 Puan</strong>, 2–9 = yüz değeri). Toplamda 101 puana ulaşan oyuncu maçı kazanır.",
         "faq_tag": "MERAK EDİLENLER",
         "faq_title": "Sıkça Sorulan Sorular",
         "faq_desc": "Çapraz platform eşleşme, adil oyun algoritması ve çevrimdışı mod hakkında sık sorulan sorular.",
@@ -2464,6 +2594,17 @@
         "pisti_f5": "Luxury Wood & Felt Themes",
         "pisti_f6": "Mutual Pause & Resume",
         "pisti_web_play": "Play in Browser",
+        "konken_status": "LIVE ON WEB • MOBILE COMING SOON",
+        "konken_title": "Classic Konken",
+        "konken_tagline": "10-Card Strategic Rummy & Hand-Out ×2 Duels",
+        "konken_desc": "Traditional 10-card Turkish Konken Rummy! Form valid Sets and Runs, lay off cards onto table melds, and win double points with Hand-Out Konken (×2). Cross-platform 1v1 live duels, one-tap friend invites, and offline smart AI!",
+        "konken_f1": "Web & Mobile Cross-Play 1v1",
+        "konken_f2": "Hand-Out Konken ×2 Bonus",
+        "konken_f3": "Offline Smart AI",
+        "konken_f4": "1-Tap Meld Finder & Lay Off",
+        "konken_f5": "4 Luxury Felt Table Themes",
+        "konken_f6": "Mutual Pause & Resume",
+        "konken_web_play": "Play in Browser",
         "store_review": "In Review",
         "store_closed_test": "Closed Testing",
         "tavla_status": "LIVE ON WEB & GOOGLE PLAY",
@@ -2519,6 +2660,10 @@
         "guide_pisti_p1": "Classic Pishti is a fast-paced traditional card game of memory, probability tracking, and quick decisions played with a standard 52-card deck. At the start, 3 face-down cards and 1 face-up card are placed on the table, and each player is dealt 4 cards.",
         "guide_pisti_p2": "<strong>Pishti & Jack (J) Rule:</strong> Playing a card matching the rank of the top card on the table captures the entire pile. A Jack (J) captures the pile regardless of the top card. If there is only a <strong>single card</strong> on the table and you match its rank, you score a <strong>Pishti (+10 Points)</strong>, or a <strong>Double Pishti (+20 Points)</strong> with Jack-on-Jack.",
         "guide_pisti_p3": "<strong>Official Scoring (101 Target):</strong> 10 of Diamonds is <strong>3 Points</strong>, 2 of Clubs is <strong>2 Points</strong>, each Ace (A) and Jack (J) is <strong>1 Point</strong>, and collecting the most cards in a deck earns <strong>+3 Card Majority Points</strong>. First player to reach 101 points wins. The <strong>Online Career</strong> score tracks live 1v1 multiplayer matches against real players.",
+        "guide_konken_title": "Classic Konken Rules & Scoring",
+        "guide_konken_p1": "Classic Konken is a traditional 10-card Rummy game played between two players with a standard 52-card deck. On each turn, draw 1 card from either the stock or discard pile, optionally open Sets (3–4 same rank, distinct suits) or Runs (3+ consecutive same suit), and discard 1 card.",
+        "guide_konken_p2": "<strong>Laying Off & Hand-Out Konken:</strong> Once you have opened at least one meld, you may lay off single cards onto any meld on the table. Going out on your very first opening turn scores a <strong>Hand-Out Konken (×2)</strong> bonus!",
+        "guide_konken_p3": "<strong>Official Scoring (101 Target):</strong> The winner collects the total deadwood points left in the opponent's hand (Ace = <strong>11 Pts</strong>, K/Q/J/10 = <strong>10 Pts</strong>, 2–9 = face value). First to 101 points wins the match.",
         "faq_tag": "FAQ",
         "faq_title": "Frequently Asked Questions",
         "faq_desc": "Common questions about cross-platform matchmaking, fair RNG algorithms, and offline AI mode.",
@@ -2618,6 +2763,17 @@
         "pisti_f5": "Luxus Holz- & Filzthemen",
         "pisti_f6": "Pause & Fortsetzen",
         "pisti_web_play": "Im Browser spielen",
+        "konken_status": "IM WEB LIVE • MOBIL BALD VERFÜGBAR",
+        "konken_title": "Klassisches Konken",
+        "konken_tagline": "Strategisches 10-Karten-Rommé & Hand-Konken ×2",
+        "konken_desc": "Traditionelles türkisches 10-Karten-Konken! Bilde Sätze und Folgen, lege an Tischmeldungen an und verdopple deine Punkte mit Hand-Konken (×2). Plattformübergreifendes 1v1-Live-Duell und Offline-KI!",
+        "konken_f1": "Web & Mobil Cross-Play 1v1",
+        "konken_f2": "Hand-Konken ×2 Bonus",
+        "konken_f3": "Offline Intelligente KI",
+        "konken_f4": "1-Klick Meldungsfinder & Anlegen",
+        "konken_f5": "4 Luxus-Filzthemen",
+        "konken_f6": "Pause & Fortsetzen",
+        "konken_web_play": "Im Browser spielen",
         "store_review": "In Prüfung",
         "store_closed_test": "Geschlossener Test",
         "tavla_status": "IM WEB & AUF GOOGLE PLAY LIVE",
@@ -2673,6 +2829,10 @@
         "guide_pisti_p1": "Klassisches Pishti wird mit einem 52er-Kartendeck gespielt und erfordert Gedächtnis und Taktik. Zu Beginn liegen 3 verdeckte und 1 offene Karte auf dem Tisch, jeder Spieler erhält 4 Karten.",
         "guide_pisti_p2": "<strong>Pishti & Bube (J):</strong> Eine Karte gleichen Werts wie die oberste Tischkarte gewinnt den gesamten Stapel. Ein Bube (J) räumt den Stapel immer ab. Liegt nur <strong>eine einzige Karte</strong> auf dem Tisch und wird mit gleichem Wert geschlagen, gibt es <strong>Pishti (+10 Punkte)</strong>, mit Bube auf Bube <strong>Doppel-Pishti (+20 Punkte)</strong>.",
         "guide_pisti_p3": "<strong>Offizielle Wertung (Ziel 101):</strong> Karo 10 zählt <strong>3 Punkte</strong>, Kreuz 2 zählt <strong>2 Punkte</strong>, jedes Ass (A) und jeder Bube (J) <strong>1 Punkt</strong>, die Kartenmehrheit bringt <strong>+3 Punkte</strong>. Wer zuerst 101 Punkte erreicht, gewinnt.",
+        "guide_konken_title": "Klassisches Konken: Regeln & Punkte",
+        "guide_konken_p1": "Klassisches Konken ist ein taktisches 10-Karten-Rommé mit einem 52er-Deck. Ziehe pro Zug 1 Karte vom Stapel oder der Ablage, lege Sätze oder Folgen aus und wirf am Ende 1 Karte ab.",
+        "guide_konken_p2": "<strong>Anlegen & Hand-Konken:</strong> Nach deiner ersten Auslage darfst du einzelne Karten an alle Tischmeldungen anlegen. Wer beim allerersten Auslegen direkt ausmacht, erzielt ein <strong>Hand-Konken (×2)</strong>!",
+        "guide_konken_p3": "<strong>Offizielle Wertung (Ziel 101):</strong> Der Gewinner erhält die Handpunkte des Gegners (Ass = <strong>11 Pkt</strong>, K/D/B/10 = <strong>10 Pkt</strong>, 2–9 = Zahlenwert). Wer zuerst 101 Punkte erreicht, gewinnt.",
         "faq_tag": "HÄUFIGE FRAGEN",
         "faq_title": "Häufig gestellte Fragen (FAQ)",
         "faq_desc": "Antworten zu plattformübergreifendem Spielen, fairen Zufallsgeneratoren und dem Offline-Modus.",
@@ -2772,6 +2932,17 @@
         "pisti_f5": "Темы дерева и сукна",
         "pisti_f6": "Пауза и продолжение",
         "pisti_web_play": "Играть в браузере",
+        "konken_status": "ДОСТУПНО В БРАУЗЕРЕ • СКОРО НА МОБИЛЬНЫХ",
+        "konken_title": "Классический Конкен",
+        "konken_tagline": "Стратегический рамми на 10 карт и Конкен с руки ×2",
+        "konken_desc": "Традиционный турецкий Конкен! Собирайте сеты и последовательности, подкладывайте карты на стол и удваивайте очки при выходе с руки (×2). Кроссплатформенные дуэли 1v1 и умный офлайн-бот!",
+        "konken_f1": "Кроссплей 1v1 (Веб и Мобильные)",
+        "konken_f2": "Бонус Конкен с руки ×2",
+        "konken_f3": "Офлайн умный бот",
+        "konken_f4": "Поиск комбинаций в 1 клик",
+        "konken_f5": "4 темы роскошного сукна",
+        "konken_f6": "Пауза и продолжение",
+        "konken_web_play": "Играть в браузере",
         "store_review": "На проверке",
         "store_closed_test": "Закрытый тест",
         "tavla_status": "ДОСТУПНО В БРАУЗЕРЕ И GOOGLE PLAY",
@@ -2827,6 +2998,10 @@
         "guide_pisti_p1": "Классический Пишти — динамичная карточная игра колодой из 52 карт на память и внимательность. В начале на стол кладутся 3 закрытые и 1 открытая карта, а игрокам раздается по 4 карты.",
         "guide_pisti_p2": "<strong>Правило Пишти и Валета (J):</strong> Карта того же достоинства, что и верхняя на столе, забирает всю стопку. Валет (J) забирает любые карты. Если на столе лежит <strong>только одна карта</strong> и вы бьете её картой того же номинала, вы получаете <strong>Пишти (+10 очков)</strong>, а валетом на валета — <strong>Двойной Пишти (+20 очков)</strong>.",
         "guide_pisti_p3": "<strong>Подсчет очков (цель — 101):</strong> Бубновая десятка — <strong>3 очка</strong>, трефовая двойка — <strong>2 очка</strong>, каждый Туз (A) и Валет (J) — <strong>по 1 очку</strong>, большинство карт в конце колоды дает <strong>+3 очка</strong>. Побеждает первый, кто наберет 101 очко.",
+        "guide_konken_title": "Правила и подсчет очков в Конкене",
+        "guide_konken_p1": "Классический Конкен — карточная игра рамми на 10 карт стандартной колодой из 52 карт. В свой ход игрок берёт карту из колоды или сброса, выкладывает сеты или последовательности и сбрасывает 1 карту.",
+        "guide_konken_p2": "<strong>Подкладывание и Конкен с руки:</strong> Выложив первую комбинацию, можно подкладывать карты к любым стопкам на столе. Выход за один ход без предварительного открытия приносит <strong>двойные очки (×2)</strong>!",
+        "guide_konken_p3": "<strong>Официальный подсчет (цель — 101):</strong> Победитель получает сумму очков оставшихся карт соперника (Туз = <strong>11</strong>, K/Q/J/10 = <strong>10</strong>, 2–9 = номинал). Побеждает первый набравший 101 очко.",
         "faq_tag": "ВОПРОСЫ И ОТВЕТЫ",
         "faq_title": "Часто задаваемые вопросы (FAQ)",
         "faq_desc": "Ответы на вопросы о кроссплатформенной игре, честном генераторе случайных чисел и офлайн-режиме.",
@@ -2926,6 +3101,17 @@
         "pisti_f5": "ثيمات الخشب الفاخر والجوخ",
         "pisti_f6": "إيقاف مؤقت ومتابعة",
         "pisti_web_play": "العب في المتصفح",
+        "konken_status": "متاح على الويب • قريباً على الجوال",
+        "konken_title": "كونكن كلاسيك",
+        "konken_tagline": "مبارزة رومي بـ 10 أوراق ومضاعفة ×2 من اليد",
+        "konken_desc": "لعبة الكونكن التقليدية بـ 10 أوراق! كوّن المجموعات والتسلسلات، أضف الأوراق على الطاولة، واضرب النقاط ×2 بالإنهاء من اليد مباشرة. لعب مشترك 1 ضد 1 وذكاء اصطناعي بدون إنترنت!",
+        "konken_f1": "لعب مشترك 1 ضد 1 (ويب وجوال)",
+        "konken_f2": "مكافأة كونكن من اليد ×2",
+        "konken_f3": "ذكاء اصطناعي بدون إنترنت",
+        "konken_f4": "كشف المجموعات بنقرة واحدة",
+        "konken_f5": "4 ثيمات فاخرة لطاولة الجوخ",
+        "konken_f6": "إيقاف مؤقت ومتابعة",
+        "konken_web_play": "العب في المتصفح",
         "store_review": "قيد المراجعة",
         "store_closed_test": "اختبار مغلق",
         "tavla_status": "متاح على الويب و GOOGLE PLAY",
@@ -2981,6 +3167,10 @@
         "guide_pisti_p1": "بيشتي الكلاسيكية هي لعبة ورق تقليدية ممتعة تعتمد على الذاكرة وحساب الاحتمالات وتُلعب بـ 52 ورقة. في البداية توضع 3 أوراق مقلوبة وورقة واحدة مكشوفة على الطاولة، ويُوزع لكل لاعب 4 أوراق.",
         "guide_pisti_p2": "<strong>قاعدة البيشتي والولد (J):</strong> رمي ورقة بنفس رقم الورقة العليا على الطاولة يكسبك جميع الأوراق الموجودة. ورقة الولد (J) تجمع كل الأوراق مهما كانت. إذا كانت هناك <strong>ورقة واحدة فقط</strong> على الطاولة وطابقت رقمها تكسب <strong>بيشتي (+10 نقاط)</strong>، وولد على ولد يمنحك <strong>بيشتي مزدوج (+20 نقطة)</strong>.",
         "guide_pisti_p3": "<strong>احتساب النقاط (الهدف 101):</strong> عشرة الديناري <strong>3 نقاط</strong>، اثنان السباتي <strong>نقطتان</strong>، كل آس (A) وولد (J) <strong>نقطة واحدة</strong>، والأكثر جمعاً للأوراق ينال <strong>+3 نقاط أغلبية</strong>. الفائز هو أول من يصل إلى 101 نقطة.",
+        "guide_konken_title": "قواعد الكونكن الكلاسيكي واحتساب النقاط",
+        "guide_konken_p1": "الكونكن الكلاسيكي لعبة رومي استراتيجية بـ 10 أوراق و52 ورقة لعب. يسحب اللاعب في دوره ورقة من الكومة أو الأرض، وينزل المجموعات أو التسلسلات، ثم يرمي ورقة واحدة.",
+        "guide_konken_p2": "<strong>الإضافة وكونكن من اليد:</strong> بعد فتح مجموعتك الأولى يمكنك إضافة أوراق فردية على مجموعات الطاولة. الإنهاء في نفس دور الفتح الأول يمنحك <strong>ضعف النقاط (×2)</strong>!",
+        "guide_konken_p3": "<strong>الاحتساب الرسمي (الهدف 101):</strong> يحصد الفائز نقاط أوراق الخصم المتبقية (الآس = <strong>11 نقطة</strong>، الصور والعشرة = <strong>10 نقاط</strong>، 2–9 = قيمتها). أول من يصل إلى 101 نقطة يفوز.",
         "faq_tag": "الأسئلة الشائعة",
         "faq_title": "الأسئلة المتكررة (FAQ)",
         "faq_desc": "إجابات حول اللعب المشترك بين المنصات، عدالة النرد والأوراق، ووضع اللعب بدون إنترنت.",

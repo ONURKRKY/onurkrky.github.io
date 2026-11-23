@@ -510,9 +510,33 @@
 
     .hero-game-btn {
       min-width: 196px;
-      height: 54px;
+      height: 52px;
+      padding: 12px 28px;
+      border-radius: var(--radius-md);
+      background: rgba(30, 16, 7, 0.72);
+      border: 1.5px solid rgba(212, 175, 55, 0.4);
+      color: #FFF8E7;
+      font-weight: 600;
+      font-size: 1.05rem;
+      letter-spacing: 0.8px;
+      display: inline-flex;
+      align-items: center;
       justify-content: center;
       text-align: center;
+      text-decoration: none;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 224, 130, 0.12);
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hero-game-btn:hover {
+      background: linear-gradient(135deg, #F59E0B, #D97706);
+      border-color: #FFE082;
+      color: #120803;
+      font-weight: 700;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(245, 158, 11, 0.45);
     }
 
     .btn-gold {
@@ -1278,25 +1302,6 @@
         align-items: center;
       }
 
-      .nav-contact-btn {
-        padding: 0 !important;
-        width: 38px !important;
-        height: 38px !important;
-        min-width: 38px !important;
-        border-radius: 50% !important;
-        justify-content: center !important;
-        gap: 0 !important;
-      }
-
-      .nav-contact-text {
-        display: none !important;
-      }
-
-      .nav-contact-icon {
-        font-size: 1.15rem !important;
-        margin: 0 !important;
-      }
-
       .lang-dropdown-btn {
         padding: 6px 10px;
         height: 38px;
@@ -1713,9 +1718,6 @@
         </div>
       </a>
       <div class="nav-links">
-        <button type="button" class="btn-outline nav-contact-btn" onclick="openContactModal()" aria-label="İletişim &amp; Destek">
-          <span class="nav-contact-icon">✉️</span> <span class="nav-contact-text" data-i18n="nav_contact">İletişim &amp; Destek</span>
-        </button>
         <!-- LANGUAGE SELECTOR -->
         <div class="lang-selector-wrap">
           <button id="langBtn" class="lang-dropdown-btn" aria-label="Dil Seçimi">
@@ -1747,12 +1749,9 @@
         işçiliği, 60 FPS akıcı 2.5D animasyonlar, gelişmiş yapay zeka ve gerçek zamanlı 1'e 1 online eşleşme ile
         parmaklarınızın ucunda.</p>
       <div class="hero-actions">
-        <a href="/tavla/" class="btn-gold hero-game-btn"><span style="margin-right: 6px; font-size: 0.8rem;">◆</span> <span
-            data-i18n="tavla_title">Tavla</span></a>
-        <a href="/pisti/" class="btn-gold hero-game-btn"><span style="margin-right: 6px; font-size: 0.8rem;">◆</span> <span
-            data-i18n="pisti_title">Pişti</span></a>
-        <a href="/konken/" class="btn-gold hero-game-btn"><span style="margin-right: 6px; font-size: 0.8rem;">◆</span> <span
-            data-i18n="konken_title">Konken</span></a>
+        <a href="/tavla/" class="hero-game-btn"><span data-i18n="tavla_title">Tavla</span></a>
+        <a href="/pisti/" class="hero-game-btn"><span data-i18n="pisti_title">Pişti</span></a>
+        <a href="/konken/" class="hero-game-btn"><span data-i18n="konken_title">Konken</span></a>
       </div>
 
       <!-- 4-BADGE TRUST & TECH STRIP -->

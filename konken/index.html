@@ -67,6 +67,13 @@
     <h1>Konken Online — Darkrock Games</h1>
     <p>10 kartlı Konken Rummy oyununu tarayıcınızda 1v1 canlı online düello veya yapay zeka modunda oynamak için JavaScript'i etkinleştirin. <a href="https://darkrockstudio.net/">Darkrock Games Ana Sayfa</a></p>
   </noscript>
+  <script>
+    // PWA WebAPK indirme teklifini engelle (Kullanıcıları Google Play Store'a yönlendir):
+    window.addEventListener('beforeinstallprompt', function(e) {
+      e.preventDefault();
+      return false;
+    });
+  </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>

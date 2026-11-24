@@ -1,13 +1,20 @@
 {
-    "name": "pisti",
-    "short_name": "pisti",
+    "name": "Pişti",
+    "short_name": "Pişti",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#06140D",
+    "theme_color": "#221107",
+    "description": "Pişti — 1v1 canlı online düello ve akıllı yapay zeka modu.",
     "orientation": "portrait-primary",
-    "prefer_related_applications": false,
+    "prefer_related_applications": true,
+    "related_applications": [
+        {
+            "platform": "play",
+            "id": "com.darkrock.pisti",
+            "url": "https://play.google.com/store/apps/details?id=com.darkrock.pisti"
+        }
+    ],
     "icons": [
         {
             "src": "icons/Icon-192.png",

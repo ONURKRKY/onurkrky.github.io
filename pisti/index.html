@@ -45,6 +45,13 @@
     For more details:
     * https://docs.flutter.dev/platform-integration/web/initialization
   -->
+  <script>
+    // PWA WebAPK indirme teklifini engelle (Kullanıcıları Google Play Store'a yönlendir):
+    window.addEventListener('beforeinstallprompt', function(e) {
+      e.preventDefault();
+      return false;
+    });
+  </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>

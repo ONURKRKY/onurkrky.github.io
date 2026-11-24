@@ -1,6 +1,6 @@
 {
-    "name": "Konken Online",
-    "short_name": "Konken",
+    "name": "Konken: Online Rummy & Remi",
+    "short_name": "Konken Rummy",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#06140D",

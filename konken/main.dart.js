@@ -27455,9 +27455,9 @@ return new A.yF(s,r,A.zb(a),A.cV(a),null,A.aE())},
 aIG(){var s,r=null,q=A.fz().goq().h(0,"ws"),p=q==null?r:B.e.eG(q)
 if(p!=null&&p.length!==0)return A.ea(p,0,r)
 s=A.fz().go8()
-if(s==="localhost"||s==="127.0.0.1")return A.ea("ws://127.0.0.1:8080",0,r)
-return A.ea("wss://konken-1dg8.onrender.com",0,r)},
-ayM(a,b){var s=b.length!==0?"&lang="+b:"",r=A.fz().go8().length!==0?A.fz().go8():"konken-1dg8.onrender.com",q=A.fz().ghC().length!==0?A.fz().ghC():"https",p=A.fz().glr()!==0&&A.fz().glr()!==80&&A.fz().glr()!==443?":"+A.fz().glr():"",o=A.fz().geC().length!==0?A.fz().geC():"/",n=B.e.zx(o,"/")?o:o+"/"
+if(s==="localhost"||s==="127.0.0.1")return A.ea("ws://127.0.0.1:8080/konken",0,r)
+return A.ea("wss://ws.darkrockstudio.net/konken",0,r)},
+ayM(a,b){var s=b.length!==0?"&lang="+b:"",r=A.fz().go8().length!==0?A.fz().go8():"ws.darkrockstudio.net",q=A.fz().ghC().length!==0?A.fz().ghC():"https",p=A.fz().glr()!==0&&A.fz().glr()!==80&&A.fz().glr()!==443?":"+A.fz().glr():"",o=A.fz().geC().length!==0?A.fz().geC():"/",n=B.e.zx(o,"/")?o:o+"/"
 return q+"://"+r+p+n+"?mac="+a+s},
 avX(a){return A.aMt(a)},
 aMt(a){var s=0,r=A.K(t.H),q

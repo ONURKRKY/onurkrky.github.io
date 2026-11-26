@@ -44,6 +44,78 @@
     * https://docs.flutter.dev/platform-integration/web/initialization
   -->
   <script>
+    // Flutter Web Hash Routing için URL parametrelerini koruma ve Android uygulamasını tetikleme:
+    (function() {
+      try {
+        var search = window.location.search;
+        var hash = window.location.hash;
+        if (search && (search.indexOf('mac=') !== -1 || search.indexOf('match=') !== -1 || search.indexOf('cihaz=') !== -1 || search.indexOf('id=') !== -1)) {
+          if (!hash || hash === '#' || hash === '#/') {
+            window.location.hash = '/' + search;
+          }
+        }
+
+        var isAndroid = /Android/i.test(navigator.userAgent);
+        var rawQuery = search || hash || '';
+        var cleanParams = rawQuery.replace(/^#?\/?\??/, '');
+        if (isAndroid && cleanParams && (cleanParams.indexOf('mac=') !== -1 || cleanParams.indexOf('match=') !== -1)) {
+          var langMatch = cleanParams.match(/(?:^|&)lang=([a-z]{2})/i);
+          var lang = langMatch ? langMatch[1].toLowerCase() : 'tr';
+          var labels = {
+            tr: '🃏 Pişti Uygulamasında Aç',
+            en: '🃏 Open in Pishti App',
+            es: '🃏 Abrir en la app Pishti',
+            zh: '🃏 在皮什蒂应用中打开',
+            ar: '🃏 فتح في تطبيق البصرة',
+            ru: '🃏 Открыть в приложении Пишти',
+            de: '🃏 In der Pishti-App öffnen'
+          };
+          var btnLabel = labels[lang] || labels.tr;
+          var basePath = window.location.pathname || '/pisti/';
+          var webParams = cleanParams + (cleanParams.indexOf('web=1') === -1 ? '&web=1' : '');
+          var fallbackUrl = window.location.origin + basePath + '?' + webParams;
+          var intentUrl = "intent://join?" + cleanParams + "#Intent;scheme=pisti;package=com.darkrock.pisti;S.browser_fallback_url=" + encodeURIComponent(fallbackUrl) + ";end";
+
+          function showOpenAppBanner() {
+            if (!document.body || document.getElementById('dr-open-app-banner')) return;
+            var banner = document.createElement('div');
+            banner.id = 'dr-open-app-banner';
+            banner.style.cssText = 'position:fixed;top:10px;left:50%;transform:translateX(-50%);z-index:99999;display:flex;align-items:center;gap:8px;background:#0f2b1d;border:1.5px solid #D4AF37;border-radius:14px;padding:8px 12px;box-shadow:0 8px 24px rgba(0,0,0,0.65);max-width:92vw;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;';
+
+            var openLink = document.createElement('a');
+            openLink.href = intentUrl;
+            openLink.textContent = btnLabel;
+            openLink.style.cssText = 'background:#EAB308;color:#0A1912;font-weight:700;font-size:13px;padding:7px 12px;border-radius:10px;text-decoration:none;white-space:nowrap;';
+
+            var closeBtn = document.createElement('button');
+            closeBtn.type = 'button';
+            closeBtn.textContent = '✕';
+            closeBtn.setAttribute('aria-label', 'Close');
+            closeBtn.style.cssText = 'background:transparent;border:none;color:#FFE082;font-size:16px;font-weight:700;cursor:pointer;padding:4px 6px;line-height:1;';
+            closeBtn.onclick = function() {
+              if (banner.parentNode) banner.parentNode.removeChild(banner);
+            };
+
+            banner.appendChild(openLink);
+            banner.appendChild(closeBtn);
+            document.body.appendChild(banner);
+          }
+
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', showOpenAppBanner);
+          } else {
+            showOpenAppBanner();
+          }
+
+          if (cleanParams.indexOf('web=1') === -1) {
+            setTimeout(function() {
+              window.location.href = intentUrl;
+            }, 120);
+          }
+        }
+      } catch (e) {}
+    })();
+
     // PWA WebAPK indirme teklifini engelle (Kullanıcıları Google Play Store'a yönlendir):
     window.addEventListener('beforeinstallprompt', function(e) {
       e.preventDefault();

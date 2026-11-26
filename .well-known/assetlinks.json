@@ -1,0 +1,29 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.darkrock.tavla",
+      "sha256_cert_fingerprints":
+        ["DD:16:D3:99:BD:AC:A6:DE:92:22:C2:02:AC:DD:62:57:56:89:82:B0:DA:83:25:8A:63:E8:65:FD:65:63:B9:AA"]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.darkrock.pisti",
+      "sha256_cert_fingerprints":
+        ["0D:A8:13:9E:D1:1F:F2:C8:58:C9:65:BB:1A:4D:9C:17:E7:00:08:7C:A9:52:0A:8D:EC:CD:5F:6E:D6:53:4E:B8"]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.darkrock.konken",
+      "sha256_cert_fingerprints":
+        ["0D:A8:13:9E:D1:1F:F2:C8:58:C9:65:BB:1A:4D:9C:17:E7:00:08:7C:A9:52:0A:8D:EC:CD:5F:6E:D6:53:4E:B8"]
+    }
+  }
+]

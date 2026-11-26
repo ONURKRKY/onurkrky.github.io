@@ -50,23 +50,68 @@
       try {
         var search = window.location.search;
         var hash = window.location.hash;
-        if (search && (search.indexOf('mac=') !== -1 || search.indexOf('cihaz=') !== -1 || search.indexOf('id=') !== -1)) {
+        if (search && (search.indexOf('mac=') !== -1 || search.indexOf('match=') !== -1 || search.indexOf('cihaz=') !== -1 || search.indexOf('id=') !== -1)) {
           if (!hash || hash === '#' || hash === '#/') {
             window.location.hash = '/' + search;
           }
         }
 
-        // Eğer kullanıcı Android telefonda Chrome'a linki yapıştırdıysa, yüklü olan Tavla uygulamasını tetikle
+        // Eğer kullanıcı Android telefonda Chrome'a linki açtıysa, yüklü olan Tavla uygulamasını tetikle
         var isAndroid = /Android/i.test(navigator.userAgent);
-        var query = search || hash;
-        if (isAndroid && query && (query.indexOf('mac=') !== -1 || query.indexOf('match=') !== -1 || query.indexOf('cihaz=') !== -1)) {
-          var cleanQuery = query.startsWith('#/') ? query.substring(2) : query;
-          var host = window.location.host || 'tavla-3q16.onrender.com';
-          var scheme = window.location.protocol.replace(':', '') || 'https';
-          var intentUrl = "intent://" + host + "/" + cleanQuery + "#Intent;scheme=" + scheme + ";package=com.darkrock.tavla;end";
-          setTimeout(function() {
-            window.location.href = intentUrl;
-          }, 100);
+        var rawQuery = search || hash || '';
+        var cleanParams = rawQuery.replace(/^#?\/?\??/, '');
+        if (isAndroid && cleanParams && (cleanParams.indexOf('mac=') !== -1 || cleanParams.indexOf('match=') !== -1)) {
+          var langMatch = cleanParams.match(/(?:^|&)lang=([a-z]{2})/i);
+          var lang = langMatch ? langMatch[1].toLowerCase() : 'tr';
+          var labels = {
+            tr: '🎲 Tavla Uygulamasında Aç',
+            en: '🎲 Open in Tavla App',
+            ar: '🎲 فتح في تطبيق الطاولة',
+            ru: '🎲 Открыть в приложении Нарды',
+            de: '🎲 In der Tavla-App öffnen'
+          };
+          var btnLabel = labels[lang] || labels.tr;
+          var basePath = window.location.pathname || '/tavla/';
+          var webParams = cleanParams + (cleanParams.indexOf('web=1') === -1 ? '&web=1' : '');
+          var fallbackUrl = window.location.origin + basePath + '?' + webParams;
+          var intentUrl = "intent://join?" + cleanParams + "#Intent;scheme=tavla;package=com.darkrock.tavla;S.browser_fallback_url=" + encodeURIComponent(fallbackUrl) + ";end";
+
+          function showOpenAppBanner() {
+            if (!document.body || document.getElementById('dr-open-app-banner')) return;
+            var banner = document.createElement('div');
+            banner.id = 'dr-open-app-banner';
+            banner.style.cssText = 'position:fixed;top:10px;left:50%;transform:translateX(-50%);z-index:99999;display:flex;align-items:center;gap:8px;background:#241409;border:1.5px solid #D4AF37;border-radius:14px;padding:8px 12px;box-shadow:0 8px 24px rgba(0,0,0,0.65);max-width:92vw;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;';
+
+            var openLink = document.createElement('a');
+            openLink.href = intentUrl;
+            openLink.textContent = btnLabel;
+            openLink.style.cssText = 'background:#EAB308;color:#160B04;font-weight:700;font-size:13px;padding:7px 12px;border-radius:10px;text-decoration:none;white-space:nowrap;';
+
+            var closeBtn = document.createElement('button');
+            closeBtn.type = 'button';
+            closeBtn.textContent = '✕';
+            closeBtn.setAttribute('aria-label', 'Close');
+            closeBtn.style.cssText = 'background:transparent;border:none;color:#FFE082;font-size:16px;font-weight:700;cursor:pointer;padding:4px 6px;line-height:1;';
+            closeBtn.onclick = function() {
+              if (banner.parentNode) banner.parentNode.removeChild(banner);
+            };
+
+            banner.appendChild(openLink);
+            banner.appendChild(closeBtn);
+            document.body.appendChild(banner);
+          }
+
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', showOpenAppBanner);
+          } else {
+            showOpenAppBanner();
+          }
+
+          if (cleanParams.indexOf('web=1') === -1) {
+            setTimeout(function() {
+              window.location.href = intentUrl;
+            }, 120);
+          }
         }
       } catch (e) {}
     })();

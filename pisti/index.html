@@ -75,8 +75,9 @@
           var basePath = window.location.pathname || '/pisti/';
           var webParams = cleanParams + (cleanParams.indexOf('web=1') === -1 ? '&web=1' : '');
           var fallbackUrl = window.location.origin + basePath + '?' + webParams;
-          var intentUrl = "intent://join?" + cleanParams + "#Intent;scheme=pisti;package=com.darkrock.pisti;S.browser_fallback_url=" + encodeURIComponent(fallbackUrl) + ";end";
-          var openUrl = isAndroid ? intentUrl : ("pisti://join?" + cleanParams);
+          var autoIntentUrl = "intent://join?" + cleanParams + "#Intent;scheme=pisti;package=com.darkrock.pisti;S.browser_fallback_url=" + encodeURIComponent(fallbackUrl) + ";end";
+          var buttonIntentUrl = "intent://join?" + cleanParams + "#Intent;scheme=pisti;package=com.darkrock.pisti;end";
+          var openUrl = isAndroid ? buttonIntentUrl : ("pisti://join?" + cleanParams);
 
           function showOpenAppBanner() {
             if (!document.body || document.getElementById('dr-open-app-banner')) return;
@@ -111,7 +112,7 @@
 
           if (isAndroid && cleanParams.indexOf('web=1') === -1) {
             setTimeout(function() {
-              window.location.href = openUrl;
+              window.location.href = autoIntentUrl;
             }, 120);
           }
         }

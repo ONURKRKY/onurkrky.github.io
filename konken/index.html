@@ -99,8 +99,9 @@
           var basePath = window.location.pathname || '/konken/';
           var webParams = cleanParams + (cleanParams.indexOf('web=1') === -1 ? '&web=1' : '');
           var fallbackUrl = window.location.origin + basePath + '?' + webParams;
-          var intentUrl = "intent://join?" + cleanParams + "#Intent;scheme=konken;package=com.darkrock.konken;S.browser_fallback_url=" + encodeURIComponent(fallbackUrl) + ";end";
-          var openUrl = isAndroid ? intentUrl : ("konken://join?" + cleanParams);
+          var autoIntentUrl = "intent://join?" + cleanParams + "#Intent;scheme=konken;package=com.darkrock.konken;S.browser_fallback_url=" + encodeURIComponent(fallbackUrl) + ";end";
+          var buttonIntentUrl = "intent://join?" + cleanParams + "#Intent;scheme=konken;package=com.darkrock.konken;end";
+          var openUrl = isAndroid ? buttonIntentUrl : ("konken://join?" + cleanParams);
 
           function showOpenAppBanner() {
             if (!document.body || document.getElementById('dr-open-app-banner')) return;
@@ -135,7 +136,7 @@
 
           if (isAndroid && cleanParams.indexOf('web=1') === -1) {
             setTimeout(function() {
-              window.location.href = openUrl;
+              window.location.href = autoIntentUrl;
             }, 120);
           }
         }

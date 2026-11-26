@@ -1,0 +1,37 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "G3RNRBHL3K.com.darkrock.tavla",
+        "paths": ["/tavla", "/tavla/*"],
+        "components": [
+          { "/": "/tavla/*", "?": { "mac": "?*" } },
+          { "/": "/tavla/*", "?": { "match": "?*" } },
+          { "/": "/tavla", "?": { "mac": "?*" } },
+          { "/": "/tavla", "?": { "match": "?*" } }
+        ]
+      },
+      {
+        "appID": "G3RNRBHL3K.com.onurkarakaya.pisti",
+        "paths": ["/pisti", "/pisti/*"],
+        "components": [
+          { "/": "/pisti/*", "?": { "mac": "?*" } },
+          { "/": "/pisti/*", "?": { "match": "?*" } },
+          { "/": "/pisti", "?": { "mac": "?*" } },
+          { "/": "/pisti", "?": { "match": "?*" } }
+        ]
+      },
+      {
+        "appID": "G3RNRBHL3K.com.darkrock.konken",
+        "paths": ["/konken", "/konken/*"],
+        "components": [
+          { "/": "/konken/*", "?": { "mac": "?*" } },
+          { "/": "/konken/*", "?": { "match": "?*" } },
+          { "/": "/konken", "?": { "mac": "?*" } },
+          { "/": "/konken", "?": { "match": "?*" } }
+        ]
+      }
+    ]
+  }
+}

@@ -27682,10 +27682,10 @@ aNl(a){var s,r,q=A.b([],t.s)
 for(s=0;s<a.length;++s){r=a.key(s)
 r.toString
 q.push(r)}return q},
-aKf(){var s="tavla-3q16.onrender.com"
-if(!B.e.q(s,"10.")&&!B.e.q(s,"192.168.")&&!B.e.q(s,"127.0.0.1")&&!B.e.q(s,"localhost"))return A.dX("wss://tavla-3q16.onrender.com",0,null)
-else return A.dX("ws://tavla-3q16.onrender.com:8080",0,null)},
-aAb(a,b){var s=b.length!==0?"&lang="+b:"",r=A.eF().gqA().length!==0?A.eF().gqA():"tavla-3q16.onrender.com",q=A.eF().ghO().length!==0?A.eF().ghO():"https",p=A.eF().glK()!==0&&A.eF().glK()!==80&&A.eF().glK()!==443?":"+A.eF().glK():"",o=A.eF().geS().length!==0?A.eF().geS():"/",n=B.e.zN(o,"/")?o:o+"/"
+aKf(){var s="ws.darkrockstudio.net"
+if(!B.e.q(s,"10.")&&!B.e.q(s,"192.168.")&&!B.e.q(s,"127.0.0.1")&&!B.e.q(s,"localhost"))return A.dX("wss://ws.darkrockstudio.net/tavla",0,null)
+else return A.dX("ws://ws.darkrockstudio.net:8080/tavla",0,null)},
+aAb(a,b){var s=b.length!==0?"&lang="+b:"",r=A.eF().gqA().length!==0?A.eF().gqA():"ws.darkrockstudio.net",q=A.eF().ghO().length!==0?A.eF().ghO():"https",p=A.eF().glK()!==0&&A.eF().glK()!==80&&A.eF().glK()!==443?":"+A.eF().glK():"",o=A.eF().geS().length!==0?A.eF().geS():"/",n=B.e.zN(o,"/")?o:o+"/"
 return q+"://"+r+p+n+"?mac="+a+s},
 axo(a){return A.aO8(a)},
 aO8(a){var s=0,r=A.K(t.H),q

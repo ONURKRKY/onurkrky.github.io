@@ -28021,9 +28021,9 @@ s=s[2]
 p=b[2]
 return A.b([o*m+l*k+j*n,o*r+l*q+j*s,o*p[0]+l*p[1]+j*p[2]],t.n)},
 aKs(){var s=A.eB().goB()
-if(s==="localhost"||s==="127.0.0.1")return A.eh("ws://127.0.0.1:8080",0,null)
-return A.eh("wss://pisti-u5ib.onrender.com",0,null)},
-aAH(a,b){var s=b.length!==0?"&lang="+b:"",r=A.eB().goB().length!==0?A.eB().goB():"pisti-u5ib.onrender.com",q=A.eB().ghV().length!==0?A.eB().ghV():"https",p=A.eB().glO()!==0&&A.eB().glO()!==80&&A.eB().glO()!==443?":"+A.eB().glO():"",o=A.eB().geJ().length!==0?A.eB().geJ():"/",n=B.d.Am(o,"/")?o:o+"/"
+if(s==="localhost"||s==="127.0.0.1")return A.eh("ws://127.0.0.1:8080/pisti",0,null)
+return A.eh("wss://ws.darkrockstudio.net/pisti",0,null)},
+aAH(a,b){var s=b.length!==0?"&lang="+b:"",r=A.eB().goB().length!==0?A.eB().goB():"ws.darkrockstudio.net",q=A.eB().ghV().length!==0?A.eB().ghV():"https",p=A.eB().glO()!==0&&A.eB().glO()!==80&&A.eB().glO()!==443?":"+A.eB().glO():"",o=A.eB().geJ().length!==0?A.eB().geJ():"/",n=B.d.Am(o,"/")?o:o+"/"
 return q+"://"+r+p+n+"?mac="+a+s},
 axP(a){return A.aOg(a)},
 aOg(a){var s=0,r=A.H(t.H),q

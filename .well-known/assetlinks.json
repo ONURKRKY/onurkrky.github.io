@@ -13,8 +13,12 @@
     "target": {
       "namespace": "android_app",
       "package_name": "com.darkrock.pisti",
-      "sha256_cert_fingerprints":
-        ["0D:A8:13:9E:D1:1F:F2:C8:58:C9:65:BB:1A:4D:9C:17:E7:00:08:7C:A9:52:0A:8D:EC:CD:5F:6E:D6:53:4E:B8"]
+      "sha256_cert_fingerprints": [
+        "0D:A8:13:9E:D1:1F:F2:C8:58:C9:65:BB:1A:4D:9C:17:E7:00:08:7C:A9:52:0A:8D:EC:CD:5F:6E:D6:53:4E:B8",
+        "60:91:A6:A5:C9:04:D4:3E:45:D7:EE:A4:A7:9E:89:BA:60:C8:F5:FE:0B:04:40:ED:5D:4A:2B:7B:E3:94:5B:44",
+        "F3:2D:8A:5F:2D:F5:A8:3D:8B:21:B2:A6:86:32:9F:55:9A:D4:BA:93:84:B7:91:08:DC:13:CA:FD:A1:58:6B:F3",
+        "5D:BB:64:19:61:10:DD:76:16:14:A4:A7:01:74:EE:24:FD:4D:57:F1:00:40:B6:E8:E1:07:6F:E5:A7:B0:10:17"
+      ]
     }
   },
   {

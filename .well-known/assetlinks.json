@@ -22,8 +22,10 @@
     "target": {
       "namespace": "android_app",
       "package_name": "com.darkrock.konken",
-      "sha256_cert_fingerprints":
-        ["0D:A8:13:9E:D1:1F:F2:C8:58:C9:65:BB:1A:4D:9C:17:E7:00:08:7C:A9:52:0A:8D:EC:CD:5F:6E:D6:53:4E:B8"]
+      "sha256_cert_fingerprints": [
+        "8A:D3:98:7E:21:3E:8E:E3:48:92:18:78:E2:CD:8D:9A:BC:61:95:6D:9C:6F:A5:46:6C:A1:69:CF:54:6A:2F:23",
+        "0D:A8:13:9E:D1:1F:F2:C8:58:C9:65:BB:1A:4D:9C:17:E7:00:08:7C:A9:52:0A:8D:EC:CD:5F:6E:D6:53:4E:B8"
+      ]
     }
   }
 ]

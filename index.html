@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Darkrock Games | Tavla, Pişti &amp; Konken Online</title>
+  <title>Darkrock Games | Tavla, Pişti, Konken &amp; Solitaire</title>
 
   <!-- SEO & Social Meta Tags -->
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="description"
-    content="Tavla, Pişti, Konken ve Türk Daması! Geleneksel masa ve iskambil oyunları, lüks ahşap ve altın teması, akıllı botlar ve 1'e 1 canlı online düellolarla web tarayıcısında ve mağazalarda.">
+    content="Tavla, Pişti, Konken, Solitaire ve Türk Daması! Geleneksel masa ve iskambil oyunları, lüks ahşap ve altın teması, akıllı botlar ve 1'e 1 canlı online düellolarla web tarayıcısında ve mağazalarda.">
   <meta name="keywords"
-    content="tavla, tavla oyna, pişti, pişti oyna, pisti, konken, konken oyna, konken online, türk daması, dama, masa oyunları, iskambil oyunları, online oyun, darkrock games">
+    content="tavla, tavla oyna, pişti, pişti oyna, pisti, konken, konken oyna, konken online, solitaire, klondike solitaire, solitaire oyna, türk daması, dama, masa oyunları, iskambil oyunları, online oyun, darkrock games">
   <meta name="author" content="Darkrock Games">
   <meta name="theme-color" content="#232A36">
   <link rel="canonical" href="https://darkrockstudio.net/">
@@ -68,6 +68,12 @@
             "position": 3,
             "name": "Konken",
             "url": "https://darkrockstudio.net/konken/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Solitaire",
+            "url": "https://darkrockstudio.net/solitaire/"
           }
         ]
       },
@@ -120,6 +126,22 @@
         }
       },
       {
+        "@type": "VideoGame",
+        "name": "Solitaire: Klondike",
+        "url": "https://darkrockstudio.net/solitaire/",
+        "image": "https://darkrockstudio.net/assets/images/solitaire_banner.png",
+        "description": "Klasik Klondike Solitaire; 1 Kart ve 3 Kart Çekme modları, Kazanılabilir El garantisi, Akıllı İpucu, Sınırsız Geri Al, Otomatik Tamamlama ve 4 lüks casino çuhası teması.",
+        "genre": ["Card Game", "Strategy", "Puzzle"],
+        "gamePlatform": ["Web Browser", "Android", "iOS"],
+        "applicationCategory": "Game",
+        "operatingSystem": "Web, Android, iOS",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
         "@type": "FAQPage",
         "mainEntity": [
           {
@@ -127,7 +149,7 @@
             "name": "Üye olmadan veya uygulama indirmeden oynayabilir miyim?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Evet. Tavla, Pişti ve Konken oyunlarımızı hiçbir üyelik, şifre veya kurulum gerektirmeden doğrudan web tarayıcınızdan (PC, Mac, Tablet veya Telefon) tek tıkla ücretsiz oynayabilirsiniz."
+              "text": "Evet. Tavla, Pişti, Konken ve Solitaire oyunlarımızı hiçbir üyelik, şifre veya kurulum gerektirmeden doğrudan web tarayıcınızdan (PC, Mac, Tablet veya Telefon) tek tıkla ücretsiz oynayabilirsiniz."
             }
           },
           {
@@ -171,15 +193,15 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://darkrockstudio.net/">
-  <meta property="og:title" content="Darkrock Games | Tavla, Pişti &amp; Konken Online">
+  <meta property="og:title" content="Darkrock Games | Tavla, Pişti, Konken &amp; Solitaire">
   <meta property="og:description"
     content="Lüks ceviz & altın tasarımı, 60 FPS akıcı animasyonlar, gelişmiş yapay zeka ve gerçek zamanlı 1'e 1 online düellolar!">
   <meta property="og:image" content="https://darkrockstudio.net/assets/images/konken_banner.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:title" content="Darkrock Games | Tavla, Pişti &amp; Konken Online">
-  <meta property="twitter:description" content="Tavla, Pişti &amp; Konken - Web, Google Play ve App Store'da!">
+  <meta property="twitter:title" content="Darkrock Games | Tavla, Pişti, Konken &amp; Solitaire">
+  <meta property="twitter:description" content="Tavla, Pişti, Konken &amp; Solitaire - Web, Google Play ve App Store'da!">
   <meta property="twitter:image" content="https://darkrockstudio.net/assets/images/konken_banner.png">
 
   <!-- Google Fonts: Outfit & Cinzel -->
@@ -580,11 +602,14 @@
       color: var(--gold-light);
     }
 
-    /* 4-BADGE TRUST & TECH STRIP */
+    /* 2-BADGE TRUST & TECH STRIP */
     .trust-strip {
       margin-top: 44px;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 720px;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 16px;
       background: rgba(50, 60, 78, 0.72);
       border: 1px solid var(--border-gold);
@@ -774,7 +799,7 @@
 
     .games-showcase-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 24px;
       margin-bottom: 48px;
       align-items: stretch;
@@ -1752,17 +1777,11 @@
         <a href="/tavla/" class="hero-game-btn"><span data-i18n="tavla_title">Tavla</span></a>
         <a href="/pisti/" class="hero-game-btn"><span data-i18n="pisti_title">Pişti</span></a>
         <a href="/konken/" class="hero-game-btn"><span data-i18n="konken_title">Konken</span></a>
+        <a href="/solitaire/" class="hero-game-btn"><span data-i18n="solitaire_title">Solitaire</span></a>
       </div>
 
-      <!-- 4-BADGE TRUST & TECH STRIP -->
+      <!-- 2-BADGE TRUST & TECH STRIP -->
       <div class="trust-strip">
-        <div class="trust-item">
-          <div class="trust-icon" style="color: var(--gold-primary); font-size: 1.25rem;">◆</div>
-          <div>
-            <div class="trust-title" data-i18n="trust1_title">&lt;40ms Sıfır Gecikme</div>
-            <div class="trust-sub" data-i18n="trust1_sub">Gerçek Zamanlı WebSocket</div>
-          </div>
-        </div>
         <div class="trust-item">
           <div class="trust-icon" style="color: var(--gold-primary); font-size: 1.25rem;">◆</div>
           <div>
@@ -1775,13 +1794,6 @@
           <div>
             <div class="trust-title" data-i18n="trust3_title">Üyeliksiz &amp; Anında</div>
             <div class="trust-sub" data-i18n="trust3_sub">Kayıt Olmadan Tek Tıkla Masa</div>
-          </div>
-        </div>
-        <div class="trust-item">
-          <div class="trust-icon" style="color: var(--gold-primary); font-size: 1.25rem;">◆</div>
-          <div>
-            <div class="trust-title" data-i18n="trust4_title">5 Dil Desteği</div>
-            <div class="trust-sub" data-i18n="trust4_sub">TR • EN • DE • RU • AR</div>
           </div>
         </div>
       </div>
@@ -1969,6 +1981,60 @@
             </div>
           </div>
         </div>
+
+        <!-- GAME 4: SOLITAIRE -->
+        <div class="game-card-large">
+          <div class="game-visual">
+            <img src="assets/images/solitaire_banner.png" alt="Solitaire Afiş" class="game-banner-img" loading="lazy">
+          </div>
+          <div class="game-content">
+            <div class="game-header-row">
+              <img src="assets/images/solitaire_icon.png" alt="Solitaire Logosu" class="game-avatar" loading="lazy">
+              <div>
+                <span class="game-status-badge status-live">
+                  <span class="status-pulse-dot"></span>
+                  <span data-i18n="solitaire_status">WEB'DE CANLI • MOBİL ÇOK YAKINDA</span>
+                </span>
+                <h3 class="game-title" data-i18n="solitaire_title">Solitaire: Klondike</h3>
+                <p class="game-tagline" data-i18n="solitaire_tagline">Lüks Casino Çuhasında Klasik Klondike Solitaire</p>
+              </div>
+            </div>
+            <p class="game-desc" data-i18n="solitaire_desc">Zamanı aşan klasik Klondike Solitaire, Darkrock Games lüks çuha ve altın varak tasarımıyla buluştu! 1 Kart ve 3 Kart Çekme modları, Kazanılabilir El garantisi, akıllı ipucu, sınırsız geri alma, tek dokunuşla akıllı taşıma ve zafer anında klasik zıplayan kart şelalesi!</p>
+            <div class="game-features-list">
+              <div class="feature-item"><span class="feature-bullet">◆</span> <span data-i18n="solitaire_f1">1 Kart &amp; 3 Kart Çekme</span></div>
+              <div class="feature-item"><span class="feature-bullet">◆</span> <span data-i18n="solitaire_f2">Kazanılabilir El Garantisi</span></div>
+              <div class="feature-item"><span class="feature-bullet">◆</span> <span data-i18n="solitaire_f3">Akıllı İpucu &amp; Sınırsız Geri Al</span></div>
+              <div class="feature-item"><span class="feature-bullet">◆</span> <span data-i18n="solitaire_f4">Otomatik Tamamlama &amp; Şelale</span></div>
+              <div class="feature-item"><span class="feature-bullet">◆</span> <span data-i18n="solitaire_f5">4 Çuha &amp; 3 Kart Arkası Teması</span></div>
+              <div class="feature-item"><span class="feature-bullet">◆</span> <span data-i18n="solitaire_f6">%100 İnternetsiz &amp; Anında Kayıt</span></div>
+            </div>
+            <div class="store-badges">
+              <a href="/solitaire/" class="primary-play-cta">
+                <span style="font-size: 0.8rem; margin-right: 4px;">◆</span> <span data-i18n="solitaire_web_play">Web'de Hemen Oyna</span>
+              </a>
+              <div class="store-badge-btn" style="border-color: rgba(212, 175, 55, 0.4);">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 0 1-.22-.986V2.8a2.38 2.38 0 0 1 .219-.986zm11.233 11.234l2.42 2.42-11.75 6.643 9.33-9.063zm0-2.096L5.512 1.89l11.75 6.642-2.42 2.42zm1.485 1.048l3.414 1.929c.954.54.954 1.419 0 1.958l-3.414 1.93-2.148-2.148 2.148-2.148z" />
+                </svg>
+                <div class="store-badge-text">
+                  <div class="store-badge-sub">Google Play</div>
+                  <div class="store-badge-main" style="color: #FFE082;" data-i18n="store_soon">Çok Yakında</div>
+                </div>
+              </div>
+              <div class="store-badge-btn" style="border-color: rgba(212, 175, 55, 0.4);">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.99.6-2.63 1.35-.57.65-1.07 1.72-.94 2.74 1 .08 2.03-.49 2.65-1.24z" />
+                </svg>
+                <div class="store-badge-text">
+                  <div class="store-badge-sub">App Store (iOS)</div>
+                  <div class="store-badge-main" style="color: #FFE082;" data-i18n="store_soon">Çok Yakında</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- UPCOMING GAMES -->
@@ -2068,8 +2134,7 @@
         <div class="feature-card">
           <div class="feature-icon-box" style="color: var(--gold-primary); font-size: 1.25rem;">◆</div>
           <h3 class="feature-title" data-i18n="feat1_title">Gerçek Zamanlı 1'e 1</h3>
-          <p class="feature-text" data-i18n="feat1_desc">Özel optimize edilmiş WebSocket sunucu mimarisi sayesinde dünya
-            çapında <40ms ultra düşük gecikmeyle kesintisiz online maçlar.</p>
+          <p class="feature-text" data-i18n="feat1_desc">Özel optimize edilmiş sunucu mimarisi sayesinde dünyanın her yerinden akıcı ve kesintisiz canlı online maçlar.</p>
         </div>
 
         <div class="feature-card">
@@ -2101,12 +2166,12 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag" data-i18n="guides_tag">OYUN REHBERİ &amp; KURALLAR</span>
-        <h2 class="section-title" data-i18n="guides_title">Tavla, Pişti ve Konken Nasıl Oynanır?</h2>
+        <h2 class="section-title" data-i18n="guides_title">Tavla, Pişti, Konken ve Solitaire Nasıl Oynanır?</h2>
         <p class="section-desc" data-i18n="guides_desc">Geleneksel masa ve iskambil oyunlarımızın resmi turnuva
           kuralları, puanlama sistemi ve strateji ipuçları.</p>
       </div>
 
-      <div class="steps-grid">
+      <div class="grid-2">
         <div class="mini-game-card">
           <div>
             <h3 class="game-title" style="font-size: 1.35rem; margin-bottom: 12px;" data-i18n="guide_tavla_title">Tavla Kuralları ve Stratejisi</h3>
@@ -2171,6 +2236,27 @@
               <strong>Resmi Puanlama (101 Hedef):</strong> Elini bitiren oyuncu, rakibin elinde kalan ceza kartlarının
               toplamını hanesine yazar (As = <strong>11 Puan</strong>, K/Q/J/10 = <strong>10 Puan</strong>, 2–9 = yüz
               değeri). Toplamda 101 puana ulaşan oyuncu maçı kazanır.
+            </p>
+          </div>
+        </div>
+
+        <div class="mini-game-card">
+          <div>
+            <h3 class="game-title" style="font-size: 1.35rem; margin-bottom: 12px;" data-i18n="guide_solitaire_title">Solitaire Kuralları ve Puanlama</h3>
+            <p class="game-desc" style="margin-bottom: 14px;" data-i18n="guide_solitaire_p1">
+              Klondike Solitaire, 52 kartlık standart deste ile 7 sütunlu masa düzeninde oynanan dünyanın en sevilen
+              tek kişilik kart strateji oyunudur. Amaç, sağ üstteki 4 As yuvasını her tür için (♠ ♥ ♦ ♣) As'tan
+              Papaz'a (A → K) sırayla tamamlamaktır.
+            </p>
+            <p class="game-desc" style="margin-bottom: 14px;" data-i18n="guide_solitaire_p2">
+              <strong>Masa Kuralları:</strong> Sütunlarda kartlar büyükten küçüğe ve zıt renklerle (Kırmızı-Siyah
+              dönüşümlü) dizilir; boşalan bir sütuna ise yalnızca Papaz (K) veya Papaz ile başlayan açık dizi
+              yerleştirilebilir. Kapalı deste 1 veya 3 kartlık modda çevrilebilir.
+            </p>
+            <p class="game-desc" style="margin-bottom: 0;" data-i18n="guide_solitaire_p3">
+              <strong>Resmi Puanlama:</strong> As yuvasına kart çıkarmak <strong>+10 Puan</strong>, kapalı kart açmak
+              <strong>+5 Puan</strong>, yerden sütuna kart almak <strong>+5 Puan</strong> kazandırır; süreyi hızlı
+              tamamlamak ekstra <strong>Hız Bonusu</strong> ekler.
             </p>
           </div>
         </div>
@@ -2262,6 +2348,21 @@
             <span data-i18n="strat_read_more">Rehberi Oku</span> <span>→</span>
           </div>
         </article>
+
+        <!-- Article 6: Solitaire Kazanma Stratejisi -->
+        <article class="strategy-card" onclick="openArticle('solitaire_strategy')">
+          <div>
+            <div class="strategy-meta">
+              <span class="strategy-tag" data-i18n="art6_tag">Solitaire Stratejisi</span>
+              <span class="strategy-read-time" data-i18n="art6_time">5 dk okuma</span>
+            </div>
+            <h3 class="strategy-card-title" data-i18n="art6_title">Klondike Solitaire'de Kazanma Oranını Artırma Taktikleri</h3>
+            <p class="strategy-card-excerpt" data-i18n="art6_excerpt">Kapalı kartları önceliklendirme, boş sütunu Papaz (K) için saklama, 1 Kart vs 3 Kart çekme disiplini ve As yuvalarına güvenli çıkış zamanlaması.</p>
+          </div>
+          <div class="strategy-read-btn">
+            <span data-i18n="strat_read_more">Rehberi Oku</span> <span>→</span>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -2280,7 +2381,7 @@
         <div class="faq-card">
           <h3 class="faq-q"><span style="color: var(--gold-primary); font-size: 0.8rem; margin-right: 6px;">◆</span> <span data-i18n="faq1_q">Üye olmadan veya uygulama indirmeden oynayabilir
               miyim?</span></h3>
-          <p class="faq-a" data-i18n="faq1_a">Evet! Tavla, Pişti ve Konken oyunlarımızı hiçbir üyelik, kişisel
+          <p class="faq-a" data-i18n="faq1_a">Evet! Tavla, Pişti, Konken ve Solitaire oyunlarımızı hiçbir üyelik, kişisel
             bilgi veya kurulum gerektirmeden doğrudan web tarayıcınızdan (PC, Mac, Tablet veya Telefon) tek tıkla
             ücretsiz oynayabilirsiniz.</p>
         </div>
@@ -2403,6 +2504,7 @@
                 rel="noopener">Pişti (Android)</a></li>
             <li><a href="/pisti/">Pişti (Web Oyunu)</a></li>
             <li><a href="/konken/">Konken (Web Oyunu)</a></li>
+            <li><a href="/solitaire/">Solitaire (Web Oyunu)</a></li>
             <li><a href="https://play.google.com/store/apps/details?id=com.darkrock.tavla" target="_blank"
                 rel="noopener">Tavla (Android)</a></li>
             <li><a href="/tavla/">Tavla (Web Oyunu)</a></li>
@@ -2443,14 +2545,10 @@
         "hero_desc": "En sevilen geleneksel masa ve iskambil oyunları; masif ceviz & altın işçiliği, 60 FPS akıcı 2.5D animasyonlar, gelişmiş yapay zeka ve gerçek zamanlı 1'e 1 online eşleşme ile parmaklarınızın ucunda.",
         "hero_explore": "Oyunları Keşfet",
         "hero_coming_soon": "Yakında Mağazalarda",
-        "trust1_title": "<40ms Sıfır Gecikme",
-        "trust1_sub": "Gerçek Zamanlı WebSocket",
         "trust2_title": "Çapraz Platform",
         "trust2_sub": "Web, Android & iOS Karşılıklı",
         "trust3_title": "Üyeliksiz & Anında",
         "trust3_sub": "Kayıt Olmadan Tek Tıkla Masa",
-        "trust4_title": "5 Dil Desteği",
-        "trust4_sub": "TR • EN • DE • RU • AR",
         "sec_games_tag": "PORTFÖYÜMÜZ",
         "sec_games_title": "Öne Çıkan Oyunlarımız",
         "sec_games_desc": "Milyonların tutkusu geleneksel oyunlar, üstün mühendislik ve lüks görsel tasarımla yeniden canlandı.",
@@ -2476,6 +2574,17 @@
         "konken_f5": "4 Lüks Çuha Masa Teması",
         "konken_f6": "Karşılıklı Mola & Devam Et",
         "konken_web_play": "Web'de Hemen Oyna",
+        "solitaire_status": "WEB'DE CANLI • MOBİL ÇOK YAKINDA",
+        "solitaire_title": "Solitaire: Klondike",
+        "solitaire_tagline": "Lüks Casino Çuhasında Klasik Klondike Solitaire",
+        "solitaire_desc": "Zamanı aşan klasik Klondike Solitaire, Darkrock Games lüks çuha ve altın varak tasarımıyla buluştu! 1 Kart ve 3 Kart Çekme modları, Kazanılabilir El garantisi, akıllı ipucu, sınırsız geri alma, tek dokunuşla akıllı taşıma ve zafer anında klasik zıplayan kart şelalesi!",
+        "solitaire_f1": "1 Kart & 3 Kart Çekme",
+        "solitaire_f2": "Kazanılabilir El Garantisi",
+        "solitaire_f3": "Akıllı İpucu & Sınırsız Geri Al",
+        "solitaire_f4": "Otomatik Tamamlama & Şelale",
+        "solitaire_f5": "4 Çuha & 3 Kart Arkası Teması",
+        "solitaire_f6": "%100 İnternetsiz & Anında Kayıt",
+        "solitaire_web_play": "Web'de Hemen Oyna",
         "store_review": "İnceleme Aşamasında",
         "store_closed_test": "Kapalı Testte",
         "tavla_status": "WEB & GOOGLE PLAY'DE YAYINDA",
@@ -2513,7 +2622,7 @@
         "sec_why_title": "Üstün Oyun Deneyimi",
         "sec_why_desc": "Her detay oyuncunun konforu, adil rekabet ve görsel zarafet için tasarlandı.",
         "feat1_title": "Gerçek Zamanlı 1'e 1",
-        "feat1_desc": "Özel optimize edilmiş WebSocket sunucu mimarisi sayesinde dünya çapında <40ms ultra düşük gecikmeyle kesintisiz online maçlar.",
+        "feat1_desc": "Özel optimize edilmiş sunucu mimarisi sayesinde dünyanın her yerinden akıcı ve kesintisiz canlı online maçlar.",
         "feat2_title": "Akıllı Offline Bot",
         "feat2_desc": "İnternetiniz olmadığında bile metroda, uçakta veya seyahatte oynayabileceğiniz hilesiz, adil ve zorlu yapay zeka motoru.",
         "feat3_title": "Lüks Ahşap & Altın",
@@ -2521,7 +2630,7 @@
         "feat4_title": "Mola & Masaya Dönüş",
         "feat4_desc": "Acil bir işiniz çıktığında oyundan kopmadan mola isteyin; dilediğiniz an tek tıkla masaya dönüp kaldığınız yerden devam edin.",
         "guides_tag": "OYUN REHBERİ & KURALLAR",
-        "guides_title": "Tavla, Pişti ve Konken Nasıl Oynanır?",
+        "guides_title": "Tavla, Pişti, Konken ve Solitaire Nasıl Oynanır?",
         "guides_desc": "Geleneksel masa ve iskambil oyunlarımızın resmi turnuva kuralları, puanlama sistemi ve strateji ipuçları.",
         "guide_tavla_title": "Tavla Kuralları ve Stratejisi",
         "guide_tavla_p1": "Tavla, 24 üçgen kapıdan (haneden) oluşan geleneksel marküteri ahşap tahta üzerinde iki oyuncu tarafından 15'er pul ve bir çift zarla oynanan binlerce yıllık bir strateji ve olasılık oyunudur. Her oyuncunun amacı, pullarını kendi ev bölgesine (son 6 kapıya) toplamak ve zarlarla tüm pullarını rakipten önce tahtadan dışarı (toplama tepsisine) çıkarmaktır.",
@@ -2535,11 +2644,15 @@
         "guide_konken_p1": "Konken, 52 kartlık standart iskambil destesiyle iki oyuncu arasında 10'ar kartla oynanan köklü bir per kurma (Rummy) oyunudur. Sırası gelen oyuncu kapalı desteden veya yerdeki açık karttan 1 kart çeker, ardından elindeki uygun Grup (aynı değer, farklı tür 3–4 kart) veya Seri (aynı tür, ardışık 3+ kart) perlerini masaya açabilir ve tur sonunda 1 kart atar.",
         "guide_konken_p2": "<strong>İşleme ve Elden Konken:</strong> Kendi elinden en az bir per açan oyuncu, masadaki tüm açık perlere tek kart işleyebilir. Daha önce hiç per açmadan tek bir turda tüm kartlarını bitiren oyuncu <strong>Elden Konken (×2)</strong> yapar ve kazandığı puan ikiye katlanır!",
         "guide_konken_p3": "<strong>Resmi Puanlama (101 Hedef):</strong> Elini bitiren oyuncu, rakibin elinde kalan ceza kartlarının toplamını hanesine yazar (As = <strong>11 Puan</strong>, K/Q/J/10 = <strong>10 Puan</strong>, 2–9 = yüz değeri). Toplamda 101 puana ulaşan oyuncu maçı kazanır.",
+        "guide_solitaire_title": "Solitaire Kuralları ve Puanlama",
+        "guide_solitaire_p1": "Klondike Solitaire, 52 kartlık standart deste ile 7 sütunlu masa düzeninde oynanan dünyanın en sevilen tek kişilik kart strateji oyunudur. Amaç, sağ üstteki 4 As yuvasını her tür için (♠ ♥ ♦ ♣) As'tan Papaz'a (A → K) sırayla tamamlamaktır.",
+        "guide_solitaire_p2": "<strong>Masa Kuralları:</strong> Sütunlarda kartlar büyükten küçüğe ve zıt renklerle (Kırmızı-Siyah dönüşümlü) dizilir; boşalan bir sütuna ise yalnızca Papaz (K) veya Papaz ile başlayan açık dizi yerleştirilebilir. Kapalı deste 1 veya 3 kartlık modda çevrilebilir.",
+        "guide_solitaire_p3": "<strong>Resmi Puanlama:</strong> As yuvasına kart çıkarmak <strong>+10 Puan</strong>, kapalı kart açmak <strong>+5 Puan</strong>, yerden sütuna kart almak <strong>+5 Puan</strong> kazandırır; süreyi hızlı tamamlamak ekstra <strong>Hız Bonusu</strong> ekler.",
         "faq_tag": "MERAK EDİLENLER",
         "faq_title": "Sıkça Sorulan Sorular",
         "faq_desc": "Çapraz platform eşleşme, adil oyun algoritması ve çevrimdışı mod hakkında sık sorulan sorular.",
         "faq1_q": "Üye olmadan veya uygulama indirmeden oynayabilir miyim?",
-        "faq1_a": "Evet! Tavla, Pişti ve Konken oyunlarımızı hiçbir üyelik, kişisel bilgi veya kurulum gerektirmeden doğrudan web tarayıcınızdan (PC, Mac, Tablet veya Telefon) tek tıkla ücretsiz oynayabilirsiniz.",
+        "faq1_a": "Evet! Tavla, Pişti, Konken ve Solitaire oyunlarımızı hiçbir üyelik, kişisel bilgi veya kurulum gerektirmeden doğrudan web tarayıcınızdan (PC, Mac, Tablet veya Telefon) tek tıkla ücretsiz oynayabilirsiniz.",
         "faq2_q": "Bilgisayardaki oyuncu ile telefondaki oyuncu karşılıklı oynayabilir mi?",
         "faq2_a": "Evet! Çapraz platform (Cross-Play) WebSocket altyapımız sayesinde bir oyuncu bilgisayardan web tarayıcısıyla bağlanırken, arkadaşı Android veya iOS telefonundan aynı masaya katılıp canlı 1'e 1 düello yapabilir.",
         "faq3_q": "Tavla zarları ile Pişti ve Konken kart dağılımı tamamen adil mi?",
@@ -2588,6 +2701,10 @@
         "art5_time": "6 dk okuma",
         "art5_title": "Tavla Tarihçesi ve Geleneksel Oyun Kültürü",
         "art5_excerpt": "M.Ö. 3000 Ur kraliyet mezarlarından Sasani saraylarına ve Osmanlı kıraathanelerine uzanan felsefe: 24 kapı, 12 ay ve zarların kozmik sembolizmi.",
+        "art6_tag": "Solitaire Stratejisi",
+        "art6_time": "5 dk okuma",
+        "art6_title": "Klondike Solitaire'de Kazanma Oranını Artırma Taktikleri",
+        "art6_excerpt": "Kapalı kartları önceliklendirme, boş sütunu Papaz (K) için saklama, 1 Kart vs 3 Kart çekme disiplini ve As yuvalarına güvenli çıkış zamanlaması.",
         "footer_desc": "Geleneksel masa ve iskambil oyunlarını en üstün işçilik, lüks görsel tasarım ve modern multiplayer teknolojisiyle dünya standartlarında oyuncularla buluşturuyoruz.",
         "footer_games": "Oyunlarımız",
         "footer_legal": "Bağlantılar & Yasal",
@@ -2614,14 +2731,10 @@
         "hero_desc": "Beloved traditional board and card games; solid walnut & gold craftsmanship, 60 FPS smooth 2.5D animations, advanced AI, and real-time 1v1 online duels at your fingertips.",
         "hero_explore": "Explore Games",
         "hero_coming_soon": "Coming Soon to Stores",
-        "trust1_title": "<40ms Zero Latency",
-        "trust1_sub": "Real-Time WebSocket Server",
         "trust2_title": "Cross-Platform Play",
         "trust2_sub": "Web, Android & iOS Together",
         "trust3_title": "No Sign-Up Needed",
         "trust3_sub": "Instant 1-Click Private Table",
-        "trust4_title": "5 Languages",
-        "trust4_sub": "TR • EN • DE • RU • AR",
         "sec_games_tag": "OUR PORTFOLIO",
         "sec_games_title": "Featured Games",
         "sec_games_desc": "Timeless traditional games brought to life with premium craftsmanship, cutting-edge engineering, and luxury design.",
@@ -2647,6 +2760,17 @@
         "konken_f5": "4 Luxury Felt Table Themes",
         "konken_f6": "Mutual Pause & Resume",
         "konken_web_play": "Play in Browser",
+        "solitaire_status": "LIVE ON WEB • MOBILE COMING SOON",
+        "solitaire_title": "Solitaire: Klondike",
+        "solitaire_tagline": "Classic Klondike Solitaire on Luxury Casino Felt",
+        "solitaire_desc": "Timeless Klondike Solitaire crafted with Darkrock Games luxury felt and gold foil styling! Features Draw 1 & Draw 3 modes, Winning Deal guarantee, Smart Hints, Unlimited Undo, one-tap auto-move, and the classic bouncing card cascade on victory.",
+        "solitaire_f1": "Draw 1 & Draw 3 Modes",
+        "solitaire_f2": "Winning Deal Guarantee",
+        "solitaire_f3": "Smart Hint & Unlimited Undo",
+        "solitaire_f4": "Auto-Complete & Victory Cascade",
+        "solitaire_f5": "4 Felt & 3 Card Back Themes",
+        "solitaire_f6": "100% Offline & Instant Save",
+        "solitaire_web_play": "Play in Browser",
         "store_review": "In Review",
         "store_closed_test": "Closed Testing",
         "tavla_status": "LIVE ON WEB & GOOGLE PLAY",
@@ -2684,7 +2808,7 @@
         "sec_why_title": "Superior Gaming Experience",
         "sec_why_desc": "Every detail is engineered for player comfort, fair play, and visual luxury.",
         "feat1_title": "Real-time 1v1",
-        "feat1_desc": "High-performance WebSocket architecture ensuring seamless online duels with ultra-low latency (<40ms) worldwide.",
+        "feat1_desc": "Optimized server architecture ensuring smooth and seamless live 1v1 matches worldwide.",
         "feat2_title": "Offline Smart AI",
         "feat2_desc": "A fair, challenging, and uncheated AI engine playable on subways, flights, or off-grid travels without internet.",
         "feat3_title": "Luxury Wood & Gold",
@@ -2692,7 +2816,7 @@
         "feat4_title": "Pause & Resume",
         "feat4_desc": "Request a mutual pause when real life calls; resume your match anytime with a single tap.",
         "guides_tag": "GAME GUIDES & RULES",
-        "guides_title": "How to Play Backgammon, Pishti & Konken?",
+        "guides_title": "How to Play Backgammon, Pishti, Konken & Solitaire?",
         "guides_desc": "Official tournament rules, scoring systems, and strategy tips for our traditional board and card games.",
         "guide_tavla_title": "Backgammon Rules & Strategy",
         "guide_tavla_p1": "Backgammon is a millennia-old game of strategy and probability played by two players on a traditional 24-point marquetry wooden board with 15 checkers each and a pair of dice. The goal is to bring all checkers into your home board (final 6 points) and bear them off before your opponent.",
@@ -2706,11 +2830,15 @@
         "guide_konken_p1": "Konken is a traditional 10-card Rummy game played between two players with a standard 52-card deck. On each turn, draw 1 card from either the stock or discard pile, optionally open Sets (3–4 same rank, distinct suits) or Runs (3+ consecutive same suit), and discard 1 card.",
         "guide_konken_p2": "<strong>Laying Off & Hand-Out Konken:</strong> Once you have opened at least one meld, you may lay off single cards onto any meld on the table. Going out on your very first opening turn scores a <strong>Hand-Out Konken (×2)</strong> bonus!",
         "guide_konken_p3": "<strong>Official Scoring (101 Target):</strong> The winner collects the total deadwood points left in the opponent's hand (Ace = <strong>11 Pts</strong>, K/Q/J/10 = <strong>10 Pts</strong>, 2–9 = face value). First to 101 points wins the match.",
+        "guide_solitaire_title": "Solitaire Rules & Scoring",
+        "guide_solitaire_p1": "Klondike Solitaire is the world's most beloved single-player card strategy game played with a standard 52-card deck across 7 tableau columns. Build all 4 top-right Foundation piles by suit from Ace to King (A → K).",
+        "guide_solitaire_p2": "<strong>Tableau Rules:</strong> Stack cards in descending order with alternating colors (Red on Black); empty columns may only be filled by a King (K) or a face-up sequence starting with a King. Draw from the stock in Draw 1 or Draw 3 mode.",
+        "guide_solitaire_p3": "<strong>Official Scoring:</strong> Moving a card to a Foundation awards <strong>+10 Pts</strong>, revealing a hidden card awards <strong>+5 Pts</strong>, waste to tableau earns <strong>+5 Pts</strong>, and fast finishes grant an extra <strong>Time Bonus</strong>.",
         "faq_tag": "FAQ",
         "faq_title": "Frequently Asked Questions",
         "faq_desc": "Common questions about cross-platform matchmaking, fair RNG algorithms, and offline AI mode.",
         "faq1_q": "Can I play without registering or downloading an app?",
-        "faq1_a": "Yes! You can play Backgammon, Pishti, and Konken directly in your web browser (PC, Mac, Tablet, or Mobile) with a single click—completely free and without any registration or personal data.",
+        "faq1_a": "Yes! You can play Backgammon, Pishti, Konken, and Solitaire directly in your web browser (PC, Mac, Tablet, or Mobile) with a single click—completely free and without any registration or personal data.",
         "faq2_q": "Can a player on a PC play against a friend on a smartphone?",
         "faq2_a": "Yes! Thanks to our cross-platform WebSocket architecture, one player can join from a computer web browser while their friend joins the exact same table from an Android or iOS mobile device.",
         "faq3_q": "Are the dice rolls and card shuffles 100% fair?",
@@ -2757,6 +2885,10 @@
         "art5_time": "6 min read",
         "art5_title": "5,000-Year Backgammon History & Culture",
         "art5_excerpt": "From the Royal Game of Ur (3000 BC) to Sasanian palaces and Mediterranean cafes: cosmic symbolism of 24 points, 12 months, and dice rolls.",
+        "art6_tag": "Solitaire Strategy",
+        "art6_time": "5 min read",
+        "art6_title": "Winning Tactics in Klondike Solitaire",
+        "art6_excerpt": "Prioritizing hidden cards, reserving empty columns for Kings, Draw 1 vs Draw 3 discipline, and safe foundation timing.",
         "footer_desc": "Delivering traditional board and card games to players worldwide with exquisite craftsmanship, luxury design, and modern multiplayer tech.",
         "footer_games": "Our Games",
         "footer_legal": "Links & Legal",
@@ -2783,14 +2915,10 @@
         "hero_desc": "Die beliebtesten traditionellen Brett- und Kartenspiele; massive Walnuss- und Goldverarbeitung, flüssige 60-FPS-2.5D-Animationen, fortschrittliche KI und 1-gegen-1-Live-Duelle.",
         "hero_explore": "Spiele entdecken",
         "hero_coming_soon": "Bald in den Stores",
-        "trust1_title": "<40ms Null Latenz",
-        "trust1_sub": "Echtzeit-WebSocket-Server",
         "trust2_title": "Cross-Platform",
         "trust2_sub": "Web, Android & iOS zusammen",
         "trust3_title": "Ohne Anmeldung",
         "trust3_sub": "Sofortiger 1-Klick-Spieltisch",
-        "trust4_title": "5 Sprachen",
-        "trust4_sub": "TR • EN • DE • RU • AR",
         "sec_games_tag": "PORTFOLIO",
         "sec_games_title": "Ausgewählte Spiele",
         "sec_games_desc": "Zeitlose traditionelle Spiele, wiederbelebt mit meisterhafter Handwerkskunst und modernem Design.",
@@ -2816,6 +2944,17 @@
         "konken_f5": "4 Luxus-Filzthemen",
         "konken_f6": "Pause & Fortsetzen",
         "konken_web_play": "Im Browser spielen",
+        "solitaire_status": "IM WEB LIVE • MOBIL BALD VERFÜGBAR",
+        "solitaire_title": "Solitaire: Klondike",
+        "solitaire_tagline": "Klassisches Klondike-Solitaire auf edlem Casino-Filz",
+        "solitaire_desc": "Zeitloses Klondike-Solitaire im luxuriösen Darkrock-Filz- & Gold-Design! Mit 1- und 3-Karten-Ziehen, lösbarer Garantie-Ausgabe, smartem Tipp, unbegrenztem Rückgängigmachen und klassischem Karten-Wasserfall.",
+        "solitaire_f1": "1- & 3-Karten-Ziehen",
+        "solitaire_f2": "Lösbare Spiele-Garantie",
+        "solitaire_f3": "Smarter Tipp & Unbegrenzt Zurück",
+        "solitaire_f4": "Auto-Abschluss & Sieges-Kaskade",
+        "solitaire_f5": "4 Tischfilz- & 3 Karten-Designs",
+        "solitaire_f6": "100% Offline & Sofort-Speicherung",
+        "solitaire_web_play": "Im Browser spielen",
         "store_review": "In Prüfung",
         "store_closed_test": "Geschlossener Test",
         "tavla_status": "IM WEB & AUF GOOGLE PLAY LIVE",
@@ -2853,7 +2992,7 @@
         "sec_why_title": "Überlegenes Spielerlebnis",
         "sec_why_desc": "Jedes Detail ist für Komfort, faires Spiel und visuelle Eleganz gestaltet.",
         "feat1_title": "Echtzeit 1-gegen-1",
-        "feat1_desc": "Optimierte WebSocket-Serverarchitektur für Duelle mit extrem niedriger Latenz (<40ms).",
+        "feat1_desc": "Optimierte Serverarchitektur für flüssige und unterbrechungsfreie Live-Duelle weltweit.",
         "feat2_title": "Offline Intelligente KI",
         "feat2_desc": "Ein faires, anspruchsvolles KI-Erlebnis, das auch ohne Internetverbindung überall gespielt werden kann.",
         "feat3_title": "Luxus Holz & Gold",
@@ -2861,7 +3000,7 @@
         "feat4_title": "Pause & Fortsetzen",
         "feat4_desc": "Unterbrich dein Spiel bei Bedarf und kehre mit einem Klick an den Tisch zurück.",
         "guides_tag": "SPIELANLEITUNG & REGELN",
-        "guides_title": "Wie spielt man Backgammon, Pishti & Konken?",
+        "guides_title": "Wie spielt man Backgammon, Pishti, Konken & Solitaire?",
         "guides_desc": "Offizielle Turnierregeln, Punktesystem und Strategietipps für unsere traditionellen Brett- und Kartenspiele.",
         "guide_tavla_title": "Backgammon: Regeln & Strategie",
         "guide_tavla_p1": "Backgammon wird von zwei Spielern auf einem Brett mit 24 Dreiecken (Zungen), je 15 Steinen und zwei Würfeln gespielt. Ziel ist es, alle eigenen Steine ins Heimfeld zu bringen und als Erster komplett auszuwürfeln.",
@@ -2875,11 +3014,15 @@
         "guide_konken_p1": "Konken ist ein taktisches 10-Karten-Rommé mit einem 52er-Deck. Ziehe pro Zug 1 Karte vom Stapel oder der Ablage, lege Sätze oder Folgen aus und wirf am Ende 1 Karte ab.",
         "guide_konken_p2": "<strong>Anlegen & Hand-Konken:</strong> Nach deiner ersten Auslage darfst du einzelne Karten an alle Tischmeldungen anlegen. Wer beim allerersten Auslegen direkt ausmacht, erzielt ein <strong>Hand-Konken (×2)</strong>!",
         "guide_konken_p3": "<strong>Offizielle Wertung (Ziel 101):</strong> Der Gewinner erhält die Handpunkte des Gegners (Ass = <strong>11 Pkt</strong>, K/D/B/10 = <strong>10 Pkt</strong>, 2–9 = Zahlenwert). Wer zuerst 101 Punkte erreicht, gewinnt.",
+        "guide_solitaire_title": "Solitaire: Regeln & Punkte",
+        "guide_solitaire_p1": "Klondike-Solitaire ist das beliebteste Einzelspieler-Kartenspiel mit einem 52er-Blatt und 7 Spielfeld-Spalten. Baue alle 4 Zielstapel oben rechts nach Farbe aufsteigend vom Ass bis zum König (A → K).",
+        "guide_solitaire_p2": "<strong>Spielfeld-Regeln:</strong> Lege Karten absteigend mit wechselnden Farben an; leere Spalten nehmen nur einen König (K) oder eine Reihe mit König auf. Der Vorratsstapel kann im 1- oder 3-Karten-Modus gezogen werden.",
+        "guide_solitaire_p3": "<strong>Wertung:</strong> Karte auf Zielstapel bringt <strong>+10 Pkt</strong>, verdeckte Karte aufdecken <strong>+5 Pkt</strong>, Ablagestapel aufs Spielfeld <strong>+5 Pkt</strong>; schnelle Siege erhalten einen zusätzlichen <strong>Zeitbonus</strong>.",
         "faq_tag": "HÄUFIGE FRAGEN",
         "faq_title": "Häufig gestellte Fragen (FAQ)",
         "faq_desc": "Antworten zu plattformübergreifendem Spielen, fairen Zufallsgeneratoren und dem Offline-Modus.",
         "faq1_q": "Kann ich ohne Registrierung oder Download spielen?",
-        "faq1_a": "Ja! Du kannst Backgammon, Pishti und Konken direkt im Webbrowser (PC, Mac, Tablet oder Smartphone) mit einem Klick kostenlos und ohne Benutzerkonto spielen.",
+        "faq1_a": "Ja! Du kannst Backgammon, Pishti, Konken und Solitaire direkt im Webbrowser (PC, Mac, Tablet oder Smartphone) mit einem Klick kostenlos und ohne Benutzerkonto spielen.",
         "faq2_q": "Können PC-Spieler gegen Smartphone-Spieler antreten?",
         "faq2_a": "Ja! Dank unserer Cross-Play-WebSocket-Architektur kann ein Spieler im Browser am Computer spielen, während der Freund am Android- oder iOS-Handy am selben Tisch sitzt.",
         "faq3_q": "Sind Würfel und Kartenverteilung zu 100 % fair?",
@@ -2926,6 +3069,10 @@
         "art5_time": "6 Min. Lesezeit",
         "art5_title": "5.000 Jahre Backgammon-Geschichte & Tradition",
         "art5_excerpt": "Vom königlichen Spiel von Ur (3000 v. Chr.) bis zu osmanischen Teehäusern: kosmische Symbolik der 24 Punkte.",
+        "art6_tag": "Solitaire-Strategie",
+        "art6_time": "5 Min. Lesezeit",
+        "art6_title": "Siegestaktiken im Klondike-Solitaire",
+        "art6_excerpt": "Verdeckte Karten priorisieren, leere Spalten für Könige reservieren, 1- vs. 3-Ziehen-Disziplin und sicheres Ablegen.",
         "footer_desc": "Traditionelle Spiele in weltweiter Spitzenqualität mit edlem Holzdesign und moderner Mehrspieler-Technik.",
         "footer_games": "Spiele",
         "footer_legal": "Rechtliches",
@@ -2952,14 +3099,10 @@
         "hero_desc": "Любимые традиционные настольные и карточные игры: отделка из ореха и золота, 60 FPS 2.5D анимации, умный ИИ и онлайн-дуэли 1 на 1 в реальном времени.",
         "hero_explore": "Смотреть игры",
         "hero_coming_soon": "Скоро в магазинах",
-        "trust1_title": "<40 мс без задержек",
-        "trust1_sub": "Серверы WebSocket",
         "trust2_title": "Кроссплатформенность",
         "trust2_sub": "Браузер, Android и iOS вместе",
         "trust3_title": "Без регистрации",
         "trust3_sub": "Стол в 1 клик без аккаунта",
-        "trust4_title": "5 языков",
-        "trust4_sub": "TR • EN • DE • RU • AR",
         "sec_games_tag": "НАШЕ ПОРТФОЛИО",
         "sec_games_title": "Избранные игры",
         "sec_games_desc": "Вечные традиционные игры, воссозданные с безупречным качеством и роскошным дизайном.",
@@ -2985,6 +3128,17 @@
         "konken_f5": "4 темы роскошного сукна",
         "konken_f6": "Пауза и продолжение",
         "konken_web_play": "Играть в браузере",
+        "solitaire_status": "ДОСТУПНО В БРАУЗЕРЕ • СКОРО НА МОБИЛЬНЫХ",
+        "solitaire_title": "Солитер: Косынка",
+        "solitaire_tagline": "Классический пасьянс Косынка на роскошном сукне",
+        "solitaire_desc": "Легендарная Косынка (Klondike Solitaire) в фирменном стиле Darkrock с золотом и бархатным сукном! Режимы по 1 и 3 карты, гарантия решаемого расклада, умная подсказка, безлимитная отмена и классический каскад карт при победе.",
+        "solitaire_f1": "Режимы по 1 и 3 карты",
+        "solitaire_f2": "Выигрышные расклады",
+        "solitaire_f3": "Умная подсказка и отмена",
+        "solitaire_f4": "Автосбор и каскад победы",
+        "solitaire_f5": "4 темы сукна и 3 рубашки",
+        "solitaire_f6": "100% офлайн и автосохранение",
+        "solitaire_web_play": "Играть в браузере",
         "store_review": "На проверке",
         "store_closed_test": "Закрытый тест",
         "tavla_status": "ДОСТУПНО В БРАУЗЕРЕ И GOOGLE PLAY",
@@ -3022,7 +3176,7 @@
         "sec_why_title": "Превосходный игровой опыт",
         "sec_why_desc": "Каждая деталь создана для комфорта, честной игры и эстетического удовольствия.",
         "feat1_title": "1 на 1 в реальном времени",
-        "feat1_desc": "Серверная архитектура WebSocket с минимальной задержкой (<40 мс) по всему миру.",
+        "feat1_desc": "Оптимизированная серверная архитектура для плавных и стабильных онлайн-дуэлей по всему миру.",
         "feat2_title": "Умный офлайн-бот",
         "feat2_desc": "Честный и глубокий искусственный интеллект, готовый к игре в самолете, метро или поездке.",
         "feat3_title": "Роскошное дерево и золото",
@@ -3030,7 +3184,7 @@
         "feat4_title": "Пауза и возвращение",
         "feat4_desc": "Ставьте партию на паузу по согласию и возвращайтесь в игру в любое удобное время.",
         "guides_tag": "ПРАВИЛА И СТРАТЕГИЯ",
-        "guides_title": "Как играть в Нарды, Пишти и Конкен?",
+        "guides_title": "Как играть в Нарды, Пишти, Конкен и Косынку?",
         "guides_desc": "Официальные турнирные правила, система подсчета очков и тактические советы.",
         "guide_tavla_title": "Правила и стратегия коротких нард",
         "guide_tavla_p1": "Короткие нарды — древняя стратегическая игра для двух игроков на доске из 24 пунктов по 15 шашек у каждого. Цель игры — перевести все свои шашки в «дом» (последние 6 пунктов) и выбросить их за доску раньше соперника.",
@@ -3044,11 +3198,15 @@
         "guide_konken_p1": "Конкен — карточная игра рамми на 10 карт стандартной колодой из 52 карт. В свой ход игрок берёт карту из колоды или сброса, выкладывает сеты или последовательности и сбрасывает 1 карту.",
         "guide_konken_p2": "<strong>Подкладывание и Конкен с руки:</strong> Выложив первую комбинацию, можно подкладывать карты к любым стопкам на столе. Выход за один ход без предварительного открытия приносит <strong>двойные очки (×2)</strong>!",
         "guide_konken_p3": "<strong>Официальный подсчет (цель — 101):</strong> Победитель получает сумму очков оставшихся карт соперника (Туз = <strong>11</strong>, K/Q/J/10 = <strong>10</strong>, 2–9 = номинал). Побеждает первый набравший 101 очко.",
+        "guide_solitaire_title": "Правила и очки пасьянса Косынка",
+        "guide_solitaire_p1": "Косынка (Klondike Solitaire) — самая популярная карточная головоломка с колодой из 52 карт и 7 столбцами. Соберите все 4 базовые стопки (♠ ♥ ♦ ♣) по возрастанию от Туза до Короля (A → K).",
+        "guide_solitaire_p2": "<strong>Правила столбцов:</strong> Выкладывайте карты по убыванию с чередованием цвета; в пустой столбец можно положить только Короля (K) или серию с Королём. Колода сдаётся по 1 или по 3 карты.",
+        "guide_solitaire_p3": "<strong>Подсчёт очков:</strong> Перенос в базу даёт <strong>+10 очков</strong>, открытие карты <strong>+5 очков</strong>, перенос из сброса на стол <strong>+5 очков</strong>, а быстрая сборка приносит <strong>бонус времени</strong>.",
         "faq_tag": "ВОПРОСЫ И ОТВЕТЫ",
         "faq_title": "Часто задаваемые вопросы (FAQ)",
         "faq_desc": "Ответы на вопросы о кроссплатформенной игре, честном генераторе случайных чисел и офлайн-режиме.",
         "faq1_q": "Можно ли играть без регистрации и скачивания приложения?",
-        "faq1_a": "Да! Вы можете играть в Нарды, Пишти и Конкен прямо в веб-браузере на ПК, Mac, планшете или телефоне бесплатно и без регистрации.",
+        "faq1_a": "Да! Вы можете играть в Нарды, Пишти, Конкен и Косынку прямо в веб-браузере на ПК, Mac, планшете или телефоне бесплатно и без регистрации.",
         "faq2_q": "Могут ли играть друг с другом игрок на ПК и игрок на смартфоне?",
         "faq2_a": "Да! Благодаря нашей кроссплатформенной архитектуре WebSocket один игрок может подключиться через браузер на компьютере, а его друг — со смартфона Android или iOS.",
         "faq3_q": "Честно ли выпадают кости в нардах и карты в Пишти?",
@@ -3095,6 +3253,10 @@
         "art5_time": "6 мин чтения",
         "art5_title": "5000 лет истории и культуры нард",
         "art5_excerpt": "От Царской игры Ура (3000 до н.э.) до восточных чайных: космический символизм 24 пунктов и костей.",
+        "art6_tag": "Стратегия Косынки",
+        "art6_time": "5 мин чтения",
+        "art6_title": "Тактика побед в пасьянсе Косынка",
+        "art6_excerpt": "Открытие скрытых карт в первую очередь, резерв пустых столбцов для королей, режимы по 1 и 3 карты.",
         "footer_desc": "Традиционные игры мирового уровня с премиальным деревянным дизайном и современным мультиплеером.",
         "footer_games": "Наши игры",
         "footer_legal": "Юридическая информация",
@@ -3121,14 +3283,10 @@
         "hero_desc": "أشهر ألعاب الطاولة والورق التقليدية؛ خشب الجوز المصمت والذهب، رسوم متحركة 2.5D سلسة بمعدل 60 إطاراً، ذكاء اصطناعي متطور، ومبارزات 1 ضد 1 حية.",
         "hero_explore": "استكشف الألعاب",
         "hero_coming_soon": "قريباً في المتاجر",
-        "trust1_title": "<40ms بدون تأخير",
-        "trust1_sub": "خوادم WebSocket فورية",
         "trust2_title": "لعب مشترك عبر المنصات",
         "trust2_sub": "الويب و Android و iOS معاً",
         "trust3_title": "بدون تسجيل حساب",
         "trust3_sub": "طاولة خاصة بضغطة واحدة",
-        "trust4_title": "دعم 5 لغات",
-        "trust4_sub": "TR • EN • DE • RU • AR",
         "sec_games_tag": "محفظتنا",
         "sec_games_title": "ألعابنا المميزة",
         "sec_games_desc": "ألعاب تراثية خالدة تنبض بالحياة بحرفية متقونة وتصميم فاخر.",
@@ -3154,6 +3312,17 @@
         "konken_f5": "4 ثيمات فاخرة لطاولة الجوخ",
         "konken_f6": "إيقاف مؤقت ومتابعة",
         "konken_web_play": "العب في المتصفح",
+        "solitaire_status": "متاح على الويب • قريباً على الجوال",
+        "solitaire_title": "سوليتير: كلوندايك",
+        "solitaire_tagline": "سوليتير كلوندايك الكلاسيكية على جوخ الكازينو الفاخر",
+        "solitaire_desc": "لعبة سوليتير كلوندايك الخالدة بتصميم Darkrock الفاخر من الجوخ والذهب! أوضاع سحب ورقة و 3 أوراق، ضمان توزيعات رابحة، تلميح ذكي، تراجع غير محدود، وشلال الأوراق الكلاسيكي عند الفوز.",
+        "solitaire_f1": "سحب ورقة و 3 أوراق",
+        "solitaire_f2": "ضمان توزيعات رابحة",
+        "solitaire_f3": "تلميح ذكي وتراجع لا محدود",
+        "solitaire_f4": "إكمال تلقائي وشلال الفوز",
+        "solitaire_f5": "4 ثيمات للطاولة و 3 لظهر الورق",
+        "solitaire_f6": "بدون إنترنت 100% وحفظ فوري",
+        "solitaire_web_play": "العب في المتصفح",
         "store_review": "قيد المراجعة",
         "store_closed_test": "اختبار مغلق",
         "tavla_status": "متاح على الويب و GOOGLE PLAY",
@@ -3191,7 +3360,7 @@
         "sec_why_title": "تجربة لعب استثنائية",
         "sec_why_desc": "صُممت كل التفاصيل لراحة اللاعب والمنافسة العادلة والفخامة البصرية.",
         "feat1_title": "مبارزات حية 1 ضد 1",
-        "feat1_desc": "خوادم WebSocket عالية الأداء تضمن لعباً سلساً بدون تأخير (<40 مللي ثانية).",
+        "feat1_desc": "بنية خوادم محسّنة تضمن مباريات حية سلسة ومستقرة في جميع أنحاء العالم.",
         "feat2_title": "ذكاء اصطناعي بدون إنترنت",
         "feat2_desc": "محرك ذكاء اصطناعي قوي وعادل يمكنك اللعب ضده في الطائرة أو المترو بدون إنترنت.",
         "feat3_title": "الخشب والذهب الفاخر",
@@ -3199,7 +3368,7 @@
         "feat4_title": "ميزة الإيقاف المؤقت",
         "feat4_desc": "أوقف اللعب بموافقة الطرفين وعُد إلى طاولتك في أي وقت بلمسة واحدة.",
         "guides_tag": "دليل اللعب والقوانين",
-        "guides_title": "كيف تلعب طاولة الزهر وبيشتي وكونكن؟",
+        "guides_title": "كيف تلعب طاولة الزهر وبيشتي وكونكن وسوليتير؟",
         "guides_desc": "القوانين الرسمية للبطولات ونظام احتساب النقاط ونصائح الاستراتيجية لألعابنا التقليدية.",
         "guide_tavla_title": "قوانين واستراتيجية طاولة الزهر",
         "guide_tavla_p1": "طاولة الزهر هي لعبة استراتيجية عريقة تُلعب بين لاعبين على لوح خشبي مقسم إلى 24 خانة بـ 15 حجراً لكل لاعب وزوج من النرد. الهدف هو تجميع جميع أحجارك في منطقتك الداخلية وإخراجها بالكامل قبل خصمك.",
@@ -3213,11 +3382,15 @@
         "guide_konken_p1": "الكونكن لعبة رومي استراتيجية بـ 10 أوراق و52 ورقة لعب. يسحب اللاعب في دوره ورقة من الكومة أو الأرض، وينزل المجموعات أو التسلسلات، ثم يرمي ورقة واحدة.",
         "guide_konken_p2": "<strong>الإضافة وكونكن من اليد:</strong> بعد فتح مجموعتك الأولى يمكنك إضافة أوراق فردية على مجموعات الطاولة. الإنهاء في نفس دور الفتح الأول يمنحك <strong>ضعف النقاط (×2)</strong>!",
         "guide_konken_p3": "<strong>الاحتساب الرسمي (الهدف 101):</strong> يحصد الفائز نقاط أوراق الخصم المتبقية (الآس = <strong>11 نقطة</strong>، الصور والعشرة = <strong>10 نقاط</strong>، 2–9 = قيمتها). أول من يصل إلى 101 نقطة يفوز.",
+        "guide_solitaire_title": "قواعد سوليتير واحتساب النقاط",
+        "guide_solitaire_p1": "سوليتير كلوندايك هي أشهر لعبة ورق فردية في العالم بمجموعة 52 ورقة و 7 أعمدة. الهدف هو إكمال مجموعات الآص الأربع في الأعلى حسب النوع من الآص إلى الملك (A → K).",
+        "guide_solitaire_p2": "<strong>قواعد الأعمدة:</strong> تُرتب الأوراق تنازلياً وبألوان متبادلة؛ الأعمدة الفارغة تقبل الملك (K) فقط أو سلسلة مكشوفة تبدأ بالملك. يمكن السحب من الكومة بورقة أو بـ 3 أوراق.",
+        "guide_solitaire_p3": "<strong>الاحتساب الرسمي:</strong> نقل ورقة للأساس يمنح <strong>+10 نقاط</strong>، كشف ورقة مغلقة <strong>+5 نقاط</strong>، من السحب للأعمدة <strong>+5 نقاط</strong>، مع <strong>مكافأة سرعة</strong> إضافية عند الإنهاء السريع.",
         "faq_tag": "الأسئلة الشائعة",
         "faq_title": "الأسئلة المتكررة (FAQ)",
         "faq_desc": "إجابات حول اللعب المشترك بين المنصات، عدالة النرد والأوراق، ووضع اللعب بدون إنترنت.",
         "faq1_q": "هل يمكنني اللعب بدون تسجيل حساب أو تحميل تطبيق؟",
-        "faq1_a": "نعم! يمكنك لعب طاولة الزهر وبيشتي وكونكن مباشرة من متصفح الويب على الكمبيوتر أو الجوال بضغطة واحدة مجاناً وبدون أي تسجيل.",
+        "faq1_a": "نعم! يمكنك لعب طاولة الزهر وبيشتي وكونكن وسوليتير مباشرة من متصفح الويب على الكمبيوتر أو الجوال بضغطة واحدة مجاناً وبدون أي تسجيل.",
         "faq2_q": "هل يمكن للاعب على الكمبيوتر اللعب ضد صديق على الهاتف؟",
         "faq2_a": "نعم! بفضل تقنية اللعب المشترك عبر WebSocket يمكن للاعب الانضمام من متصفح الكمبيوتر بينما ينضم صديقه إلى نفس الطاولة من هاتف Android أو iOS.",
         "faq3_q": "هل رميات النرد وتوزيع أوراق بيشتي عادلة بنسبة 100%؟",
@@ -3264,6 +3437,10 @@
         "art5_time": "6 دقائق قراءة",
         "art5_title": "5000 عام من تاريخ وثقافة طاولة الزهر",
         "art5_excerpt": "من لعبة أور الملكية (3000 ق.م) إلى بلاط الساسانيين والمقاهي العثمانية: الرمزية الفلكية لـ 24 خانة.",
+        "art6_tag": "استراتيجية سوليتير",
+        "art6_time": "5 دقائق قراءة",
+        "art6_title": "تكتيكات الفوز في سوليتير كلوندايك",
+        "art6_excerpt": "إعطاء الأولوية لكشف الأوراق المغلقة، حفظ الأعمدة الفارغة للملوك، وإتقان أوضاع السحب بذكاء.",
         "footer_desc": "نقدم ألعاب الطاولة والورق التراثية لجميع اللاعبين حول العالم بأعلى معايير الحرفية والتصميم.",
         "footer_games": "ألعابنا",
         "footer_legal": "الروابط والقانونية",
@@ -3516,6 +3693,33 @@
 
           <h4>3. Osmanlı Kıraathanelerinden Günümüze</h4>
           <p>Tavla, Osmanlı İmparatorluğu döneminde saraylardan mahalle kıraathanelerine kadar toplumun her kesiminde en popüler centilmenlik ritüeli haline gelmiştir. Zarların geleneksel Farsça sayı adlarıyla (Yek, Dü, Se, Cihar, Penç, Şeş) söylenmesi ve oyun sonu dostça çay ikramı bu köklü Akdeniz kültürünün yaşayan birer mirasıdır.</p>
+        `
+      },
+      solitaire_strategy: {
+        badge: 'Solitaire Stratejisi',
+        time: '5 dk okuma',
+        title: 'Klondike Solitaire\'de Kazanma Oranını Artırma Taktikleri',
+        content: `
+          <p>Klondike Solitaire ilk bakışta şans oyunu gibi görünse de, doğru hamle sıralaması ve disiplinli sütun yönetimi ile kazanma oranınızı %80'in üzerine çıkarmak mümkündür. İşte usta oyuncuların uyguladığı 4 temel prensip:</p>
+
+          <h4>1. Öncelik Daima Kapalı Kartları Açmaktır</h4>
+          <p>El başlangıcında desteden kart çekmeden önce masadaki 7 sütunu tarayın. Özellikle en çok kapalı kart barındıran sağdaki sütunlardan (6 ve 7 kartlı yığınlar) bir hamle yapabiliyorsanız bunu hemen oynayın. Her açılan kapalı kart size yeni hareket alanı kazandırır.</p>
+
+          <div class="article-tip-box">
+            💡 <strong>Altın Kural:</strong> İki sütundan biri kapalı kartı açacak, diğeri açmayacaksa daima kapalı kartı açan veya daha derin yığını eriten hamleyi seçin.
+          </div>
+
+          <h4>2. Boş Sütunları Yalnızca Papaz (K) İçin Hazırlayın</h4>
+          <p>Bir sütunu tamamen boşaltmak harikadır; ancak elinizde veya açık yığınlarda yerleştirecek bir <strong>Papaz (K)</strong> yoksa o sütunu boşaltmak size hiçbir alan kazandırmaz, hatta hareket esnekliğinizi kısıtlar. Üstelik renk dengesine dikkat edin: Örneğin ♥Q diziniz varsa boş sütuna siyah bir Papaz (♠K veya ♣K) indirmek uzun vadeli kilitleri açar.</p>
+
+          <h4>3. As Yuvalarına Çıkarken Sabırlı Olun</h4>
+          <p>Asları (A) ve İkilileri (2) güvenle sağ üstteki As yuvalarına gönderebilirsiniz. Ancak orta değerdeki kartları (5, 6, 7 gibi) çok erken As yuvasına çıkarmak, masadaki zıt renkli bir kartı altına takıp kapalı kart açma şansınızı elinizden alabilir. Zıt renklerin alt sıraları As yuvasına yerleşmeden büyük kartları masada tutmak daha güvenlidir.</p>
+
+          <h4>4. 1 Kart Çek vs 3 Kart Çek Disiplini</h4>
+          <ul>
+            <li><strong>1 Kart Çek Modu:</strong> Stratejik kontrolü maksimumda tutmak ve yüksek kazanma serileri yakalamak için idealdir.</li>
+            <li><strong>3 Kart Çek Modu:</strong> Desteyi her çevirdiğinizde açığa çıkan kart sırası değişir. Yerdeki üst kartı masaya koymak, bir sonraki turda destedeki her 3'lü grubun hizasını kaydırarak kilitli kartları açığa çıkarır.</li>
+          </ul>
         `
       }
     };
